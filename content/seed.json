@@ -1,0 +1,542 @@
+{
+  "textiles": [
+    {
+      "_id": "textile-strata",
+      "_type": "textile",
+      "title": "Strata",
+      "slug": "strata",
+      "category": "upholstery",
+      "description": "Un relief minéral, une matière vivante.",
+      "heroMedia": {
+        "src": "/images/187-1440.webp",
+        "alt": "Strata — détail du tissage Saint-Frison"
+      },
+      "gallery": [
+        {
+          "src": "/images/190-1440.webp",
+          "alt": "Strata — matière et tombé"
+        }
+      ],
+      "composition": "40% laine 25% coton 20%lin 15% soie",
+      "width": "140 cm",
+      "weight": "700 gr / ml",
+      "colourNames": "Limestone",
+      "collection": "On the Rocks",
+      "madeToOrder": true,
+      "applications": [
+        "Ameublement et assises"
+      ],
+      "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
+      "sortOrder": 0,
+      "colourways": []
+    },
+    {
+      "_id": "textile-meltem",
+      "_type": "textile",
+      "title": "Meltem",
+      "slug": "meltem",
+      "category": "voile",
+      "description": "Un souffle de lin dans la lumière.",
+      "heroMedia": {
+        "src": "/images/212-1440.webp",
+        "alt": "Meltem — détail du tissage Saint-Frison"
+      },
+      "gallery": [
+        {
+          "src": "/images/213-1440.webp",
+          "alt": "Meltem — matière et tombé"
+        }
+      ],
+      "composition": "100% lin",
+      "width": "140 cm",
+      "weight": "360 gr / ml",
+      "colourNames": "Blanc",
+      "collection": "Eole",
+      "madeToOrder": true,
+      "applications": [
+        "Voilages et rideaux"
+      ],
+      "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
+      "sortOrder": 1,
+      "colourways": []
+    },
+    {
+      "_id": "textile-edgar",
+      "_type": "textile",
+      "title": "Edgar",
+      "slug": "edgar",
+      "category": "upholstery",
+      "description": "Des rythmes irréguliers, tissés dans la matière.",
+      "heroMedia": {
+        "src": "/images/122-1440.webp",
+        "alt": "Edgar — détail du tissage Saint-Frison"
+      },
+      "gallery": [
+        {
+          "src": "/images/118-1440.webp",
+          "alt": "Edgar — matière et tombé"
+        },
+        {
+          "src": "/images/127-1440.webp",
+          "alt": "Edgar — matière et tombé"
+        },
+        {
+          "src": "/images/136-1440.webp",
+          "alt": "Edgar — matière et tombé"
+        },
+        {
+          "src": "/images/140-1440.webp",
+          "alt": "Edgar — matière et tombé"
+        }
+      ],
+      "composition": "55% lin 45% laine",
+      "width": "140 cm",
+      "weight": "1080 gr / ml",
+      "colourNames": "Naturel, Citron, Kaki, Terracotta, Midnight Blue",
+      "collection": "Family Affair",
+      "madeToOrder": true,
+      "applications": [
+        "Ameublement et assises"
+      ],
+      "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
+      "sortOrder": 2,
+      "colourways": [
+        {
+          "name": "Kaki",
+          "swatch": "#777b60",
+          "heroMedia": {
+            "src": "/images/122-1440.webp",
+            "alt": "Edgar — Kaki"
+          }
+        },
+        {
+          "name": "Terracotta",
+          "swatch": "#a55340",
+          "heroMedia": {
+            "src": "/images/118-1440.webp",
+            "alt": "Edgar — Terracotta"
+          }
+        },
+        {
+          "name": "Citron",
+          "swatch": "#c3b64c",
+          "heroMedia": {
+            "src": "/images/127-1440.webp",
+            "alt": "Edgar — Citron"
+          }
+        },
+        {
+          "name": "Naturel",
+          "swatch": "#aaa795",
+          "heroMedia": {
+            "src": "/images/136-1440.webp",
+            "alt": "Edgar — Naturel"
+          }
+        },
+        {
+          "name": "Midnight Blue",
+          "swatch": "#2c384d",
+          "heroMedia": {
+            "src": "/images/140-1440.webp",
+            "alt": "Edgar — Midnight Blue"
+          }
+        }
+      ]
+    },
+    {
+      "_id": "textile-java",
+      "_type": "textile",
+      "title": "Java",
+      "slug": "java",
+      "category": "upholstery",
+      "description": "La rencontre subtile de la laine et du lin.",
+      "heroMedia": {
+        "src": "/images/167-1440.webp",
+        "alt": "Java — détail du tissage Saint-Frison"
+      },
+      "gallery": [
+        {
+          "src": "/images/164-1440.webp",
+          "alt": "Java — matière et tombé"
+        },
+        {
+          "src": "/images/171-1440.webp",
+          "alt": "Java — matière et tombé"
+        }
+      ],
+      "composition": "60% laine 40% lin",
+      "width": "140 cm",
+      "weight": "672 gr / ml",
+      "colourNames": "Fauve, Denim, Olive, Menthe",
+      "collection": "Pas de Deux",
+      "madeToOrder": true,
+      "applications": [
+        "Ameublement et assises"
+      ],
+      "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
+      "sortOrder": 3,
+      "colourways": []
+    },
+    {
+      "_id": "textile-pampero",
+      "_type": "textile",
+      "title": "Pampero",
+      "slug": "pampero",
+      "category": "voile",
+      "description": "Une transparence délicate, des couleurs sensibles.",
+      "heroMedia": {
+        "src": "/images/219-1440.webp",
+        "alt": "Pampero — détail du tissage Saint-Frison"
+      },
+      "gallery": [
+        {
+          "src": "/images/214-1440.webp",
+          "alt": "Pampero — matière et tombé"
+        },
+        {
+          "src": "/images/216-1440.webp",
+          "alt": "Pampero — matière et tombé"
+        }
+      ],
+      "composition": "100% lin",
+      "width": "140 cm",
+      "weight": "510 gr / ml",
+      "colourNames": "Mastic, Ciel, Corail & Poudre",
+      "collection": "Eole",
+      "madeToOrder": true,
+      "applications": [
+        "Voilages et rideaux"
+      ],
+      "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
+      "sortOrder": 4,
+      "colourways": []
+    },
+    {
+      "_id": "textile-espuma",
+      "_type": "textile",
+      "title": "Espuma",
+      "slug": "espuma",
+      "category": "upholstery",
+      "description": "Une matière généreuse, douce et texturée.",
+      "heroMedia": {
+        "src": "/images/145-1440.webp",
+        "alt": "Espuma — détail du tissage Saint-Frison"
+      },
+      "gallery": [
+        {
+          "src": "/images/148-1440.webp",
+          "alt": "Espuma — matière et tombé"
+        },
+        {
+          "src": "/images/151-1440.webp",
+          "alt": "Espuma — matière et tombé"
+        }
+      ],
+      "composition": "79% lin, 21% coton",
+      "width": "140 cm",
+      "weight": "1050 gr / ml",
+      "colourNames": "Blanc, Bleu Ciel, Bleu Nuit",
+      "collection": "Dolce",
+      "madeToOrder": true,
+      "applications": [
+        "Ameublement et assises"
+      ],
+      "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
+      "sortOrder": 5,
+      "colourways": []
+    },
+    {
+      "_id": "textile-oslo",
+      "_type": "textile",
+      "title": "Oslo",
+      "slug": "oslo",
+      "category": "upholstery",
+      "description": "La présence singulière d’un lin texturé.",
+      "heroMedia": {
+        "src": "/images/177-1440.webp",
+        "alt": "Oslo — détail du tissage Saint-Frison"
+      },
+      "gallery": [],
+      "composition": "100% lin",
+      "width": "140 cm",
+      "weight": "1160 gr / ml",
+      "colourNames": "Blanc",
+      "collection": "Grand Nord",
+      "madeToOrder": true,
+      "applications": [
+        "Ameublement et assises"
+      ],
+      "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
+      "sortOrder": 6,
+      "colourways": []
+    },
+    {
+      "_id": "textile-toundra",
+      "_type": "textile",
+      "title": "Toundra",
+      "slug": "toundra",
+      "category": "upholstery",
+      "description": "Des nuances profondes et une trame contrastée.",
+      "heroMedia": {
+        "src": "/images/193-1440.webp",
+        "alt": "Toundra — détail du tissage Saint-Frison"
+      },
+      "gallery": [],
+      "composition": "65% lin, 35% laine",
+      "width": "140 cm",
+      "weight": "903 gr / ml",
+      "colourNames": "Marlin, Larkspur, Clémentine, Burgundy, Carbon",
+      "collection": "Grand Nord",
+      "madeToOrder": true,
+      "applications": [
+        "Ameublement et assises"
+      ],
+      "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
+      "sortOrder": 7,
+      "colourways": []
+    },
+    {
+      "_id": "textile-mauka",
+      "_type": "textile",
+      "title": "Mauka",
+      "slug": "mauka",
+      "category": "voile",
+      "description": "Le lin se fait léger, la lumière se nuance.",
+      "heroMedia": {
+        "src": "/images/207-1440.webp",
+        "alt": "Mauka — détail du tissage Saint-Frison"
+      },
+      "gallery": [
+        {
+          "src": "/images/209-1440.webp",
+          "alt": "Mauka — matière et tombé"
+        }
+      ],
+      "composition": "100% lin",
+      "width": "140 cm",
+      "weight": "460 gr / ml",
+      "colourNames": "Ardoise, Blush, Naturel, Sable et Blanc",
+      "collection": "Eole",
+      "madeToOrder": true,
+      "applications": [
+        "Voilages et rideaux"
+      ],
+      "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
+      "sortOrder": 8,
+      "colourways": []
+    },
+    {
+      "_id": "textile-sashiko",
+      "_type": "textile",
+      "title": "Sashiko",
+      "slug": "sashiko",
+      "category": "voile",
+      "description": "Un dialogue de lignes et de transparences.",
+      "heroMedia": {
+        "src": "/images/221-1440.webp",
+        "alt": "Sashiko — détail du tissage Saint-Frison"
+      },
+      "gallery": [],
+      "composition": "100% lin",
+      "width": "140 cm",
+      "weight": "400 gr / ml",
+      "colourNames": "blanc, naturel",
+      "collection": "Influences",
+      "madeToOrder": true,
+      "applications": [
+        "Voilages et rideaux"
+      ],
+      "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
+      "sortOrder": 9,
+      "colourways": []
+    },
+    {
+      "_id": "textile-tissage-rotin",
+      "_type": "textile",
+      "title": "Tissage & rotin",
+      "slug": "tissage-rotin",
+      "category": "research",
+      "description": "Le fil accueille le rotin. La trame devient volume, la ligne dessine des courbes et la matière se transforme avec la lumière.",
+      "heroMedia": {
+        "src": "/images/256-1440.webp",
+        "alt": "Tissage blanc et courbes de rotin"
+      },
+      "gallery": [
+        {
+          "src": "/images/254-1440.webp",
+          "alt": "Travail à la main du rotin dans le tissage"
+        },
+        {
+          "src": "/images/264-1440.webp",
+          "alt": "Recherche de rotin sur tissage sombre"
+        },
+        {
+          "src": "/images/266-1440.webp",
+          "alt": "Détail du geste sur la trame"
+        }
+      ],
+      "sortOrder": 10,
+      "materials": [
+        "Textile",
+        "Rotin"
+      ],
+      "colourways": []
+    }
+  ],
+  "lighting": [
+    {
+      "_id": "lighting-courbes-applique",
+      "_type": "lighting",
+      "title": "Courbes — applique",
+      "slug": "courbes-applique",
+      "description": "La recherche textile se prolonge dans la lumière. Le tissage et le rotin composent un jeu de lignes, d’ombres et de transparences.",
+      "heroMedia": {
+        "src": "/images/29-1440.webp",
+        "alt": "Courbes — applique — Saint-Frison Textiles"
+      },
+      "gallery": [
+        {
+          "src": "/images/3-1440.webp",
+          "alt": "Courbes — applique — détail et application"
+        },
+        {
+          "src": "/images/36-1440.webp",
+          "alt": "Courbes — applique — détail et application"
+        },
+        {
+          "src": "/images/40-1440.webp",
+          "alt": "Courbes — applique — détail et application"
+        }
+      ],
+      "materials": [
+        "Textile tissé",
+        "Rotin"
+      ],
+      "textileSlug": "tissage-rotin",
+      "status": "selection",
+      "sortOrder": 0
+    },
+    {
+      "_id": "lighting-ondes-lampadaire",
+      "_type": "lighting",
+      "title": "Ondes — lampadaire",
+      "slug": "ondes-lampadaire",
+      "description": "La recherche textile se prolonge dans la lumière. Le tissage et le rotin composent un jeu de lignes, d’ombres et de transparences.",
+      "heroMedia": {
+        "src": "/images/9-1440.webp",
+        "alt": "Ondes — lampadaire — Saint-Frison Textiles"
+      },
+      "gallery": [
+        {
+          "src": "/images/40-1440.webp",
+          "alt": "Ondes — lampadaire — détail et application"
+        }
+      ],
+      "materials": [
+        "Textile tissé",
+        "Rotin"
+      ],
+      "textileSlug": "tissage-rotin",
+      "status": "selection",
+      "sortOrder": 1
+    },
+    {
+      "_id": "lighting-courbes-lampe-noire",
+      "_type": "lighting",
+      "title": "Courbes — lampe noire",
+      "slug": "courbes-lampe-noire",
+      "description": "La recherche textile se prolonge dans la lumière. Le tissage et le rotin composent un jeu de lignes, d’ombres et de transparences.",
+      "heroMedia": {
+        "src": "/images/18-1440.webp",
+        "alt": "Courbes — lampe noire — Saint-Frison Textiles"
+      },
+      "gallery": [
+        {
+          "src": "/images/27-1440.webp",
+          "alt": "Courbes — lampe noire — détail et application"
+        },
+        {
+          "src": "/images/264-1440.webp",
+          "alt": "Courbes — lampe noire — détail et application"
+        }
+      ],
+      "materials": [
+        "Textile tissé",
+        "Rotin"
+      ],
+      "textileSlug": "tissage-rotin",
+      "status": "selection",
+      "sortOrder": 2
+    },
+    {
+      "_id": "lighting-courbes-suspensions",
+      "_type": "lighting",
+      "title": "Courbes — suspensions",
+      "slug": "courbes-suspensions",
+      "description": "La recherche textile se prolonge dans la lumière. Le tissage et le rotin composent un jeu de lignes, d’ombres et de transparences.",
+      "heroMedia": {
+        "src": "/images/49-1440.webp",
+        "alt": "Courbes — suspensions — Saint-Frison Textiles"
+      },
+      "gallery": [
+        {
+          "src": "/images/52-1440.webp",
+          "alt": "Courbes — suspensions — détail et application"
+        }
+      ],
+      "materials": [
+        "Textile tissé",
+        "Rotin"
+      ],
+      "textileSlug": "tissage-rotin",
+      "status": "selection",
+      "sortOrder": 3
+    }
+  ],
+  "projects": [
+    {
+      "_id": "project-rotin",
+      "_type": "project",
+      "title": "La ligne devient lumière",
+      "slug": "la-ligne-devient-lumiere",
+      "category": "Recherche & application",
+      "description": "Du tissage à l’objet : une recherche autour du rotin, de ses courbes et de la lumière qui les traverse.",
+      "heroMedia": {
+        "src": "/images/36-1440.webp",
+        "alt": "Applique textile et rotin dans un intérieur"
+      },
+      "gallery": [],
+      "contentBlocks": [
+        {
+          "_key": "a",
+          "type": "pair",
+          "images": [
+            {
+              "src": "/images/254-1440.webp",
+              "alt": "Insertion du rotin à la main"
+            },
+            {
+              "src": "/images/256-1440.webp",
+              "alt": "Détail de la trame et du rotin"
+            }
+          ]
+        },
+        {
+          "_key": "b",
+          "type": "imageText",
+          "images": [
+            {
+              "src": "/images/49-1440.webp",
+              "alt": "Deux suspensions textiles dans la lumière"
+            }
+          ],
+          "text": "Dessiner avec la trame. Le textile quitte le plan pour devenir un volume traversé de lumière."
+        }
+      ],
+      "textileSlugs": [
+        "tissage-rotin"
+      ],
+      "sortOrder": 0
+    }
+  ]
+}
