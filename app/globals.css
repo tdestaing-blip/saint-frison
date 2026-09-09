@@ -7,20 +7,20 @@
   --color-border: var(--line);
   --color-ring: #81725e;
   --color-primary: #493d33;
-  --color-primary-foreground: #f5f3ed;
+  --color-primary-foreground: #ffffff;
   --color-input: #b4ac9f;
   --color-accent: #e6e1d7;
   --color-accent-foreground: #493d33;
-  --color-popover: #f5f3ed;
+  --color-popover: #ffffff;
   --color-popover-foreground: #493d33;
 }
 :root {
-  --paper: #f5f3ed;
+  --paper: #ffffff;
   --ink: #493d33;
   --line: #d5d0c6;
   --muted: #81776b;
   --blue: #253d49;
-  --background: #f5f3ed;
+  --background: #ffffff;
   --foreground: #493d33;
   color-scheme: light;
 }
@@ -238,7 +238,7 @@ button:focus-visible {
 }
 .image-wrap {
   overflow: hidden;
-  background: #e8e4dc;
+  background: var(--paper);
   aspect-ratio: 3/4;
 }
 .image-wrap img {
@@ -544,7 +544,7 @@ button:focus-visible {
 .bespoke {
   text-align: center;
   padding: 100px 7%;
-  background: #ebe7dc;
+  background: var(--paper);
 }
 .bespoke h2 {
   font-size: clamp(38px, 4.7vw, 66px);
@@ -564,7 +564,7 @@ button:focus-visible {
   min-height: 670px;
 }
 .detail-photo {
-  background: #e6e2d8;
+  background: var(--paper);
   height: calc(100svh - 112px);
   min-height: 620px;
   max-height: 950px;
@@ -801,7 +801,7 @@ button:focus-visible {
 .quote-section {
   padding: 85px 7%;
   text-align: center;
-  background: #eae5da;
+  background: var(--paper);
 }
 .quote-section blockquote {
   font-family: Georgia, serif;
@@ -868,7 +868,7 @@ button:focus-visible {
   grid-template-columns: 1.1fr 1fr;
   gap: 9%;
   align-items: center;
-  background: #eae5da;
+  background: var(--paper);
   padding: 90px 7%;
 }
 .home-studio-images {
@@ -887,7 +887,7 @@ button:focus-visible {
   position: absolute;
   right: 0;
   bottom: 0;
-  border: 9px solid #eae5da;
+  border: 9px solid var(--paper);
 }
 .home-studio h2 {
   font-size: clamp(38px, 4.4vw, 65px);
