@@ -1,3 +1,4 @@
+"use client";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
 import { presentationTool, defineLocations } from "sanity/presentation";

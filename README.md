@@ -31,7 +31,7 @@ Copier `.env.example` dans `.env.local` pour activer les services. Ne jamais com
 
 ## Connecter l’espace de Margaux
 
-1. Créer un projet Sanity et un dataset `production`.
+1. Créer un projet Sanity et un dataset `production` privé : il contient aussi les demandes reçues et leurs coordonnées. Le serveur utilise son jeton Viewer pour lire les contenus publiés et les brouillons.
 2. Renseigner `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, un jeton Viewer `SANITY_API_READ_TOKEN` et un jeton Editor serveur `SANITY_API_WRITE_TOKEN`.
 3. Ajouter les origines locales et de production dans les origines CORS Sanity, avec les identifiants autorisés. Inviter Margaux dans le projet avec les droits éditoriaux nécessaires.
 4. Exécuter `npm run seed`. Le script téléverse les photographies optimisées, crée les références et configure l’accueil. Il conserve les documents existants. Effectuer l’import avant la bascule publique.

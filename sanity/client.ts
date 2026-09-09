@@ -20,7 +20,7 @@ export async function sanityQuery<T>(
   const draft = (await draftMode()).isEnabled;
   return client.fetch<T>(query, params, {
     perspective: draft ? "drafts" : "published",
-    token: draft ? process.env.SANITY_API_READ_TOKEN : undefined,
+    token: process.env.SANITY_API_READ_TOKEN,
     stega: draft,
     cache: "no-store",
   });

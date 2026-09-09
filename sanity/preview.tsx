@@ -1,8 +1,8 @@
 "use client";
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "next-sanity";
-import { VisualEditing } from "next-sanity/visual-editing";
+import { VisualEditing } from "next-sanity/visual-editing/client-component";
 export function Preview({
   projectId,
   dataset,
@@ -11,7 +11,9 @@ export function Preview({
   dataset: string;
 }) {
   const router = useRouter();
+  const isStudio = usePathname().startsWith("/studio");
   useEffect(() => {
+    if (isStudio) return;
     const c = createClient({
       projectId,
       dataset,
@@ -30,7 +32,8 @@ export function Preview({
       clearTimeout(timer);
       sub.unsubscribe();
     };
-  }, [projectId, dataset, router]);
+  }, [projectId, dataset, router, isStudio]);
+  if (isStudio) return null;
   return (
     <>
       <div className="preview-bar">
