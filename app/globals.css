@@ -1893,3 +1893,70 @@ body:has(.studio-root) .site-footer {
     margin-top: 2rem;
   }
 }
+
+/* Editorial brief: shared catalogues and concise product information. */
+.catalog-anchor {
+  display: block;
+  scroll-margin-top: 8rem;
+}
+.related-heading {
+  margin-bottom: 2rem;
+}
+.electrical-heading {
+  margin: 2.5rem 0 1rem;
+  font-size: 1.125rem;
+}
+.vintage-note {
+  margin-top: 2rem;
+  white-space: pre-line;
+}
+.textile-personalisation {
+  padding: 2rem 7% 4rem;
+  max-width: 66rem;
+}
+.textile-personalisation p {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+.studio-materials {
+  padding: 2rem 7% 5rem;
+  max-width: 66rem;
+}
+.studio-materials p,
+.process-introduction {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+.process-introduction {
+  max-width: 48rem;
+  margin: 0 0 3rem;
+}
+.project-title .project-credits {
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+}
+.filters {
+  flex-wrap: wrap;
+}
+.filters button {
+  white-space: normal;
+}
+@media (max-width: 600px) {
+  .filters {
+    gap: 1rem 1.5rem;
+  }
+}
+
+.filters button {
+  font-size: 0.875rem;
+  min-height: 2.75rem;
+}
+.filters {
+  overflow: visible;
+}
+.filters button[aria-pressed="true"]:after {
+  bottom: 0;
+}
+.page-intro > div > p {
+  font-size: 1rem;
+}

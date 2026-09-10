@@ -1,10 +1,15 @@
-import { enquiryTypes, normaliseEnquiryType } from "./enquiry-types.ts";
+import {
+  enquiryTypes,
+  normaliseEnquiryType,
+  getEnquiryOptions,
+  type EnquiryOption,
+} from "./enquiry-types.ts";
 import { z } from "zod";
-export const enquirySchema = z.object({
+export const enquiryFields = z.object({
   id: z.string().uuid(),
   type: z.preprocess(
     (v) => (typeof v === "string" ? normaliseEnquiryType(v) : v),
-    z.enum(enquiryTypes),
+    z.string().trim().min(1).max(100),
   ),
   name: z.string().trim().min(2).max(150),
   email: z.string().email().max(254),
@@ -17,10 +22,23 @@ export const enquirySchema = z.object({
   website: z.string().max(200).default(""),
   consent: z.literal(true),
 });
-export type EnquiryInput = z.infer<typeof enquirySchema>;
+export function createEnquirySchema(options?: EnquiryOption[]) {
+  const accepted = new Set([
+    ...enquiryTypes,
+    ...getEnquiryOptions(options).map((o) => o.value),
+  ]);
+  return enquiryFields.refine((data) => accepted.has(data.type), {
+    path: ["type"],
+    message: "Catégorie inconnue",
+  });
+}
+export const enquirySchema = createEnquirySchema();
+export type EnquiryInput = z.infer<typeof enquirySchema> & {
+  typeLabel?: string;
+};
 export function enquiryEmail(data: EnquiryInput) {
   return [
-    `Nouvelle demande Saint-Frison — ${data.type}`,
+    `Nouvelle demande Saint-Frison — ${data.typeLabel || data.type}`,
     `Nom : ${data.name}`,
     `Email : ${data.email}`,
     `Studio : ${data.company || "—"}`,

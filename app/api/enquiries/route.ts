@@ -1,5 +1,10 @@
 import { createClient } from "next-sanity";
-import { enquirySchema, enquiryEmail } from "@/lib/enquiry";
+import {
+  enquiryFields,
+  createEnquirySchema,
+  enquiryEmail,
+} from "@/lib/enquiry";
+import { getEnquiryOptions, type EnquiryOption } from "@/lib/enquiry-types";
 export async function POST(request: Request) {
   const headers = { "Cache-Control": "no-store" };
   const reply = (data: object, status = 200) =>
@@ -17,7 +22,7 @@ export async function POST(request: Request) {
   } catch {
     return reply({ error: "Message invalide." }, 400);
   }
-  const parsed = enquirySchema.safeParse(raw);
+  const parsed = enquiryFields.safeParse(raw);
   if (!parsed.success)
     return reply(
       {
@@ -47,6 +52,21 @@ export async function POST(request: Request) {
     token,
   });
   try {
+    const options = getEnquiryOptions(
+      await c.fetch<EnquiryOption[]>(
+        '*[_type=="contactPage"][0].enquiryOptions',
+      ),
+    );
+    if (!createEnquirySchema(options).safeParse(data).success)
+      return reply(
+        {
+          error:
+            "Cette catégorie n’est plus disponible. Actualisez la page et réessayez.",
+        },
+        400,
+      );
+    const typeLabel =
+      options.find((o) => o.value === data.type)?.label || data.type;
     const existing = await c.getDocument("inquiry-" + data.id);
     if (existing) return reply({ ok: true });
     const digest = await crypto.subtle.digest(
@@ -75,6 +95,7 @@ export async function POST(request: Request) {
       _id: "inquiry-" + id,
       _type: "inquiry",
       ...fields,
+      typeLabel,
       senderHash,
       submittedAt: new Date().toISOString(),
       status: "new",
@@ -97,8 +118,8 @@ export async function POST(request: Request) {
             from,
             to: [receiver],
             reply_to: data.email,
-            subject: `Saint-Frison · ${data.type}`,
-            text: enquiryEmail(data),
+            subject: `Saint-Frison · ${typeLabel}`,
+            text: enquiryEmail({ ...data, typeLabel }),
           }),
           signal: AbortSignal.timeout(10000),
         });

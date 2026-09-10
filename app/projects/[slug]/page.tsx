@@ -1,7 +1,7 @@
 import { RelatedEntries } from "@/components/related-entries";
 import Link from "@/components/site-link";
 import { notFound } from "next/navigation";
-import { getEntry, getRelatedEntries } from "@/lib/content";
+import { getEntry, getRelatedEntries, getPageCopy } from "@/lib/content";
 import { Photo } from "@/components/photo";
 export async function generateMetadata({
   params,
@@ -21,20 +21,41 @@ export default async function Page({
 }) {
   const e = await getEntry("project", (await params).slug);
   if (!e) notFound();
+  const copy = await getPageCopy();
   return (
     <main id="main">
       <header className="project-title">
         <Link className="back-link" href="/projects">
           ← Les projets
         </Link>
-        <p className="eyebrow">{e.category || "PROJET"}</p>
+        <p className="eyebrow">
+          {e.category?.toLowerCase() === "recherche & application"
+            ? "PROJET"
+            : e.category || "PROJET"}
+        </p>
         <h1>{e.title}</h1>
-        <p>{e.description}</p>
+        {e.description && <p>{e.description}</p>}
+        {[e.clientOrCollaborator, e.location, e.year].some(Boolean) && (
+          <p className="project-credits">
+            {[e.clientOrCollaborator, e.location, e.year]
+              .filter(Boolean)
+              .join(" · ")}
+          </p>
+        )}
       </header>
-      <div className="project-hero">
-        <Photo media={e.heroMedia} priority sizes="100vw" />
-      </div>
+      {e.heroMedia?.src && (
+        <div className="project-hero">
+          <Photo media={e.heroMedia} priority sizes="100vw" />
+        </div>
+      )}
       <article className="project-story">
+        {!e.contentBlocks?.length &&
+          e.gallery?.map((m) => (
+            <figure className="editorial-block block-full" key={m.src}>
+              <Photo media={m} />
+              {m.credit && <figcaption>{m.credit}</figcaption>}
+            </figure>
+          ))}
         {e.contentBlocks?.map((b) => (
           <section key={b._key} className={"editorial-block block-" + b.type}>
             {b.images?.map((m) => (
@@ -50,15 +71,7 @@ export default async function Page({
             {b.text && <p>{b.text}</p>}
           </section>
         ))}
-        {[e.year, e.location, e.clientOrCollaborator, e.credits].some(
-          Boolean,
-        ) && (
-          <p className="project-credits">
-            {[e.year, e.location, e.clientOrCollaborator, e.credits]
-              .filter(Boolean)
-              .join(" · ")}
-          </p>
-        )}
+        {e.credits && <p className="project-credits">{e.credits}</p>}
         {!!e.applications?.length && (
           <p className="project-credits">
             Applications : {e.applications.join(" · ")}
@@ -67,11 +80,6 @@ export default async function Page({
         <RelatedEntries entries={await getRelatedEntries(e)} />
       </article>
       <section className="bespoke">
-        <h2>
-          Et si nous tissions
-          <br />
-          <em>votre projet ?</em>
-        </h2>
         <Link
           className="text-link"
           href={
@@ -81,7 +89,7 @@ export default async function Page({
             encodeURIComponent("/projects/" + e.slug)
           }
         >
-          Ouvrir la conversation <span>↗</span>
+          {copy.projectCta} <span>↗</span>
         </Link>
       </section>
     </main>

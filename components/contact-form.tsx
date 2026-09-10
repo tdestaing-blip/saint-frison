@@ -1,8 +1,8 @@
 "use client";
 import {
-  enquiryTypes as types,
+  getEnquiryOptions,
+  type EnquiryOption,
   normaliseEnquiryType,
-  type EnquiryType,
 } from "@/lib/enquiry-types";
 import Link from "@/components/site-link";
 import { useState, useRef } from "react";
@@ -19,17 +19,29 @@ export function ContactForm({
   source = "",
   initialType = "",
   email,
+  options,
 }: {
   reference?: string;
   source?: string;
   initialType?: string;
   email?: string;
+  options?: EnquiryOption[];
 }) {
   const normalised = normaliseEnquiryType(initialType);
+  const types = getEnquiryOptions(options);
+  // Keep direct sample requests explicit while the general form has six categories.
+  if (
+    normalised === "Échantillon" &&
+    !types.some((o) => o.value === normalised)
+  )
+    types.unshift({ value: "Échantillon", label: "Échantillon" });
+  const initial = types.find(
+    (o) => o.value === normalised || o.label === initialType,
+  )?.value;
   const [type, setType] = useState<string>(
-    types.includes(normalised as EnquiryType)
-      ? normalised
-      : "Projet sur mesure",
+    initial ||
+      types.find((o) => o.value === "Projet sur mesure")?.value ||
+      types[0].value,
   );
   const [consent, setConsent] = useState(false);
   const [state, setState] = useState<"idle" | "sending" | "success" | "error">(
@@ -115,8 +127,8 @@ export function ContactForm({
           </SelectTrigger>
           <SelectContent>
             {types.map((t) => (
-              <SelectItem value={t} key={t}>
-                {t}
+              <SelectItem value={t.value} key={t.value}>
+                {t.label}
               </SelectItem>
             ))}
           </SelectContent>

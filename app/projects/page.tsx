@@ -1,5 +1,5 @@
 import Link from "@/components/site-link";
-import { getEntries } from "@/lib/content";
+import { getEntries, getPageCopy } from "@/lib/content";
 import { CatalogCard } from "@/components/catalog-card";
 export const metadata = {
   title: "Projets",
@@ -7,17 +7,14 @@ export const metadata = {
     "Applications textiles et projets Saint-Frison pour l’architecture intérieure.",
 };
 export default async function Page() {
+  const copy = await getPageCopy();
   const entries = await getEntries("project");
   return (
     <main id="main">
       <header className="page-intro">
-        <p className="eyebrow">APPLICATIONS & COLLABORATIONS</p>
         <div>
-          <h1>Projets</h1>
-          <p>
-            Une sélection de projets et d’applications des textiles et
-            luminaires du studio.
-          </p>
+          <h1>{copy.projectsTitle}</h1>
+          <p>{copy.projectsIntroduction}</p>
         </div>
       </header>
       <section className="catalog-section" aria-label="Catalogue des projets">
@@ -35,7 +32,7 @@ export default async function Page() {
       <section className="bespoke">
         <h2>Votre projet</h2>
         <Link className="text-link" href="/contact?type=Projet%20sur%20mesure">
-          Parler de votre projet <span>↗</span>
+          {copy.projectCta} <span>↗</span>
         </Link>
       </section>
     </main>

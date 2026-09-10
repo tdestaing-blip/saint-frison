@@ -16,7 +16,9 @@ export default async function Page() {
     <main id="main" className="studio-page">
       <section className="about-opening">
         <div>
-          <p className="eyebrow">DESIGN TEXTILE · SAINT-OUEN</p>
+          <p className="eyebrow">
+            {c?.studioEyebrow || defaults.studioEyebrow}
+          </p>
           <h1>{c?.studioHeading || defaults.studioHeading}</h1>
           <p className="multiline">
             {c?.studioIntroduction || defaults.studioIntroduction}
@@ -42,16 +44,31 @@ export default async function Page() {
           }
         />
         <div>
+          <p className="eyebrow">
+            {c?.workshopEyebrow || defaults.workshopEyebrow}
+          </p>
           <h2>{c?.workshopHeading || defaults.workshopHeading}</h2>
           <p className="multiline">
             {c?.workshopDescription || defaults.workshopDescription}
           </p>
         </div>
       </section>
+      <section className="studio-materials">
+        <h2 className="eyebrow">
+          {c?.materialsHeading || defaults.materialsHeading}
+        </h2>
+        <p>{c?.materialsDescription || defaults.materialsDescription}</p>
+      </section>
       <section className="process-section">
+        <p className="eyebrow">
+          {c?.processEyebrow || defaults.processEyebrow}
+        </p>
         <div className="catalogue-heading">
           <h2>{c?.processHeading || defaults.processHeading}</h2>
         </div>
+        <p className="process-introduction">
+          {c?.processDescription || defaults.processDescription}
+        </p>
         <ol className="process-steps">
           {steps.map((step, i) => (
             <li key={i}>
@@ -62,7 +79,7 @@ export default async function Page() {
           ))}
         </ol>
         <Link className="text-link" href="/contact?type=Projet%20sur%20mesure">
-          Parler de votre projet <span>↗</span>
+          {c?.processCta || defaults.processCta} <span>↗</span>
         </Link>
       </section>
     </main>

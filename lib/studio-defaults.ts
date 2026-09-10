@@ -1,11 +1,20 @@
 export const studioDefaults = {
-  studioHeading: "Margaux Saint Frison / le studio",
+  studioEyebrow: "MARGAUX SAINT FRISON",
+  studioHeading: "LE STUDIO",
   studioIntroduction:
-    "Formée en design textile et tissage à l’École Duperré, Margaux Saint Frison travaille comme responsable d’atelier auprès de Perrine Rousseau avant de créer Saint-Frison Textiles. Installé à Saint-Ouen, le studio développe des textiles d’ameublement, des tissages d’exception et des luminaires pour les projets d’architecture intérieure.",
-  workshopHeading: "L’atelier et la fabrication",
+    "Formée au design textile et au tissage à l'École Duperré à Paris, Margaux Saint Frison poursuit son expérience auprès de la designer textile Perrine Rousseau, dont elle devient responsable d'atelier, avant de fonder Saint Frison.\n\nLe studio développe aujourd'hui des collections de textiles d'ameublement, des tissages singuliers, des luminaires et des créations sur mesure pour l'architecture intérieure.",
+  workshopEyebrow: "L’ATELIER",
+  workshopHeading: "Développer la matière.",
   workshopDescription:
-    "Le développement des matières et l’échantillonnage sont réalisés sur métier à bras au studio. Certains tissages particuliers et certaines pièces sont réalisés directement à l’atelier. Pour les métrages à la commande, le studio travaille avec un atelier partenaire lorsque le projet le nécessite.",
-  processHeading: "Le processus / sur-mesure",
+    "Le métier à bras est au cœur du développement des textiles du studio. Choix des fils, mise au point des structures, couleurs, densités et échantillonnages permettent d'en définir progressivement l'aspect, le toucher et l'usage.\n\nLes collections et développements sur mesure sont mis au point au studio. Certaines pièces et tissages particuliers y sont réalisés directement ; les métrages sont ensuite produits à la commande avec un atelier de tissage partenaire en Europe.",
+  materialsHeading: "LES MATIÈRES",
+  materialsDescription:
+    "Lin, laine, soie, coton, papier, rotin : le choix des matières accompagne chaque développement selon la structure recherchée, le toucher et l'usage du textile.",
+  processEyebrow: "PERSONNALISATION & SUR-MESURE",
+  processHeading: "Du premier échange à la production.",
+  processDescription:
+    "Une référence existante peut être adaptée ou un textile entièrement développé pour répondre aux besoins d'un projet.",
+  processCta: "Parler de votre projet",
   processSteps: [
     {
       title: "Échanger",
@@ -17,11 +26,11 @@ export const studioDefaults = {
     },
     {
       title: "Échantillonner",
-      text: "Développer la matière, tester et ajuster.",
+      text: "Développer la matière, tester et ajuster avant sa mise en production.",
     },
     {
       title: "Produire",
-      text: "Réaliser la pièce ou lancer la production à la commande.",
+      text: "Réaliser la pièce au studio ou lancer la production en métrage auprès d'un atelier partenaire.",
     },
   ],
 };

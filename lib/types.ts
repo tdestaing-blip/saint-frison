@@ -7,7 +7,12 @@ export type Media = {
   hotspot?: { x: number; y: number };
   asset?: { _ref: string };
 };
-export type Colourway = { name: string; swatch?: string; heroMedia?: Media };
+export type Colourway = {
+  name: string;
+  swatch?: string;
+  heroMedia?: Media;
+  gallery?: Media[];
+};
 export type EditorialBlock = {
   _key: string;
   type:

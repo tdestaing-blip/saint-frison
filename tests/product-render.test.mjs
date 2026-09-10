@@ -80,7 +80,7 @@ test("available lamp uses contact only; a textile colourway supplies its image a
       },
     }),
   );
-  assert.match(lamp, /Acquérir cette pièce/);
+  assert.match(lamp, /Se renseigner sur cette pièce/);
   assert.match(lamp, /900 €/);
   assert.match(lamp, /E27/);
   assert.match(lamp, /Photo suivante/);
@@ -104,4 +104,58 @@ test("available lamp uses contact only; a textile colourway supplies its image a
   assert.match(textile, /\/images\/ecru.webp/);
   assert.match(textile, /Demander un échantillon/);
   assert.match(textile, /reference=Pi%C3%A8ce\+de\+test\+%E2%80%94\+%C3%89cru/);
+});
+
+test("sold pieces hide their price and offer a similar piece; made-to-order price is qualified", () => {
+  const render = (status) =>
+    renderToStaticMarkup(
+      React.createElement(EntryDetail, {
+        type: "lighting",
+        entry: { ...entry, status, priceLabel: "900 € TTC" },
+      }),
+    );
+  const sold = render("sold");
+  assert.match(sold, /Pièce vendue/);
+  assert.match(sold, /Demander une pièce similaire/);
+  assert.doesNotMatch(sold, /900/);
+  assert.match(render("madeToOrder"), /À partir de 900 € TTC/);
+});
+test("colourway gallery replaces general photos and hidden textile specifications stay hidden", () => {
+  const html = renderToStaticMarkup(
+    React.createElement(EntryDetail, {
+      type: "textile",
+      entry: {
+        ...entry,
+        gallery: [{ src: "/general.webp", alt: "Général" }],
+        care: "Nettoyage test",
+        performance: ["Martindale 10000"],
+        priceLabel: "900 €",
+        colourways: [
+          {
+            name: "Écru",
+            heroMedia: media,
+            gallery: [{ src: "/ecru-detail.webp", alt: "Détail écru" }],
+          },
+        ],
+      },
+    }),
+  );
+  assert.match(html, /ecru-detail.webp/);
+  assert.doesNotMatch(html, /general.webp|Nettoyage test|Martindale|900 €/);
+});
+const { CatalogCard } = await import("../components/catalog-card.tsx");
+test("luminaire index cards show name and typology without commerce fields", () => {
+  const html = renderToStaticMarkup(
+    React.createElement(CatalogCard, {
+      entry: {
+        ...entry,
+        typology: "Lampe à poser",
+        status: "available",
+        priceLabel: "900 € TTC",
+        materials: ["Coton test"],
+      },
+    }),
+  );
+  assert.match(html, /Lampe à poser/);
+  assert.doesNotMatch(html, /900|Disponible|Coton test/);
 });

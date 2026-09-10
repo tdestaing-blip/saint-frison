@@ -7,6 +7,7 @@ const singletons = [
   ["homePage", "Accueil"],
   ["aboutPage", "Le studio"],
   ["contactPage", "Contact"],
+  ["cataloguePage", "Textes des catalogues et fiches"],
   ["siteSettings", "Réglages du site"],
 ];
 export default defineConfig({

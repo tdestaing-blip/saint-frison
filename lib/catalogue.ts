@@ -23,6 +23,7 @@ export const availabilityLabels: Record<string, string> = {
   available: "Disponible",
   madeToOrder: "Sur commande",
   archive: "Archive",
+  sold: "Pièce vendue",
 };
 export type RelatedEntry = {
   title: string;
@@ -68,4 +69,19 @@ export function relatedEntries(entry: Entry, entries: Entry[]): RelatedEntry[] {
     });
   }
   return [...related.values()];
+}
+
+export function projectLabel(entry: Entry) {
+  const nature =
+    entry.category?.toLowerCase() === "recherche & application"
+      ? undefined
+      : entry.category;
+  return [nature, entry.year, entry.location].filter(Boolean).join(" · ");
+}
+export function lightingPrice(entry: Entry) {
+  if (entry.status === "sold" || !entry.priceLabel?.trim()) return "";
+  const price = entry.priceLabel.trim();
+  return entry.status === "madeToOrder" && !/^à partir de/i.test(price)
+    ? "À partir de " + price
+    : price;
 }

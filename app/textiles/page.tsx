@@ -1,4 +1,4 @@
-import { getEntries } from "@/lib/content";
+import { getEntries, getPageCopy } from "@/lib/content";
 import { Catalog } from "@/components/catalog";
 export const metadata = {
   title: "Textiles",
@@ -6,36 +6,18 @@ export const metadata = {
     "Une sélection de textiles tissés : ameublement, voiles et tissages d’exception. Collections et développements sur mesure.",
 };
 export default async function Page() {
+  const copy = await getPageCopy();
   return (
     <main id="main">
       <header className="page-intro">
-        <p className="eyebrow">COLLECTIONS & TISSAGES D’EXCEPTION</p>
+        <p className="eyebrow">{copy.textilesEyebrow}</p>
         <div>
-          <h1>Textiles</h1>
-          <p>
-            La texture, la structure, la transparence.
-            <br />
-            Des tissages conçus pour habiter les espaces.
-          </p>
+          <h1>{copy.textilesTitle}</h1>
+          <p>{copy.textilesIntroduction}</p>
         </div>
       </header>
       <section className="catalog-section">
         <Catalog entries={await getEntries("textile")} />
-      </section>
-      <section className="bespoke">
-        <p className="eyebrow">DU FIL AU PROJET</p>
-        <h2>
-          Une autre couleur.
-          <br />
-          <em>Une nouvelle histoire.</em>
-        </h2>
-        <p>
-          Le studio développe des textiles sur mesure, en dialogue avec les
-          architectes et les décorateurs.
-        </p>
-        <a className="text-link" href="/contact?type=Sur%20mesure">
-          Parlons de votre projet <span>↗</span>
-        </a>
       </section>
     </main>
   );

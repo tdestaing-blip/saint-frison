@@ -1,4 +1,4 @@
-import { getEntry, getRelatedEntries } from "@/lib/content";
+import { getEntry, getRelatedEntries, getPageCopy } from "@/lib/content";
 import { EntryDetail } from "@/components/entry-detail";
 import { notFound } from "next/navigation";
 export async function generateMetadata({
@@ -24,6 +24,7 @@ export default async function Page({
       <EntryDetail
         entry={e}
         related={await getRelatedEntries(e)}
+        copy={await getPageCopy()}
         type="textile"
       />
     </main>

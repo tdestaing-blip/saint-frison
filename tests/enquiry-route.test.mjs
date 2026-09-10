@@ -18,7 +18,7 @@ registerHooks({
     return next(specifier, context);
   },
 });
-const { records } = await import("./fixtures/sanity-test-double.mjs");
+const { records, settings } = await import("./fixtures/sanity-test-double.mjs");
 const { POST } = await import("../app/api/enquiries/route.ts");
 const checkout = await import("../app/api/checkout/route.ts");
 const valid = {
@@ -57,6 +57,24 @@ test("contact handler records context in isolated storage, handles retries and r
     assert.equal(record.deliveryStatus, "not-configured");
     assert.equal((await POST(request())).status, 200);
     assert.equal(records.size, 1);
+    settings.enquiryOptions = [
+      { value: "visite-pro", label: "Visite professionnelle" },
+    ];
+    const customId = "1e4e65de-eec4-4f6c-a7f4-fc14880dabcb";
+    assert.equal(
+      (await POST(request({ ...valid, id: customId, type: "visite-pro" })))
+        .status,
+      200,
+    );
+    assert.equal(
+      records.get("inquiry-" + customId).typeLabel,
+      "Visite professionnelle",
+    );
+    assert.equal(
+      (await POST(request({ ...valid, type: "unknown-category" }))).status,
+      400,
+    );
+    delete settings.enquiryOptions;
     assert.equal(
       (await POST(request(valid, "https://wrong.invalid"))).status,
       403,

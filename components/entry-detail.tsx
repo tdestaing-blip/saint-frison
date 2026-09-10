@@ -5,24 +5,31 @@ import { ProductGallery } from "./product-gallery";
 import { RelatedEntries } from "./related-entries";
 import {
   availabilityLabels,
+  lightingPrice,
   textileLabel,
   type RelatedEntry,
 } from "@/lib/catalogue";
 import { contactHref } from "@/lib/enquiry-types";
+import { pageCopy, type PageCopy } from "@/lib/page-copy";
 import type { Entry } from "@/lib/types";
 export function EntryDetail({
   entry,
   type,
   related = [],
+  copy = pageCopy,
 }: {
   entry: Entry;
   type: "textile" | "lighting";
   related?: RelatedEntry[];
+  copy?: PageCopy;
 }) {
   const [selected, setSelected] = useState(0);
   const variant = entry.colourways?.[selected];
   const hero = variant?.heroMedia || entry.heroMedia;
-  const images = [hero, ...(entry.gallery || [])].filter(
+  const images = [
+    hero,
+    ...(variant?.gallery?.length ? variant.gallery : entry.gallery || []),
+  ].filter(
     (m, i, all) => m?.src && all.findIndex((x) => x?.src === m.src) === i,
   );
   const source =
@@ -35,49 +42,50 @@ export function EntryDetail({
     reference,
     source,
   );
+  const price = lightingPrice(entry);
+  const lightLinks = related.filter((e) => e.kind === "lighting");
+  const textileLinks = related.filter((e) => e.kind === "textile");
+  const primaryLinks = type === "textile" ? lightLinks : textileLinks;
+  const otherLinks = related.filter((e) => !primaryLinks.includes(e));
+  const electrical = [
+    ["Douille", entry.socketType],
+    ["Ampoule recommandée", entry.recommendedBulb],
+    ["Puissance maximale", entry.maxWattage],
+    ["Câble / interrupteur", entry.cableDescription],
+    ["Informations complémentaires", entry.electricalInfo],
+  ].filter(([, value]) => value);
   const specs = (
     type === "textile"
       ? [
-          ["Famille", textileLabel(entry)],
-          ["Collection", entry.collection],
           ["Composition", entry.composition],
-          ["Laize", entry.width],
+          ["Largeur", entry.width],
           ["Poids", entry.weight],
-          ["Usages", entry.applications?.join(" · ")],
+          ["Usage", entry.applications?.join(" · ")],
+          ["Commande minimum", entry.minimumOrder],
           [
-            "Coloris",
-            entry.colourNames ||
-              entry.colourways?.map((c) => c.name).join(" · "),
+            "Production",
+            entry.productionType ||
+              (entry.madeToOrder ? "À la commande" : undefined),
           ],
-          ["Matières", entry.materials?.join(" · ")],
-          ["Performances", entry.performance?.join(" · ")],
-          ["Minimum de commande", entry.minimumOrder],
-          ["Délai", entry.leadTime],
-          ["Production", entry.madeToOrder ? "À la commande" : undefined],
-          ["Entretien", entry.care],
+          ["Délai indicatif", entry.leadTime],
         ]
       : [
-          ["Typologie", entry.typology],
           ["Dimensions", entry.dimensions],
-          ["Textile / matériaux", entry.materials?.join(" · ")],
+          ["Matériaux", entry.materials?.join(" · ")],
           ["Pied", entry.baseDescription],
-          ["Production", entry.productionType],
-          ["Disponibilité", availabilityLabels[entry.status || ""]],
-          ["Prix", entry.priceLabel],
-          ["Informations électriques", entry.electricalInfo],
-          ["Douille", entry.socketType],
-          ["Ampoule recommandée", entry.recommendedBulb],
-          ["Puissance maximale", entry.maxWattage],
-          ["Câble", entry.cableDescription],
+          ["Fabrication", entry.productionType],
+          ["Délai indicatif", entry.leadTime],
           ["Pays de fabrication", entry.countryOfManufacture],
-          ["Délai", entry.leadTime],
-          ["Pied vintage / pièce unique", entry.vintageNote],
         ]
   ).filter(([, value]) => value);
   return (
     <>
       <section className="detail-intro product-intro">
-        <ProductGallery key={hero.src} title={entry.title} images={images} />
+        <ProductGallery
+          key={entry.slug + "-" + selected}
+          title={entry.title}
+          images={images}
+        />
         <div className="detail-copy">
           <Link
             className="back-link"
@@ -91,11 +99,13 @@ export function EntryDetail({
               : entry.typology || "Luminaire"}
           </p>
           <h1>{entry.title}</h1>
-          <p className="detail-description">{entry.description}</p>
+          {entry.description && (
+            <p className="detail-description">{entry.description}</p>
+          )}
           {type === "lighting" &&
-            (entry.priceLabel || availabilityLabels[entry.status || ""]) && (
+            (price || availabilityLabels[entry.status || ""]) && (
               <p className="product-availability">
-                {[availabilityLabels[entry.status || ""], entry.priceLabel]
+                {[availabilityLabels[entry.status || ""], price]
                   .filter(Boolean)
                   .join(" — ")}
               </p>
@@ -120,10 +130,10 @@ export function EntryDetail({
           <div className="product-actions">
             <Link className="text-link" href={url}>
               {type === "textile"
-                ? "Se renseigner sur ce textile"
-                : entry.status === "available"
-                  ? "Acquérir cette pièce"
-                  : "Se renseigner sur cette pièce"}{" "}
+                ? copy.textileCta
+                : entry.status === "sold"
+                  ? copy.soldCta
+                  : copy.lightingCta}{" "}
               <span aria-hidden="true">↗</span>
             </Link>
             {type === "textile" && (
@@ -131,20 +141,22 @@ export function EntryDetail({
                 className="text-link"
                 href={contactHref("Échantillon", reference, source)}
               >
-                Demander un échantillon <span aria-hidden="true">↗</span>
+                {copy.sampleCta} <span aria-hidden="true">↗</span>
               </Link>
             )}
           </div>
         </div>
       </section>
-      {!!specs.length && (
+      {(!!specs.length ||
+        (type === "lighting" && (!!electrical.length || !!entry.vintageNote)) ||
+        !!entry.technicalSheet) && (
         <section className="specs-section">
           <div>
             <p className="eyebrow">FICHE TECHNIQUE</p>
             <h2>
               Informations
               <br />
-              <em>{type === "textile" ? "textile." : "luminaire."}</em>
+              <em>{type === "textile" ? "textile." : "pièce."}</em>
             </h2>
           </div>
           <div>
@@ -156,6 +168,22 @@ export function EntryDetail({
                 </div>
               ))}
             </dl>
+            {type === "lighting" && !!electrical.length && (
+              <>
+                <h3 className="electrical-heading">Informations électriques</h3>
+                <dl>
+                  {electrical.map(([label, value]) => (
+                    <div key={label}>
+                      <dt>{label}</dt>
+                      <dd>{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </>
+            )}
+            {type === "lighting" && entry.vintageNote && (
+              <p className="vintage-note">{entry.vintageNote}</p>
+            )}
             {entry.technicalSheet && (
               <a
                 className="text-link"
@@ -166,26 +194,33 @@ export function EntryDetail({
                 Télécharger la fiche technique ↗
               </a>
             )}
-            <p className="small-note">
-              Les nuances à l’écran peuvent varier. Contactez le studio pour
-              découvrir les matières.
-            </p>
           </div>
         </section>
       )}
-      <RelatedEntries entries={related} />
+      {type === "textile" && (
+        <section className="textile-personalisation">
+          <h2 className="eyebrow">{copy.customisationTitle}</h2>
+          <p>{entry.customisation || copy.customisationDescription}</p>
+        </section>
+      )}
+      <RelatedEntries
+        entries={primaryLinks}
+        heading={
+          type === "textile"
+            ? copy.textileLightingHeading
+            : copy.lightingTextileHeading
+        }
+        cta={
+          type === "textile" ? copy.textileLightingCta : copy.lightingTextileCta
+        }
+      />
+      <RelatedEntries entries={otherLinks} />
       {type === "textile" && (
         <section className="bespoke">
-          <h2>Un développement sur mesure</h2>
-          <p>
-            {entry.customisation ||
-              "Le studio étudie les adaptations de matières, de couleurs et de structures selon les besoins de votre projet."}
-          </p>
-          <Link
-            className="text-link"
-            href={contactHref("Projet sur mesure", reference, source)}
-          >
-            Parler de votre projet <span aria-hidden="true">↗</span>
+          <h2>{copy.textileClosingTitle.replace("{textile}", entry.title)}</h2>
+          <p>{copy.textileClosingDescription}</p>
+          <Link className="text-link" href={url}>
+            {copy.textileCta} <span aria-hidden="true">↗</span>
           </Link>
         </section>
       )}

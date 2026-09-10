@@ -35,8 +35,8 @@ export default async function Page({
             "Un projet d’architecture intérieure, une matière à développer, une pièce qui vous attire. Nous serons heureux d’en parler avec vous."}
         </p>
         <div className="contact-address">
-          <p>{settings.studioLocationLabel || "Saint-Ouen / Paris"}</p>
-          <span>L’atelier vous accueille sur rendez-vous.</span>
+          <p>{content?.locationLabel || "Paris / Saint-Ouen"}</p>
+          <span>{content?.appointmentLabel || "Atelier sur rendez-vous."}</span>
           {settings.professionalEmail && (
             <a href={"mailto:" + settings.professionalEmail}>
               {settings.professionalEmail} ↗
@@ -54,6 +54,7 @@ export default async function Page({
         source={value("source")}
         initialType={value("type")}
         email={settings.professionalEmail}
+        options={content?.enquiryOptions}
       />
     </main>
   );

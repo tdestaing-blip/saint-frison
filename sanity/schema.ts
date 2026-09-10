@@ -1,3 +1,5 @@
+import { pageCopy } from "../lib/page-copy";
+import { defaultEnquiryOptions } from "../lib/enquiry-types";
 import { homeCopy } from "../lib/home-copy";
 import { defineType, defineField } from "sanity";
 const field = (name: string, title: string, type = "string") =>
@@ -52,7 +54,7 @@ const seo = [
 const identity = [
   required("title", "Nom"),
   slug,
-  required("description", "Présentation courte", "text"),
+  field("description", "Présentation courte", "text"),
   hero,
   gallery,
   order,
@@ -96,6 +98,7 @@ export const schemaTypes = [
         title: "Photo de ce coloris",
         type: "editorialImage",
       }),
+      gallery,
     ],
   }),
   defineType({
@@ -177,17 +180,29 @@ export const schemaTypes = [
         of: [{ type: "colourway" }],
       }),
       field("colourNames", "Liste des coloris"),
+      field("productionType", "Production"),
       field("composition", "Composition"),
       field("width", "Laize"),
       field("weight", "Poids (préciser l’unité)"),
       texts("applications", "Applications"),
       texts("materials", "Matières"),
-      texts("performance", "Performances vérifiées"),
+      defineField({
+        name: "performance",
+        title: "Performances (historique)",
+        type: "array",
+        of: [{ type: "string" }],
+        hidden: true,
+      }),
       field("minimumOrder", "Minimum de commande"),
       field("leadTime", "Délai"),
       field("madeToOrder", "Production à la commande", "boolean"),
       field("customisation", "Personnalisation", "text"),
-      field("care", "Entretien", "text"),
+      defineField({
+        name: "care",
+        title: "Entretien (historique)",
+        type: "text",
+        hidden: true,
+      }),
       defineField({
         name: "technicalSheet",
         title: "Fiche technique",
@@ -228,7 +243,8 @@ export const schemaTypes = [
             },
             { title: "Disponible à la vente", value: "available" },
             { title: "Sur commande", value: "madeToOrder" },
-            { title: "Archive", value: "archive" },
+            { title: "Vendue", value: "sold" },
+            { title: "Archive (historique)", value: "archive" },
           ],
         },
       }),
@@ -254,13 +270,13 @@ export const schemaTypes = [
         title: "Prix à afficher",
         type: "string",
         description:
-          "Prix et devise, avec la mention fiscale appropriée si nécessaire. Laisser vide pour ne pas afficher de prix.",
+          "Prix avec devise et mention fiscale confirmée (par exemple TTC). Sur commande : le site ajoute « À partir de ». Vendue : le prix est masqué. Laisser vide pour ne pas afficher de prix.",
       }),
       field("electricalInfo", "Informations électriques", "text"),
       field("socketType", "Type de douille"),
       field("recommendedBulb", "Ampoule recommandée"),
       field("maxWattage", "Puissance maximale (avec unité)"),
-      field("cableDescription", "Longueur et type de câble"),
+      field("cableDescription", "Câble et interrupteur"),
       field("countryOfManufacture", "Pays de fabrication"),
       field("leadTime", "Délai sur commande"),
       field("vintageNote", "Variations du pied vintage / pièce unique", "text"),
@@ -280,12 +296,24 @@ export const schemaTypes = [
     title: "Projet",
     type: "document",
     fields: [
-      ...identity,
+      ...identity.map((f) =>
+        f.name === "heroMedia"
+          ? defineField({
+              name: "heroMedia",
+              title: "Photographie principale",
+              type: "editorialImage",
+            })
+          : f,
+      ),
       field("category", "Nature du projet"),
       field("year", "Année"),
       field("location", "Lieu"),
       field("clientOrCollaborator", "Client ou collaboration (si public)"),
-      field("credits", "Crédits photographiques"),
+      field(
+        "credits",
+        "Crédits (photographie, architecture intérieure, stylisme…)",
+        "text",
+      ),
       texts("applications", "Types d’application"),
       defineField({
         name: "contentBlocks",
@@ -419,6 +447,13 @@ export const schemaTypes = [
         field("description", "Texte principal", "text"),
         ...(name === "aboutPage"
           ? [
+              field("studioEyebrow", "Surtitre — studio"),
+              field("workshopEyebrow", "Surtitre — atelier"),
+              field("materialsHeading", "Titre — matières"),
+              field("materialsDescription", "Les matières", "text"),
+              field("processEyebrow", "Surtitre — sur mesure"),
+              field("processDescription", "Introduction — sur mesure", "text"),
+              field("processCta", "Lien — sur mesure"),
               field("studioHeading", "Titre — présentation du studio"),
               field("studioIntroduction", "Présentation du studio", "text"),
               field("workshopHeading", "Titre — atelier et fabrication"),
@@ -446,7 +481,45 @@ export const schemaTypes = [
                 ],
               }),
             ]
-          : []),
+          : [
+              field("locationLabel", "Localisation sur Contact"),
+              field("appointmentLabel", "Rendez-vous"),
+              defineField({
+                name: "enquiryOptions",
+                title: "Catégories du formulaire",
+                type: "array",
+                initialValue: defaultEnquiryOptions,
+                description:
+                  "Modifiez les intitulés et l’ordre, ou ajoutez une catégorie. Conservez les identifiants existants pour les liens des fiches.",
+                validation: (r) =>
+                  r
+                    .min(1)
+                    .custom(
+                      (options) =>
+                        !options ||
+                        new Set(
+                          options.map((o) => (o as { value?: string }).value),
+                        ).size === options.length ||
+                        "Chaque catégorie doit avoir un identifiant unique.",
+                    ),
+                of: [
+                  {
+                    type: "object",
+                    name: "enquiryOption",
+                    fields: [
+                      required("label", "Intitulé visible"),
+                      defineField({
+                        name: "value",
+                        title: "Identifiant stable",
+                        type: "string",
+                        validation: (r) => r.required().max(100),
+                      }),
+                    ],
+                    preview: { select: { title: "label", subtitle: "value" } },
+                  },
+                ],
+              }),
+            ]),
         defineField({
           name: "heroMedia",
           title: "Photographie",
@@ -455,6 +528,42 @@ export const schemaTypes = [
       ],
     }),
   ),
+  defineType({
+    name: "cataloguePage",
+    title: "Textes des catalogues et fiches",
+    type: "document",
+    fields: Object.keys(pageCopy).map((name) =>
+      defineField({
+        name,
+        title: (
+          {
+            textilesEyebrow: "Textiles — surtitre",
+            textilesTitle: "Textiles — titre",
+            textilesIntroduction: "Textiles — introduction",
+            lightingTitle: "Luminaires — titre",
+            lightingIntroduction: "Luminaires — introduction",
+            projectsTitle: "Projets — titre",
+            projectsIntroduction: "Projets — introduction",
+            customisationTitle: "Personnalisation — titre",
+            customisationDescription: "Personnalisation — texte",
+            textileClosingTitle:
+              "Fin de fiche textile — titre ({textile} insère le nom)",
+            textileClosingDescription: "Fin de fiche textile — texte",
+            textileCta: "Textile — lien de renseignement",
+            sampleCta: "Textile — lien d’échantillon",
+            textileLightingHeading: "Du textile à l’objet — titre",
+            textileLightingCta: "Du textile à l’objet — lien",
+            lightingTextileHeading: "Textile associé — titre",
+            lightingTextileCta: "Textile associé — lien",
+            lightingCta: "Luminaire — lien de renseignement",
+            soldCta: "Pièce vendue — lien",
+            projectCta: "Projet — lien",
+          } as Record<string, string>
+        )[name],
+        type: /Introduction|Description/.test(name) ? "text" : "string",
+      }),
+    ),
+  }),
   defineType({
     name: "availablePiece",
     title: "Éditorial d’une pièce Shopify",
@@ -507,6 +616,7 @@ export const schemaTypes = [
         "company",
         "location",
         "type",
+        "typeLabel",
         "reference",
         "sourceUrl",
         "utm",
@@ -520,7 +630,8 @@ export const schemaTypes = [
               email: "Email",
               company: "Entreprise / studio",
               location: "Localisation",
-              type: "Objet",
+              type: "Objet (identifiant)",
+              typeLabel: "Objet",
               reference: "Référence",
               sourceUrl: "Page d’origine",
               utm: "Campagne",

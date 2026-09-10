@@ -1,9 +1,11 @@
+import { pageCopy, type PageCopy } from "./page-copy";
+import type { EnquiryOption } from "./enquiry-types";
 import { relatedEntries } from "./catalogue";
 import { cache } from "react";
 import seed from "@/content/seed.json";
 import type { Entry, Settings, HomeContent } from "./types";
 import { sanityQuery, isSanityConfigured } from "@/sanity/client";
-const projection = `{...,"slug":slug.current,"textileSlug":textileReference->slug.current,"textileSlugs":coalesce(textiles[]->slug.current,textileSlugs),"lightingSlugs":coalesce(lighting[]->slug.current,relatedLighting[]->slug.current,lightingSlugs),"projectSlugs":projects[]->slug.current,"relatedTextileSlugs":relatedTextiles[]->slug.current,"heroMedia":heroMedia{...,"src":asset->url},"gallery":gallery[]{...,"src":asset->url},"colourways":colourways[]{...,"heroMedia":heroMedia{...,"src":asset->url}},"contentBlocks":contentBlocks[]{...,"images":images[]{...,"src":asset->url}},"technicalSheet":technicalSheet.asset->url}`;
+const projection = `{...,"slug":slug.current,"textileSlug":textileReference->slug.current,"textileSlugs":coalesce(textiles[]->slug.current,textileSlugs),"lightingSlugs":coalesce(lighting[]->slug.current,relatedLighting[]->slug.current,lightingSlugs),"projectSlugs":projects[]->slug.current,"relatedTextileSlugs":relatedTextiles[]->slug.current,"heroMedia":heroMedia{...,"src":asset->url},"gallery":gallery[]{...,"src":asset->url},"colourways":colourways[]{...,"heroMedia":heroMedia{...,"src":asset->url},"gallery":gallery[]{...,"src":asset->url}},"contentBlocks":contentBlocks[]{...,"images":images[]{...,"src":asset->url}},"technicalSheet":technicalSheet.asset->url}`;
 export const getEntries = cache(
   async (type: "textile" | "lighting" | "project"): Promise<Entry[]> => {
     if (!isSanityConfigured)
@@ -43,6 +45,16 @@ export const getHome = cache(async (): Promise<HomeContent> =>
 export async function getPageContent(type: "aboutPage" | "contactPage") {
   return isSanityConfigured
     ? await sanityQuery<{
+        studioEyebrow?: string;
+        workshopEyebrow?: string;
+        materialsHeading?: string;
+        materialsDescription?: string;
+        processEyebrow?: string;
+        processDescription?: string;
+        processCta?: string;
+        locationLabel?: string;
+        appointmentLabel?: string;
+        enquiryOptions?: EnquiryOption[];
         studioHeading?: string;
         studioIntroduction?: string;
         workshopHeading?: string;
@@ -74,3 +86,15 @@ export async function getRelatedEntries(entry: Entry) {
   ]);
   return relatedEntries(entry, groups.flat());
 }
+
+export const getPageCopy = cache(async (): Promise<PageCopy> => {
+  const content = isSanityConfigured
+    ? await sanityQuery<Partial<PageCopy>>('*[_type=="cataloguePage"][0]')
+    : null;
+  return Object.fromEntries(
+    Object.entries(pageCopy).map(([key, fallback]) => [
+      key,
+      content?.[key as keyof PageCopy]?.trim() || fallback,
+    ]),
+  ) as PageCopy;
+});
