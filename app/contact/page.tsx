@@ -21,15 +21,7 @@ export default async function Page({
     <main id="main" className="contact-page">
       <section className="contact-intro">
         <p className="eyebrow">OUVRIR LA CONVERSATION</p>
-        <h1>
-          {content?.title || (
-            <>
-              Tout commence
-              <br />
-              <em>par un échange.</em>
-            </>
-          )}
-        </h1>
+        <h1>{content?.title || "Tout commence par un échange."}</h1>
         <p>
           {content?.description ||
             "Un projet d’architecture intérieure, une matière à développer, une pièce qui vous attire. Nous serons heureux d’en parler avec vous."}

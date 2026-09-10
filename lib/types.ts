@@ -2,6 +2,7 @@ import type { HomeCopy } from "./home-copy";
 export type Media = {
   src: string;
   alt: string;
+  caption?: string;
   credit?: string;
   crop?: { top: number; bottom: number; left: number; right: number };
   hotspot?: { x: number; y: number };

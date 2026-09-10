@@ -102,7 +102,11 @@ test("available lamp uses contact only; a textile colourway supplies its image a
     }),
   );
   assert.match(textile, /\/images\/ecru.webp/);
-  assert.match(textile, /Demander un échantillon/);
+  assert.doesNotMatch(
+    textile,
+    /Demander un échantillon|Présentation|<figcaption/,
+  );
+  assert.match(textile, /Se renseigner sur ce textile/);
   assert.match(textile, /reference=Pi%C3%A8ce\+de\+test\+%E2%80%94\+%C3%89cru/);
 });
 

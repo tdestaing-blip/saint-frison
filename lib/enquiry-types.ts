@@ -27,6 +27,7 @@ export function contactHref(type: EnquiryType, title = "", source = "") {
 
 export type EnquiryOption = { value: string; label: string };
 export const defaultEnquiryOptions: EnquiryOption[] = [
+  { value: "Échantillon", label: "Demande d’échantillon" },
   { value: "Informations sur un textile", label: "Textile" },
   { value: "Projet sur mesure", label: "Sur mesure" },
   { value: "Luminaire / acquisition", label: "Luminaire ou pièce" },

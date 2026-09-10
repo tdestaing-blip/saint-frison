@@ -1,9 +1,9 @@
 export const homeCopy = {
-  heroTitle: "SAINT FRISON",
+  heroTitle: "Saint Frison",
   heroSubtitle: "STUDIO DE DESIGN TEXTILE",
   heroDescription:
     "Saint Frison développe des collections de textiles d'ameublement, des matières sur mesure et des luminaires où le tissage occupe une place centrale.",
-  collectionsTitle: "LES COLLECTIONS",
+  collectionsTitle: "Les collections",
   collectionsDescription:
     "Tissées à partir de fibres naturelles, les collections Saint Frison explorent les structures, les couleurs et les reliefs pour créer des textiles destinés à l'ameublement et à la décoration intérieure.",
   collectionsCta: "Explorer les collections",

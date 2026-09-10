@@ -46,10 +46,12 @@ export function ProductGallery({
           >
             <figure className="product-view">
               <Photo media={media} fullView priority={i === 0} />
-              <figcaption>
-                {media.alt}
-                {media.credit && <span>Photo : {media.credit}</span>}
-              </figcaption>
+              {(media.caption || media.credit) && (
+                <figcaption>
+                  {media.caption}
+                  {media.credit && <span>Photo : {media.credit}</span>}
+                </figcaption>
+              )}
             </figure>
           </CarouselItem>
         ))}

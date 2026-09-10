@@ -35,14 +35,14 @@ export default async function Home() {
     alt: "Navette sur le métier à tisser du studio",
   };
   return (
-    <main id="main" className="home-v2 typography-v3">
+    <main id="main" className="home-v2">
       <section className="hero">
         <Photo
           className="hero-image"
           media={
             content.heroMedia || {
-              src: "/images/40-1440.webp",
-              alt: "Tissage blanc et courbes de rotin",
+              src: "/images/187-1440.webp",
+              alt: "Détail du textile Strata, lin clair en relief",
             }
           }
           priority

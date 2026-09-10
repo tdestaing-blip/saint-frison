@@ -8,7 +8,7 @@ export const metadata = {
 export default async function Page() {
   const copy = await getPageCopy();
   return (
-    <main id="main" className="typography-v3">
+    <main id="main">
       <header className="page-intro">
         <p className="eyebrow">{copy.textilesEyebrow}</p>
         <div>

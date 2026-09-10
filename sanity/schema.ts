@@ -75,6 +75,7 @@ export const schemaTypes = [
           "Décrivez ce que montre la photo. Nécessaire pour les visiteurs utilisant un lecteur d’écran.",
         validation: (r) => r.required(),
       }),
+      field("caption", "Légende visible (facultative)"),
       field("credit", "Crédit photographique"),
     ],
   }),

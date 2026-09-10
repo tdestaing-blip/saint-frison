@@ -20,7 +20,7 @@ export default async function Page({
   const e = await getEntry("lighting", (await params).slug);
   if (!e) notFound();
   return (
-    <main id="main" className="typography-v3">
+    <main id="main">
       <EntryDetail
         entry={e}
         related={await getRelatedEntries(e)}

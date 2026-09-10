@@ -1,12 +1,12 @@
 export const pageCopy = {
   textilesEyebrow: "COLLECTIONS",
-  textilesTitle: "TEXTILES",
+  textilesTitle: "Textiles",
   textilesIntroduction:
     "Collections de textiles pour l'ameublement, le voilage et la décoration intérieure.",
-  lightingTitle: "LUMINAIRES",
+  lightingTitle: "Luminaires",
   lightingIntroduction:
     "Lampes, appliques et abat-jour développés à partir des textiles du studio, en pièces uniques et petites séries.",
-  projectsTitle: "PROJETS",
+  projectsTitle: "Projets",
   projectsIntroduction:
     "Une sélection de projets, collaborations et applications des textiles Saint Frison.",
   customisationTitle: "PERSONNALISATION & SUR-MESURE",

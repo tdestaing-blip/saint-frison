@@ -99,7 +99,7 @@ export function EntryDetail({
               : entry.typology || "Luminaire"}
           </p>
           <h1>{entry.title}</h1>
-          {entry.description && (
+          {type === "lighting" && entry.description && (
             <p className="detail-description">{entry.description}</p>
           )}
           {type === "lighting" &&
@@ -136,14 +136,6 @@ export function EntryDetail({
                   : copy.lightingCta}{" "}
               <span aria-hidden="true">↗</span>
             </Link>
-            {type === "textile" && (
-              <Link
-                className="text-link"
-                href={contactHref("Échantillon", reference, source)}
-              >
-                {copy.sampleCta} <span aria-hidden="true">↗</span>
-              </Link>
-            )}
           </div>
         </div>
       </section>

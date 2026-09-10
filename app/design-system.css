@@ -1,0 +1,353 @@
+/* Shared typography. Public pages inherit these tokens; Sanity retains its own UI. */
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("/fonts/instrument-sans/instrument-sans-variable.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+:root {
+  --font-sans: "Instrument Sans", Arial, sans-serif;
+  --type-hero: clamp(2rem, 3.4vw, 2.875rem);
+  --type-page: clamp(2rem, 3.5vw, 2.875rem);
+  --type-home-section: clamp(1.75rem, 2.85vw, 2.5rem);
+  --type-heading: clamp(1.5rem, 2.3vw, 2rem);
+  --type-product: clamp(1.5rem, 2.1vw, 1.875rem);
+  --type-h3: 1.125rem;
+  --type-body: 0.9375rem; /* 15px: -6.25% from the validated 16px body. */
+  --type-intro: 1.0625rem; /* 17px: -5.6% from the validated 18px intro. */
+  --type-ui: 0.9375rem;
+  --type-small: 0.875rem;
+  --type-caption: 0.8125rem;
+  --type-eyebrow: 0.75rem;
+  --leading-body: 1.75;
+  --gutter: 7%;
+  --column-gap: clamp(2rem, 6vw, 6rem);
+  --text-column: 32rem;
+  --section-space: clamp(3.5rem, 6vw, 5rem);
+  --product-space: clamp(2rem, 4vw, 3.5rem);
+}
+
+body.sf-site:not(:has(.studio-root)) :is(main, input, textarea, select) {
+  font-size: var(--type-body);
+}
+body.sf-site:not(:has(.studio-root)) :is(h1, h2, h3, blockquote) {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-transform: none;
+}
+body.sf-site:not(:has(.studio-root)) h1 {
+  font-size: var(--type-page);
+}
+body.sf-site:not(:has(.studio-root)) h2 {
+  font-size: var(--type-heading);
+}
+body.sf-site:not(:has(.studio-root)) h3 {
+  font-size: var(--type-h3);
+}
+body.sf-site:not(:has(.studio-root)) :is(p, blockquote) {
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+}
+body.sf-site:not(:has(.studio-root)) :is(figcaption, .small-note) {
+  font-size: var(--type-caption);
+}
+body.sf-site:not(:has(.studio-root)) {
+  font-family: var(--font-sans);
+  font-size: var(--type-body);
+  font-weight: 400;
+  line-height: 1.65;
+}
+body.sf-site:not(:has(.studio-root))
+  :is(h1, h2, h3, .serif, .mobile-menu nav a, .menu-heading h2) {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+body.sf-site:not(:has(.studio-root)) :is(em, .serif) {
+  font-style: normal;
+}
+body.sf-site:not(:has(.studio-root)) :is(strong, b) {
+  font-weight: 500;
+}
+body.sf-site:not(:has(.studio-root)) .desktop-nav,
+body.sf-site:not(:has(.studio-root)) .menu-trigger {
+  font-size: var(--type-ui);
+}
+body.sf-site:not(:has(.studio-root)) .mobile-menu nav a {
+  font-size: 1.875rem;
+}
+body.sf-site:not(:has(.studio-root)) .menu-heading h2 {
+  font-size: var(--type-body);
+}
+body.sf-site:not(:has(.studio-root)) .mobile-menu :is(p, small, button) {
+  font-family: var(--font-sans);
+}
+body.sf-site:not(:has(.studio-root)) .site-footer {
+  font-size: var(--type-small);
+}
+body.sf-site:not(:has(.studio-root)) .footer-bottom {
+  font-size: var(--type-caption);
+}
+body.sf-site:not(:has(.studio-root)) .eyebrow {
+  font-size: var(--type-eyebrow);
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+  font-weight: 400;
+}
+body.sf-site:not(:has(.studio-root)) .page-intro h1 {
+  font-size: var(--type-page);
+  font-weight: 500;
+}
+body.sf-site:not(:has(.studio-root)) .hero-copy h1 {
+  font-size: var(--type-hero);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+body.sf-site:not(:has(.studio-root)) .hero-subtitle {
+  font-size: var(--type-eyebrow);
+  letter-spacing: 0.15em;
+}
+body.sf-site:not(:has(.studio-root)) .hero-description,
+body.sf-site:not(:has(.studio-root)) .page-intro > div > p {
+  font-size: var(--type-intro);
+  line-height: 1.65;
+}
+body.sf-site:not(:has(.studio-root)) .home-v2 h2 {
+  font-size: var(--type-home-section);
+}
+body.sf-site:not(:has(.studio-root)) .home-v2 .body-copy {
+  font-size: var(--type-body);
+  line-height: 1.75;
+}
+body.sf-site:not(:has(.studio-root)) .text-link {
+  font-size: var(--type-ui);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+body.sf-site:not(:has(.studio-root)) .catalogue-card h3 {
+  font-size: var(--type-body);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+body.sf-site:not(:has(.studio-root)) .catalogue-card p {
+  font-size: var(--type-small);
+  line-height: 1.5;
+}
+body.sf-site:not(:has(.studio-root)) .filters {
+  column-gap: 2rem;
+  row-gap: 0.75rem;
+}
+body.sf-site:not(:has(.studio-root)) .filters button {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: var(--type-ui);
+  font-weight: 400;
+  color: var(--ink);
+  padding: 0.5rem 0;
+  min-height: 2.75rem;
+}
+body.sf-site:not(:has(.studio-root)) .filters .filter-index {
+  font-size: var(--type-eyebrow);
+  color: #9b958d;
+}
+body.sf-site:not(:has(.studio-root))
+  .filters
+  button[aria-pressed="true"]::after {
+  bottom: 0;
+}
+body.sf-site:not(:has(.studio-root)) .product-intro .detail-copy h1 {
+  font-size: var(--type-product);
+  font-weight: 500;
+}
+body.sf-site:not(:has(.studio-root)) .detail-description {
+  font-size: var(--type-body);
+  line-height: 1.7;
+}
+body.sf-site:not(:has(.studio-root)) .product-availability {
+  font-size: var(--type-body);
+}
+body.sf-site:not(:has(.studio-root)) :is(.specs-section h2, .bespoke h2) {
+  font-size: var(--type-heading);
+}
+body.sf-site:not(:has(.studio-root))
+  :is(.related-heading, .textile-personalisation .eyebrow) {
+  font-size: var(--type-eyebrow);
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+}
+body.sf-site:not(:has(.studio-root))
+  :is(.specs-section dl > div, .specs-section dt, .specs-section dd) {
+  font-size: var(--type-ui);
+  line-height: 1.65;
+}
+body.sf-site:not(:has(.studio-root)) .electrical-heading {
+  font-size: var(--type-body);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+body.sf-site:not(:has(.studio-root))
+  :is(.textile-personalisation p, .bespoke p, .vintage-note) {
+  font-size: var(--type-body);
+  line-height: 1.7;
+}
+body.sf-site:not(:has(.studio-root))
+  :is(
+    .back-link,
+    .product-view figcaption,
+    .gallery-controls p,
+    .colourways legend
+  ) {
+  font-size: var(--type-small);
+}
+@media (max-width: 800px) {
+  body.sf-site:not(:has(.studio-root)) .hero-description,
+  body.sf-site:not(:has(.studio-root)) .page-intro > div > p {
+    font-size: var(--type-body);
+  }
+  body.sf-site:not(:has(.studio-root)) .filters {
+    column-gap: 1.5rem;
+  }
+  body.sf-site:not(:has(.studio-root)) .filters button {
+    font-size: var(--type-small);
+  }
+}
+
+/* Role mappings preserve the established layouts while sharing one type scale. */
+body.sf-site:not(:has(.studio-root))
+  :is(.studio-page .about-opening h1, .contact-intro h1, .project-title h1) {
+  font-size: var(--type-page);
+}
+body.sf-site:not(:has(.studio-root))
+  :is(
+    .studio-page .process-story h2,
+    .process-section h2,
+    .project-story h2,
+    .form-success h2
+  ) {
+  font-size: var(--type-heading);
+}
+body.sf-site:not(:has(.studio-root)) .process-steps h3 {
+  font-size: var(--type-h3);
+}
+body.sf-site:not(:has(.studio-root))
+  :is(
+    .about-opening p:not(.eyebrow),
+    .process-story p:not(.eyebrow),
+    .process-steps p,
+    .studio-materials p,
+    .process-introduction,
+    .contact-intro > p:not(.eyebrow),
+    .project-title > p:not(.eyebrow):not(.project-credits),
+    .editorial-block p
+  ) {
+  font-size: var(--type-body);
+  line-height: var(--leading-body);
+}
+body.sf-site:not(:has(.studio-root)) :is(.eyebrow, .hero-subtitle) {
+  font-size: var(--type-eyebrow);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  line-height: 1.5;
+}
+body.sf-site:not(:has(.studio-root))
+  :is(
+    .card-caption p,
+    .project-credits,
+    .contact-address,
+    .reference-note,
+    .process-steps span,
+    .form-field > label,
+    .site-footer p
+  ) {
+  font-size: var(--type-small);
+}
+body.sf-site:not(:has(.studio-root))
+  :is(.consent label, .form-error, .contact-page .small-note, .footer-bottom) {
+  font-size: var(--type-caption);
+}
+body.sf-site:not(:has(.studio-root)) .form-field :is(input, textarea) {
+  font-size: 1rem;
+}
+body.sf-site:not(:has(.studio-root)) .form-field textarea::placeholder {
+  font-size: var(--type-small);
+}
+body.sf-site:not(:has(.studio-root))
+  :is(
+    .home-feature,
+    .section,
+    .page-intro,
+    .catalog-section,
+    .about-opening,
+    .process-story,
+    .process-section,
+    .studio-materials,
+    .contact-page,
+    .project-title
+  ) {
+  padding-inline: var(--gutter);
+}
+body.sf-site:not(:has(.studio-root))
+  :is(.about-opening, .process-story, .contact-page) {
+  column-gap: var(--column-gap);
+}
+body.sf-site:not(:has(.studio-root)) .home-feature {
+  padding-block: var(--section-space);
+}
+.home-section-intro .body-copy {
+  justify-self: end;
+  width: 100%;
+  max-width: var(--text-column);
+}
+/* A light supplied textile supports dark lettering without a dark image veil. */
+body.sf-site .home-v2 .hero {
+  color: var(--ink);
+  background: #eeeae2;
+}
+body.sf-site .home-v2 .hero-shade {
+  background: linear-gradient(90deg, #ffffffb8, #ffffff38 58%, transparent);
+}
+body.sf-site .home-v2 .hero-copy {
+  max-width: var(--text-column);
+}
+body.sf-site .home-v2 .hero-copy h1 {
+  text-transform: none;
+}
+body.sf-site .site-header.over-hero {
+  color: var(--ink);
+  border-color: #493d3326;
+  background: #ffffff38;
+}
+body.sf-site .over-hero .brand img {
+  filter: none;
+}
+/* Bring the material sheet's successive sections closer together. */
+body.sf-site .material-detail .product-intro {
+  padding-inline: var(--gutter);
+  padding-bottom: var(--product-space);
+}
+body.sf-site .material-detail .specs-section {
+  padding: var(--product-space) var(--gutter);
+}
+body.sf-site .material-detail .textile-personalisation {
+  padding: var(--product-space) var(--gutter);
+}
+body.sf-site .material-detail .related-entries {
+  padding: var(--product-space) var(--gutter);
+}
+body.sf-site .material-detail .bespoke {
+  padding-block: var(--product-space);
+}
+@media (max-width: 800px) {
+  :root {
+    --gutter: 6%;
+    --column-gap: 2rem;
+  }
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "@/components/site-link";
 import { Header } from "@/components/header";
 import "./globals.css";
+import "./design-system.css";
 import { draftMode } from "next/headers";
 import { Preview } from "@/sanity/preview";
 import { projectId, dataset } from "@/sanity/client";
@@ -24,7 +25,7 @@ export default async function RootLayout({
   const draft = (await draftMode()).isEnabled;
   return (
     <html lang="fr">
-      <body>
+      <body className="sf-site">
         <a className="skip-link" href="#main">
           Aller au contenu
         </a>

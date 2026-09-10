@@ -1,6 +1,6 @@
 export const studioDefaults = {
   studioEyebrow: "MARGAUX SAINT FRISON",
-  studioHeading: "LE STUDIO",
+  studioHeading: "Le studio",
   studioIntroduction:
     "Formée au design textile et au tissage à l'École Duperré à Paris, Margaux Saint Frison poursuit son expérience auprès de la designer textile Perrine Rousseau, dont elle devient responsable d'atelier, avant de fonder Saint Frison.\n\nLe studio développe aujourd'hui des collections de textiles d'ameublement, des tissages singuliers, des luminaires et des créations sur mesure pour l'architecture intérieure.",
   workshopEyebrow: "L’ATELIER",
