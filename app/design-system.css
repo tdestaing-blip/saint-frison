@@ -351,3 +351,12 @@ body.sf-site .material-detail .bespoke {
     --column-gap: 2rem;
   }
 }
+
+/* Keep the introductory copy legible over the loom photograph on narrow screens. */
+@media (max-width: 800px) {
+  body.sf-site .home-v2 .hero-shade {
+    background:
+      linear-gradient(0deg, #ffffffbd, #ffffff99 25%, transparent 65%),
+      linear-gradient(90deg, #ffffff70, #ffffff10);
+  }
+}

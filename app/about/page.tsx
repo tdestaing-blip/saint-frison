@@ -1,6 +1,7 @@
 import Link from "@/components/site-link";
 import { Photo } from "@/components/photo";
 import { getPageContent } from "@/lib/content";
+import editorialMedia from "@/content/editorial-media.json";
 import { studioDefaults as defaults } from "@/lib/studio-defaults";
 export const metadata = {
   title: "Le studio",
@@ -25,24 +26,12 @@ export default async function Page() {
           </p>
         </div>
         <Photo
-          media={
-            c?.heroMedia || {
-              src: "/images/254-1440.webp",
-              alt: "Insertion du rotin dans la trame textile à l’atelier",
-            }
-          }
+          media={c?.heroMedia || editorialMedia.about.heroMedia}
           priority
         />
       </section>
       <section className="process-story">
-        <Photo
-          media={
-            c?.workshopMedia || {
-              src: "/images/249-1440.webp",
-              alt: "Navette et tissage sur le métier de l’atelier",
-            }
-          }
-        />
+        <Photo media={c?.workshopMedia || editorialMedia.about.workshopMedia} />
         <div>
           <p className="eyebrow">
             {c?.workshopEyebrow || defaults.workshopEyebrow}

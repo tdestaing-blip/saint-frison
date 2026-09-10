@@ -3,6 +3,7 @@ import type { EnquiryOption } from "./enquiry-types";
 import { relatedEntries } from "./catalogue";
 import { cache } from "react";
 import seed from "@/content/seed.json";
+import editorialMedia from "@/content/editorial-media.json";
 import type { Entry, Settings, HomeContent } from "./types";
 import { sanityQuery, isSanityConfigured } from "@/sanity/client";
 const projection = `{...,"slug":slug.current,"textileSlug":textileReference->slug.current,"textileSlugs":coalesce(textiles[]->slug.current,textileSlugs),"lightingSlugs":coalesce(lighting[]->slug.current,relatedLighting[]->slug.current,lightingSlugs),"projectSlugs":projects[]->slug.current,"relatedTextileSlugs":relatedTextiles[]->slug.current,"heroMedia":heroMedia{...,"src":asset->url},"gallery":gallery[]{...,"src":asset->url},"colourways":colourways[]{...,"heroMedia":heroMedia{...,"src":asset->url},"gallery":gallery[]{...,"src":asset->url}},"contentBlocks":contentBlocks[]{...,"images":images[]{...,"src":asset->url}},"technicalSheet":technicalSheet.asset->url}`;
@@ -40,7 +41,7 @@ export const getHome = cache(async (): Promise<HomeContent> =>
     ? ((await sanityQuery<HomeContent>(
         `*[_type=="homePage"][0]{...,"heroMedia":heroMedia{...,"src":asset->url},"materialProcessMedia":materialProcessMedia[]{...,"src":asset->url},"selectedTextiles":selectedTextiles[]->${projection},"exceptionFeature":exceptionFeature->${projection},"lightingFeature":lightingFeature->${projection},"selectedProjects":selectedProjects[]->${projection}}`,
       )) ?? {})
-    : {},
+    : editorialMedia.home,
 );
 export async function getPageContent(type: "aboutPage" | "contactPage") {
   return isSanityConfigured

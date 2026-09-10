@@ -1,0 +1,892 @@
+{
+  "archive": "WEBSITE 2026-20260910T144152Z-1-001.zip",
+  "assets": {
+    "190": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Strata /SF_Avril23_128.jpg",
+      "basename": "library-190"
+    },
+    "191": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Strata /SF_Avril23_130.jpg",
+      "basename": "library-191"
+    },
+    "189": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Strata /SF_0922_631.jpg",
+      "basename": "library-189"
+    },
+    "193": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Strata /SF_Avril23_134.jpg",
+      "basename": "library-193"
+    },
+    "334": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Meltem /SF_Avril23_101.jpg",
+      "basename": "library-334"
+    },
+    "331": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Meltem /SF_Avril23_094.jpg",
+      "basename": "library-331"
+    },
+    "329": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Meltem /SF_Avril23_092.jpg",
+      "basename": "library-329"
+    },
+    "336": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Meltem /margaux-saint-frison-web-184.jpg",
+      "basename": "library-336"
+    },
+    "98": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Edgar /Margaux_SF_100.jpg",
+      "basename": "library-98"
+    },
+    "100": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Edgar /Margaux_SF_102.jpg",
+      "basename": "library-100"
+    },
+    "94": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Edgar /Margaux_SF_095.jpg",
+      "basename": "library-94"
+    },
+    "108": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Edgar /Margaux_SF_110.jpg",
+      "basename": "library-108"
+    },
+    "113": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Edgar /Margaux_SF_115.jpg",
+      "basename": "library-113"
+    },
+    "120": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Edgar /SF_2022339.jpg",
+      "basename": "library-120"
+    },
+    "153": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Java/SF_2022476.jpg",
+      "basename": "library-153"
+    },
+    "154": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Java/SF_2022477.jpg",
+      "basename": "library-154"
+    },
+    "145": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Java/SF_2022419.jpg",
+      "basename": "library-145"
+    },
+    "150": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Java/SF_2022454.jpg",
+      "basename": "library-150"
+    },
+    "159": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Java/SF_2022497.jpg",
+      "basename": "library-159"
+    },
+    "122": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Espuma/SF_0922_524.jpg",
+      "basename": "library-122"
+    },
+    "124": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Espuma/SF_2022511.jpg",
+      "basename": "library-124"
+    },
+    "127": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Espuma/SF_2022539.jpg",
+      "basename": "library-127"
+    },
+    "171": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Oslo /SF_2022366.jpg",
+      "basename": "library-171"
+    },
+    "167": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Oslo /SF_2022345.jpg",
+      "basename": "library-167"
+    },
+    "170": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Oslo /SF_2022364.jpg",
+      "basename": "library-170"
+    },
+    "208": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Toundra /SF_Avril23_082.jpg",
+      "basename": "library-208"
+    },
+    "204": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Toundra /SF_Avril23_078.jpg",
+      "basename": "library-204"
+    },
+    "200": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Toundra /SF_2022555.jpg",
+      "basename": "library-200"
+    },
+    "199": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Toundra /SF_2022550.jpg",
+      "basename": "library-199"
+    },
+    "340": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Pampero /margaux-saint-frison-web-188.jpg",
+      "basename": "library-340"
+    },
+    "341": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Pampero /margaux-saint-frison-web-189.jpg",
+      "basename": "library-341"
+    },
+    "338": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Pampero /margaux-saint-frison-web-186.jpg",
+      "basename": "library-338"
+    },
+    "343": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Pampero /margaux-saint-frison-web-192.jpg",
+      "basename": "library-343"
+    },
+    "326": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Mauka/margaux-saint-frison-web-181.jpg",
+      "basename": "library-326"
+    },
+    "325": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Mauka/margaux-saint-frison-web-177.jpg",
+      "basename": "library-325"
+    },
+    "322": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Mauka/margaux-saint-frison-web-170.jpg",
+      "basename": "library-322"
+    },
+    "324": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Mauka/margaux-saint-frison-web-176.jpg",
+      "basename": "library-324"
+    },
+    "345": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Sashiko/margaux-saint-frison-web-204.jpg",
+      "basename": "library-345"
+    },
+    "346": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Sashiko/margaux-saint-frison-web-205.jpg",
+      "basename": "library-346"
+    },
+    "344": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /VOILAGES - RIDEAUX /Ref _ Sashiko/margaux-saint-frison-web-203.jpg",
+      "basename": "library-344"
+    },
+    "255": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /TISSAGES D_EXCEPTION /LIN & ROTIN/SF_0922_545.jpg",
+      "basename": "library-255"
+    },
+    "260": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /TISSAGES D_EXCEPTION /LIN & ROTIN/SF_0922_561.jpg",
+      "basename": "library-260"
+    },
+    "265": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /TISSAGES D_EXCEPTION /LIN & ROTIN/SF_0922_599.jpg",
+      "basename": "library-265"
+    },
+    "248": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /TISSAGES D_EXCEPTION /LIN & ROTIN/SF_0922_194.jpg",
+      "basename": "library-248"
+    },
+    "234": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /TISSAGES D_EXCEPTION /LIN & ROTIN/SF_09-23_160.jpg",
+      "basename": "library-234"
+    },
+    "96": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Edgar /Margaux_SF_098.jpg",
+      "basename": "library-96"
+    },
+    "103": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Edgar /Margaux_SF_105.jpg",
+      "basename": "library-103"
+    },
+    "115": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Edgar /Margaux_SF_117.jpg",
+      "basename": "library-115"
+    },
+    "117": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /ASSISES - AMEUBLEMENT /Ref _ Edgar /SF_2022335.jpg",
+      "basename": "library-117"
+    },
+    "0": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _AUBE_/SFMai25_026.jpg",
+      "basename": "library-0"
+    },
+    "4": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _AUBE_/SFMai25_030.jpg",
+      "basename": "library-4"
+    },
+    "2": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _AUBE_/SFMai25_028.jpg",
+      "basename": "library-2"
+    },
+    "5": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _AUBE_/SFMai25_031.jpg",
+      "basename": "library-5"
+    },
+    "8": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _AURA_/SFMai25_034.jpg",
+      "basename": "library-8"
+    },
+    "14": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _AURA_/SFMai25_040.jpg",
+      "basename": "library-14"
+    },
+    "12": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _AURA_/SFMai25_038.jpg",
+      "basename": "library-12"
+    },
+    "10": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _AURA_/SFMai25_036.jpg",
+      "basename": "library-10"
+    },
+    "22": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _ONDE_/SFMai25_002.jpg",
+      "basename": "library-22"
+    },
+    "31": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _ONDE_/SFMai25_011.jpg",
+      "basename": "library-31"
+    },
+    "23": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _ONDE_/SFMai25_003.jpg",
+      "basename": "library-23"
+    },
+    "27": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _ONDE_/SFMai25_007.jpg",
+      "basename": "library-27"
+    },
+    "34": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _ORBE_ /SFMai25_014.jpg",
+      "basename": "library-34"
+    },
+    "41": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _ORBE_ /SFMai25_021.jpg",
+      "basename": "library-41"
+    },
+    "38": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _ORBE_ /SFMai25_018.jpg",
+      "basename": "library-38"
+    },
+    "37": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _ORBE_ /SFMai25_017.jpg",
+      "basename": "library-37"
+    },
+    "46": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _VESPER_/SFMai25_047.jpg",
+      "basename": "library-46"
+    },
+    "56": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _VESPER_/SFMai25_057.jpg",
+      "basename": "library-56"
+    },
+    "51": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _VESPER_/SFMai25_052.jpg",
+      "basename": "library-51"
+    },
+    "48": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES Plissés - collection TRAIT d_UNION/Lampe _VESPER_/SFMai25_049.jpg",
+      "basename": "library-48"
+    },
+    "297": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /TISSAGES D_EXCEPTION /PLISSÉS/SF_Dec23_091.jpg",
+      "basename": "library-297"
+    },
+    "299": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /TISSAGES D_EXCEPTION /PLISSÉS/SF_Dec23_093.jpg",
+      "basename": "library-299"
+    },
+    "284": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /TISSAGES D_EXCEPTION /PLISSÉS/SF_Avril23_122.jpg",
+      "basename": "library-284"
+    },
+    "290": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /TISSAGES D_EXCEPTION /PLISSÉS/SF_Avril23_140.jpg",
+      "basename": "library-290"
+    },
+    "273": {
+      "source": "WEBSITE 2026/COLLECTIONS /TISSUS /TISSAGES D_EXCEPTION /PLISSÉS/SF_09-23_031.jpg",
+      "basename": "library-273"
+    },
+    "70": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES lin et rotin _ collection _BUENA ONDA_/Applique _OLA_ lin et rotin/SF_Avril23_002.jpg",
+      "basename": "library-70"
+    },
+    "71": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES lin et rotin _ collection _BUENA ONDA_/Applique _OLA_ lin et rotin/SF_Avril23_003.jpg",
+      "basename": "library-71"
+    },
+    "73": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES lin et rotin _ collection _BUENA ONDA_/Applique _OLA_ lin et rotin/SF_Avril23_005.jpg",
+      "basename": "library-73"
+    },
+    "74": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES lin et rotin _ collection _BUENA ONDA_/Applique _OLA_ lin et rotin/SF_Avril23_006.jpg",
+      "basename": "library-74"
+    },
+    "82": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES lin et rotin _ collection _BUENA ONDA_/Lampe noire lin et rotin /SF_Avril23_016.jpg",
+      "basename": "library-82"
+    },
+    "86": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES lin et rotin _ collection _BUENA ONDA_/Lampe noire lin et rotin /SF_Avril23_020.jpg",
+      "basename": "library-86"
+    },
+    "84": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES lin et rotin _ collection _BUENA ONDA_/Lampe noire lin et rotin /SF_Avril23_018.jpg",
+      "basename": "library-84"
+    },
+    "89": {
+      "source": "WEBSITE 2026/COLLECTIONS /LUMINAIRES /LUMINAIRES lin et rotin _ collection _BUENA ONDA_/Lampe noire lin et rotin /SF_Avril23_023.jpg",
+      "basename": "library-89"
+    },
+    "371": {
+      "source": "WEBSITE 2026/IMAGES AMBIANCE - HOME etc /SF0922_078.jpg",
+      "basename": "library-371"
+    },
+    "386": {
+      "source": "WEBSITE 2026/IMAGES AMBIANCE - HOME etc /SF_2022107.jpg",
+      "basename": "library-386"
+    },
+    "378": {
+      "source": "WEBSITE 2026/IMAGES AMBIANCE - HOME etc /SF0922_090.jpg",
+      "basename": "library-378"
+    },
+    "380": {
+      "source": "WEBSITE 2026/IMAGES AMBIANCE - HOME etc /SF_09-23_108.jpg",
+      "basename": "library-380"
+    }
+  },
+  "patches": {
+    "textile-strata": {
+      "heroMedia": {
+        "src": "/images/library-190-1440.webp",
+        "alt": "Strata — détail du tissage"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-191-1440.webp",
+          "alt": "Strata — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-189-1440.webp",
+          "alt": "Strata — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-193-1440.webp",
+          "alt": "Strata — détail de la matière, vue 4"
+        }
+      ]
+    },
+    "textile-meltem": {
+      "heroMedia": {
+        "src": "/images/library-334-1440.webp",
+        "alt": "Meltem — détail du tissage"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-331-1440.webp",
+          "alt": "Meltem — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-329-1440.webp",
+          "alt": "Meltem — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-336-1440.webp",
+          "alt": "Meltem — détail de la matière, vue 4"
+        }
+      ]
+    },
+    "textile-edgar": {
+      "heroMedia": {
+        "src": "/images/library-98-1440.webp",
+        "alt": "Edgar — détail du tissage"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-100-1440.webp",
+          "alt": "Edgar — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-94-1440.webp",
+          "alt": "Edgar — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-108-1440.webp",
+          "alt": "Edgar — détail de la matière, vue 4"
+        },
+        {
+          "src": "/images/library-113-1440.webp",
+          "alt": "Edgar — détail de la matière, vue 5"
+        },
+        {
+          "src": "/images/library-120-1440.webp",
+          "alt": "Edgar — détail de la matière, vue 6"
+        }
+      ],
+      "variantMedia": {
+        "Kaki": {
+          "heroMedia": {
+            "src": "/images/library-98-1440.webp",
+            "alt": "Edgar — coloris Kaki, détail du tissage"
+          },
+          "gallery": [
+            {
+              "src": "/images/library-100-1440.webp",
+              "alt": "Edgar — coloris Kaki, détail du tissage"
+            }
+          ]
+        },
+        "Terracotta": {
+          "heroMedia": {
+            "src": "/images/library-94-1440.webp",
+            "alt": "Edgar — coloris Terracotta, détail du tissage"
+          },
+          "gallery": [
+            {
+              "src": "/images/library-96-1440.webp",
+              "alt": "Edgar — coloris Terracotta, détail du tissage"
+            }
+          ]
+        },
+        "Citron": {
+          "heroMedia": {
+            "src": "/images/library-108-1440.webp",
+            "alt": "Edgar — coloris Citron, détail du tissage"
+          },
+          "gallery": [
+            {
+              "src": "/images/library-103-1440.webp",
+              "alt": "Edgar — coloris Citron, détail du tissage"
+            }
+          ]
+        },
+        "Naturel": {
+          "heroMedia": {
+            "src": "/images/library-113-1440.webp",
+            "alt": "Edgar — coloris Naturel, détail du tissage"
+          },
+          "gallery": [
+            {
+              "src": "/images/library-115-1440.webp",
+              "alt": "Edgar — coloris Naturel, détail du tissage"
+            }
+          ]
+        },
+        "Midnight Blue": {
+          "heroMedia": {
+            "src": "/images/library-120-1440.webp",
+            "alt": "Edgar — coloris Midnight Blue, détail du tissage"
+          },
+          "gallery": [
+            {
+              "src": "/images/library-117-1440.webp",
+              "alt": "Edgar — coloris Midnight Blue, détail du tissage"
+            }
+          ]
+        }
+      }
+    },
+    "textile-java": {
+      "heroMedia": {
+        "src": "/images/library-153-1440.webp",
+        "alt": "Java — détail du tissage"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-154-1440.webp",
+          "alt": "Java — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-145-1440.webp",
+          "alt": "Java — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-150-1440.webp",
+          "alt": "Java — détail de la matière, vue 4"
+        },
+        {
+          "src": "/images/library-159-1440.webp",
+          "alt": "Java — détail de la matière, vue 5"
+        }
+      ]
+    },
+    "textile-espuma": {
+      "heroMedia": {
+        "src": "/images/library-122-1440.webp",
+        "alt": "Espuma — détail du tissage"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-124-1440.webp",
+          "alt": "Espuma — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-127-1440.webp",
+          "alt": "Espuma — détail de la matière, vue 3"
+        }
+      ]
+    },
+    "textile-oslo": {
+      "heroMedia": {
+        "src": "/images/library-171-1440.webp",
+        "alt": "Oslo — détail du tissage"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-167-1440.webp",
+          "alt": "Oslo — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-170-1440.webp",
+          "alt": "Oslo — détail de la matière, vue 3"
+        }
+      ]
+    },
+    "textile-toundra": {
+      "heroMedia": {
+        "src": "/images/library-208-1440.webp",
+        "alt": "Toundra — détail du tissage"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-204-1440.webp",
+          "alt": "Toundra — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-200-1440.webp",
+          "alt": "Toundra — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-199-1440.webp",
+          "alt": "Toundra — détail de la matière, vue 4"
+        }
+      ]
+    },
+    "textile-pampero": {
+      "heroMedia": {
+        "src": "/images/library-340-1440.webp",
+        "alt": "Pampero — détail du tissage"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-341-1440.webp",
+          "alt": "Pampero — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-338-1440.webp",
+          "alt": "Pampero — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-343-1440.webp",
+          "alt": "Pampero — détail de la matière, vue 4"
+        }
+      ]
+    },
+    "textile-mauka": {
+      "heroMedia": {
+        "src": "/images/library-326-1440.webp",
+        "alt": "Mauka — détail du tissage"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-325-1440.webp",
+          "alt": "Mauka — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-322-1440.webp",
+          "alt": "Mauka — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-324-1440.webp",
+          "alt": "Mauka — détail de la matière, vue 4"
+        }
+      ]
+    },
+    "textile-sashiko": {
+      "heroMedia": {
+        "src": "/images/library-345-1440.webp",
+        "alt": "Sashiko — détail du tissage"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-346-1440.webp",
+          "alt": "Sashiko — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-344-1440.webp",
+          "alt": "Sashiko — détail de la matière, vue 3"
+        }
+      ]
+    },
+    "textile-tissage-rotin": {
+      "heroMedia": {
+        "src": "/images/library-255-1440.webp",
+        "alt": "Tissage & rotin — détail du tissage"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-260-1440.webp",
+          "alt": "Tissage & rotin — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-265-1440.webp",
+          "alt": "Tissage & rotin — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-248-1440.webp",
+          "alt": "Tissage & rotin — détail de la matière, vue 4"
+        },
+        {
+          "src": "/images/library-234-1440.webp",
+          "alt": "Tissage & rotin — détail de la matière, vue 5"
+        }
+      ]
+    },
+    "lighting-courbes-applique": {
+      "heroMedia": {
+        "src": "/images/library-70-1440.webp",
+        "alt": "Courbes — applique — vue d’ensemble"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-71-1440.webp",
+          "alt": "Courbes — applique — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-73-1440.webp",
+          "alt": "Courbes — applique — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-74-1440.webp",
+          "alt": "Courbes — applique — détail de la matière, vue 4"
+        }
+      ]
+    },
+    "lighting-courbes-lampe-noire": {
+      "heroMedia": {
+        "src": "/images/library-82-1440.webp",
+        "alt": "Courbes — lampe noire — vue d’ensemble"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-86-1440.webp",
+          "alt": "Courbes — lampe noire — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-84-1440.webp",
+          "alt": "Courbes — lampe noire — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-89-1440.webp",
+          "alt": "Courbes — lampe noire — détail de la matière, vue 4"
+        }
+      ]
+    }
+  },
+  "newEntries": [
+    {
+      "_id": "lighting-aube",
+      "_type": "lighting",
+      "title": "Aube",
+      "slug": "aube",
+      "description": "Aube est une lampe à poser de la collection Trait d’Union, avec un abat-jour en textile plissé.",
+      "collection": "Trait d’Union",
+      "typology": "Lampe à poser",
+      "sortOrder": -10,
+      "status": "selection",
+      "heroMedia": {
+        "src": "/images/library-0-1440.webp",
+        "alt": "Aube — lampe plissée entière"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-4-1440.webp",
+          "alt": "Aube — lampe allumée"
+        },
+        {
+          "src": "/images/library-2-1440.webp",
+          "alt": "Aube — détail du tissage plissé"
+        },
+        {
+          "src": "/images/library-5-1440.webp",
+          "alt": "Aube — détail du pied et de l’abat-jour"
+        }
+      ],
+      "textileSlug": "plisses"
+    },
+    {
+      "_id": "lighting-aura",
+      "_type": "lighting",
+      "title": "Aura",
+      "slug": "aura",
+      "description": "Aura est une lampe à poser de la collection Trait d’Union, avec un abat-jour en textile plissé.",
+      "collection": "Trait d’Union",
+      "typology": "Lampe à poser",
+      "sortOrder": -9,
+      "status": "selection",
+      "heroMedia": {
+        "src": "/images/library-8-1440.webp",
+        "alt": "Aura — lampe plissée entière"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-14-1440.webp",
+          "alt": "Aura — lampe allumée"
+        },
+        {
+          "src": "/images/library-12-1440.webp",
+          "alt": "Aura — détail du tissage plissé"
+        },
+        {
+          "src": "/images/library-10-1440.webp",
+          "alt": "Aura — détail du pied et de l’abat-jour"
+        }
+      ],
+      "textileSlug": "plisses"
+    },
+    {
+      "_id": "lighting-onde",
+      "_type": "lighting",
+      "title": "Onde",
+      "slug": "onde",
+      "description": "Onde est une lampe à poser de la collection Trait d’Union, avec un abat-jour en textile plissé.",
+      "collection": "Trait d’Union",
+      "typology": "Lampe à poser",
+      "sortOrder": -8,
+      "status": "selection",
+      "heroMedia": {
+        "src": "/images/library-22-1440.webp",
+        "alt": "Onde — lampe plissée entière"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-31-1440.webp",
+          "alt": "Onde — lampe allumée"
+        },
+        {
+          "src": "/images/library-23-1440.webp",
+          "alt": "Onde — détail du tissage plissé"
+        },
+        {
+          "src": "/images/library-27-1440.webp",
+          "alt": "Onde — détail du pied et de l’abat-jour"
+        }
+      ],
+      "textileSlug": "plisses"
+    },
+    {
+      "_id": "lighting-orbe",
+      "_type": "lighting",
+      "title": "Orbe",
+      "slug": "orbe",
+      "description": "Orbe est une lampe à poser de la collection Trait d’Union, avec un abat-jour en textile plissé.",
+      "collection": "Trait d’Union",
+      "typology": "Lampe à poser",
+      "sortOrder": -7,
+      "status": "selection",
+      "heroMedia": {
+        "src": "/images/library-34-1440.webp",
+        "alt": "Orbe — lampe plissée entière"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-41-1440.webp",
+          "alt": "Orbe — lampe allumée"
+        },
+        {
+          "src": "/images/library-38-1440.webp",
+          "alt": "Orbe — détail du tissage plissé"
+        },
+        {
+          "src": "/images/library-37-1440.webp",
+          "alt": "Orbe — détail du pied et de l’abat-jour"
+        }
+      ],
+      "textileSlug": "plisses"
+    },
+    {
+      "_id": "lighting-vesper",
+      "_type": "lighting",
+      "title": "Vesper",
+      "slug": "vesper",
+      "description": "Vesper est une lampe à poser de la collection Trait d’Union, avec un abat-jour en textile plissé.",
+      "collection": "Trait d’Union",
+      "typology": "Lampe à poser",
+      "sortOrder": -6,
+      "status": "selection",
+      "heroMedia": {
+        "src": "/images/library-46-1440.webp",
+        "alt": "Vesper — lampe plissée entière"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-56-1440.webp",
+          "alt": "Vesper — lampe allumée"
+        },
+        {
+          "src": "/images/library-51-1440.webp",
+          "alt": "Vesper — détail du tissage plissé"
+        },
+        {
+          "src": "/images/library-48-1440.webp",
+          "alt": "Vesper — détail du pied et de l’abat-jour"
+        }
+      ],
+      "textileSlug": "plisses"
+    },
+    {
+      "_id": "textile-plisses",
+      "_type": "textile",
+      "title": "Plissés",
+      "slug": "plisses",
+      "description": "Tissages plissés développés au studio.",
+      "category": "exception",
+      "textileGroup": "exception",
+      "sortOrder": 11,
+      "heroMedia": {
+        "src": "/images/library-297-1440.webp",
+        "alt": "Plissés — relief du tissage blanc"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-299-1440.webp",
+          "alt": "Plissés — détail des plis"
+        },
+        {
+          "src": "/images/library-284-1440.webp",
+          "alt": "Plissés — tissage à carreaux"
+        },
+        {
+          "src": "/images/library-290-1440.webp",
+          "alt": "Plissés — tissage bleu plissé"
+        },
+        {
+          "src": "/images/library-273-1440.webp",
+          "alt": "Plissés — tissage blanc sur le métier avec ses navettes"
+        }
+      ],
+      "colourways": []
+    }
+  ],
+  "editorial": {
+    "home": {
+      "heroMedia": {
+        "src": "/images/library-273-1440.webp",
+        "alt": "Tissage plissé blanc sur le métier, navettes et fils à l’atelier Saint Frison"
+      },
+      "materialProcessMedia": [
+        {
+          "src": "/images/library-371-1440.webp",
+          "alt": "Dessin préparatoire et recherche de formes au studio"
+        },
+        {
+          "src": "/images/library-386-1440.webp",
+          "alt": "Insertion du rotin dans le tissage à la main"
+        }
+      ]
+    },
+    "about": {
+      "heroMedia": {
+        "src": "/images/library-378-1440.webp",
+        "alt": "Margaux Saint Frison à sa table de travail au studio"
+      },
+      "workshopMedia": {
+        "src": "/images/library-380-1440.webp",
+        "alt": "Travail d’un tissage blanc sur le métier à bras"
+      }
+    }
+  },
+  "homeLighting": "aube",
+  "homeException": "plisses"
+}

@@ -22,9 +22,13 @@ export default async function Home() {
       .map((s) => allTextiles.find((x) => x.slug === s))
       .filter((x) => !!x)
   ).filter((x) => textileGroup(x) === "collection");
-  const light = content.lightingFeature || allLights[3] || allLights[0];
+  const light =
+    content.lightingFeature ||
+    allLights.find((x) => x.slug === "aube") ||
+    allLights[0];
   const exception =
     content.exceptionFeature ||
+    allTextiles.find((x) => x.slug === "plisses") ||
     allTextiles.find((x) => textileGroup(x) === "exception");
   const atelier = content.materialProcessMedia?.[0] || {
     src: "/images/254-1440.webp",

@@ -230,6 +230,7 @@ export const schemaTypes = [
     type: "document",
     fields: [
       ...identity,
+      field("collection", "Collection"),
       field("year", "Année"),
       defineField({
         name: "status",

@@ -8,13 +8,21 @@
       "category": "upholstery",
       "description": "Un relief minéral, une matière vivante.",
       "heroMedia": {
-        "src": "/images/187-1440.webp",
-        "alt": "Strata — détail du tissage Saint-Frison"
+        "src": "/images/library-190-1440.webp",
+        "alt": "Strata — détail du tissage"
       },
       "gallery": [
         {
-          "src": "/images/190-1440.webp",
-          "alt": "Strata — matière et tombé"
+          "src": "/images/library-191-1440.webp",
+          "alt": "Strata — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-189-1440.webp",
+          "alt": "Strata — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-193-1440.webp",
+          "alt": "Strata — détail de la matière, vue 4"
         }
       ],
       "composition": "40% laine 25% coton 20%lin 15% soie",
@@ -23,7 +31,9 @@
       "colourNames": "Limestone",
       "collection": "On the Rocks",
       "madeToOrder": true,
-      "applications": ["Ameublement et assises"],
+      "applications": [
+        "Ameublement et assises"
+      ],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 0,
       "colourways": [],
@@ -37,13 +47,21 @@
       "category": "voile",
       "description": "Un souffle de lin dans la lumière.",
       "heroMedia": {
-        "src": "/images/212-1440.webp",
-        "alt": "Meltem — détail du tissage Saint-Frison"
+        "src": "/images/library-334-1440.webp",
+        "alt": "Meltem — détail du tissage"
       },
       "gallery": [
         {
-          "src": "/images/213-1440.webp",
-          "alt": "Meltem — matière et tombé"
+          "src": "/images/library-331-1440.webp",
+          "alt": "Meltem — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-329-1440.webp",
+          "alt": "Meltem — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-336-1440.webp",
+          "alt": "Meltem — détail de la matière, vue 4"
         }
       ],
       "composition": "100% lin",
@@ -52,7 +70,9 @@
       "colourNames": "Blanc",
       "collection": "Eole",
       "madeToOrder": true,
-      "applications": ["Voilages et rideaux"],
+      "applications": [
+        "Voilages et rideaux"
+      ],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 1,
       "colourways": [],
@@ -66,25 +86,29 @@
       "category": "upholstery",
       "description": "Des rythmes irréguliers, tissés dans la matière.",
       "heroMedia": {
-        "src": "/images/122-1440.webp",
-        "alt": "Edgar — détail du tissage Saint-Frison"
+        "src": "/images/library-98-1440.webp",
+        "alt": "Edgar — détail du tissage"
       },
       "gallery": [
         {
-          "src": "/images/118-1440.webp",
-          "alt": "Edgar — matière et tombé"
+          "src": "/images/library-100-1440.webp",
+          "alt": "Edgar — détail de la matière, vue 2"
         },
         {
-          "src": "/images/127-1440.webp",
-          "alt": "Edgar — matière et tombé"
+          "src": "/images/library-94-1440.webp",
+          "alt": "Edgar — détail de la matière, vue 3"
         },
         {
-          "src": "/images/136-1440.webp",
-          "alt": "Edgar — matière et tombé"
+          "src": "/images/library-108-1440.webp",
+          "alt": "Edgar — détail de la matière, vue 4"
         },
         {
-          "src": "/images/140-1440.webp",
-          "alt": "Edgar — matière et tombé"
+          "src": "/images/library-113-1440.webp",
+          "alt": "Edgar — détail de la matière, vue 5"
+        },
+        {
+          "src": "/images/library-120-1440.webp",
+          "alt": "Edgar — détail de la matière, vue 6"
         }
       ],
       "composition": "55% lin 45% laine",
@@ -93,7 +117,9 @@
       "colourNames": "Naturel, Citron, Kaki, Terracotta, Midnight Blue",
       "collection": "Family Affair",
       "madeToOrder": true,
-      "applications": ["Ameublement et assises"],
+      "applications": [
+        "Ameublement et assises"
+      ],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 2,
       "colourways": [
@@ -101,41 +127,71 @@
           "name": "Kaki",
           "swatch": "#777b60",
           "heroMedia": {
-            "src": "/images/122-1440.webp",
-            "alt": "Edgar — Kaki"
-          }
+            "src": "/images/library-98-1440.webp",
+            "alt": "Edgar — coloris Kaki, détail du tissage"
+          },
+          "gallery": [
+            {
+              "src": "/images/library-100-1440.webp",
+              "alt": "Edgar — coloris Kaki, détail du tissage"
+            }
+          ]
         },
         {
           "name": "Terracotta",
           "swatch": "#a55340",
           "heroMedia": {
-            "src": "/images/118-1440.webp",
-            "alt": "Edgar — Terracotta"
-          }
+            "src": "/images/library-94-1440.webp",
+            "alt": "Edgar — coloris Terracotta, détail du tissage"
+          },
+          "gallery": [
+            {
+              "src": "/images/library-96-1440.webp",
+              "alt": "Edgar — coloris Terracotta, détail du tissage"
+            }
+          ]
         },
         {
           "name": "Citron",
           "swatch": "#c3b64c",
           "heroMedia": {
-            "src": "/images/127-1440.webp",
-            "alt": "Edgar — Citron"
-          }
+            "src": "/images/library-108-1440.webp",
+            "alt": "Edgar — coloris Citron, détail du tissage"
+          },
+          "gallery": [
+            {
+              "src": "/images/library-103-1440.webp",
+              "alt": "Edgar — coloris Citron, détail du tissage"
+            }
+          ]
         },
         {
           "name": "Naturel",
           "swatch": "#aaa795",
           "heroMedia": {
-            "src": "/images/136-1440.webp",
-            "alt": "Edgar — Naturel"
-          }
+            "src": "/images/library-113-1440.webp",
+            "alt": "Edgar — coloris Naturel, détail du tissage"
+          },
+          "gallery": [
+            {
+              "src": "/images/library-115-1440.webp",
+              "alt": "Edgar — coloris Naturel, détail du tissage"
+            }
+          ]
         },
         {
           "name": "Midnight Blue",
           "swatch": "#2c384d",
           "heroMedia": {
-            "src": "/images/140-1440.webp",
-            "alt": "Edgar — Midnight Blue"
-          }
+            "src": "/images/library-120-1440.webp",
+            "alt": "Edgar — coloris Midnight Blue, détail du tissage"
+          },
+          "gallery": [
+            {
+              "src": "/images/library-117-1440.webp",
+              "alt": "Edgar — coloris Midnight Blue, détail du tissage"
+            }
+          ]
         }
       ],
       "textileGroup": "collection"
@@ -148,17 +204,25 @@
       "category": "upholstery",
       "description": "La rencontre subtile de la laine et du lin.",
       "heroMedia": {
-        "src": "/images/167-1440.webp",
-        "alt": "Java — détail du tissage Saint-Frison"
+        "src": "/images/library-153-1440.webp",
+        "alt": "Java — détail du tissage"
       },
       "gallery": [
         {
-          "src": "/images/164-1440.webp",
-          "alt": "Java — matière et tombé"
+          "src": "/images/library-154-1440.webp",
+          "alt": "Java — détail de la matière, vue 2"
         },
         {
-          "src": "/images/171-1440.webp",
-          "alt": "Java — matière et tombé"
+          "src": "/images/library-145-1440.webp",
+          "alt": "Java — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-150-1440.webp",
+          "alt": "Java — détail de la matière, vue 4"
+        },
+        {
+          "src": "/images/library-159-1440.webp",
+          "alt": "Java — détail de la matière, vue 5"
         }
       ],
       "composition": "60% laine 40% lin",
@@ -167,7 +231,9 @@
       "colourNames": "Fauve, Denim, Olive, Menthe",
       "collection": "Pas de Deux",
       "madeToOrder": true,
-      "applications": ["Ameublement et assises"],
+      "applications": [
+        "Ameublement et assises"
+      ],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 3,
       "colourways": [],
@@ -181,17 +247,21 @@
       "category": "voile",
       "description": "Une transparence délicate, des couleurs sensibles.",
       "heroMedia": {
-        "src": "/images/219-1440.webp",
-        "alt": "Pampero — détail du tissage Saint-Frison"
+        "src": "/images/library-340-1440.webp",
+        "alt": "Pampero — détail du tissage"
       },
       "gallery": [
         {
-          "src": "/images/214-1440.webp",
-          "alt": "Pampero — matière et tombé"
+          "src": "/images/library-341-1440.webp",
+          "alt": "Pampero — détail de la matière, vue 2"
         },
         {
-          "src": "/images/216-1440.webp",
-          "alt": "Pampero — matière et tombé"
+          "src": "/images/library-338-1440.webp",
+          "alt": "Pampero — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-343-1440.webp",
+          "alt": "Pampero — détail de la matière, vue 4"
         }
       ],
       "composition": "100% lin",
@@ -200,7 +270,9 @@
       "colourNames": "Mastic, Ciel, Corail & Poudre",
       "collection": "Eole",
       "madeToOrder": true,
-      "applications": ["Voilages et rideaux"],
+      "applications": [
+        "Voilages et rideaux"
+      ],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 4,
       "colourways": [],
@@ -214,17 +286,17 @@
       "category": "upholstery",
       "description": "Une matière généreuse, douce et texturée.",
       "heroMedia": {
-        "src": "/images/145-1440.webp",
-        "alt": "Espuma — détail du tissage Saint-Frison"
+        "src": "/images/library-122-1440.webp",
+        "alt": "Espuma — détail du tissage"
       },
       "gallery": [
         {
-          "src": "/images/148-1440.webp",
-          "alt": "Espuma — matière et tombé"
+          "src": "/images/library-124-1440.webp",
+          "alt": "Espuma — détail de la matière, vue 2"
         },
         {
-          "src": "/images/151-1440.webp",
-          "alt": "Espuma — matière et tombé"
+          "src": "/images/library-127-1440.webp",
+          "alt": "Espuma — détail de la matière, vue 3"
         }
       ],
       "composition": "79% lin, 21% coton",
@@ -233,7 +305,9 @@
       "colourNames": "Blanc, Bleu Ciel, Bleu Nuit",
       "collection": "Dolce",
       "madeToOrder": true,
-      "applications": ["Ameublement et assises"],
+      "applications": [
+        "Ameublement et assises"
+      ],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 5,
       "colourways": [],
@@ -247,17 +321,28 @@
       "category": "upholstery",
       "description": "La présence singulière d’un lin texturé.",
       "heroMedia": {
-        "src": "/images/177-1440.webp",
-        "alt": "Oslo — détail du tissage Saint-Frison"
+        "src": "/images/library-171-1440.webp",
+        "alt": "Oslo — détail du tissage"
       },
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "/images/library-167-1440.webp",
+          "alt": "Oslo — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-170-1440.webp",
+          "alt": "Oslo — détail de la matière, vue 3"
+        }
+      ],
       "composition": "100% lin",
       "width": "140 cm",
       "weight": "1160 gr / ml",
       "colourNames": "Blanc",
       "collection": "Grand Nord",
       "madeToOrder": true,
-      "applications": ["Ameublement et assises"],
+      "applications": [
+        "Ameublement et assises"
+      ],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 6,
       "colourways": [],
@@ -271,17 +356,32 @@
       "category": "upholstery",
       "description": "Des nuances profondes et une trame contrastée.",
       "heroMedia": {
-        "src": "/images/193-1440.webp",
-        "alt": "Toundra — détail du tissage Saint-Frison"
+        "src": "/images/library-208-1440.webp",
+        "alt": "Toundra — détail du tissage"
       },
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "/images/library-204-1440.webp",
+          "alt": "Toundra — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-200-1440.webp",
+          "alt": "Toundra — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-199-1440.webp",
+          "alt": "Toundra — détail de la matière, vue 4"
+        }
+      ],
       "composition": "65% lin, 35% laine",
       "width": "140 cm",
       "weight": "903 gr / ml",
       "colourNames": "Marlin, Larkspur, Clémentine, Burgundy, Carbon",
       "collection": "Grand Nord",
       "madeToOrder": true,
-      "applications": ["Ameublement et assises"],
+      "applications": [
+        "Ameublement et assises"
+      ],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 7,
       "colourways": [],
@@ -295,13 +395,21 @@
       "category": "voile",
       "description": "Le lin se fait léger, la lumière se nuance.",
       "heroMedia": {
-        "src": "/images/207-1440.webp",
-        "alt": "Mauka — détail du tissage Saint-Frison"
+        "src": "/images/library-326-1440.webp",
+        "alt": "Mauka — détail du tissage"
       },
       "gallery": [
         {
-          "src": "/images/209-1440.webp",
-          "alt": "Mauka — matière et tombé"
+          "src": "/images/library-325-1440.webp",
+          "alt": "Mauka — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-322-1440.webp",
+          "alt": "Mauka — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-324-1440.webp",
+          "alt": "Mauka — détail de la matière, vue 4"
         }
       ],
       "composition": "100% lin",
@@ -310,7 +418,9 @@
       "colourNames": "Ardoise, Blush, Naturel, Sable et Blanc",
       "collection": "Eole",
       "madeToOrder": true,
-      "applications": ["Voilages et rideaux"],
+      "applications": [
+        "Voilages et rideaux"
+      ],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 8,
       "colourways": [],
@@ -324,17 +434,28 @@
       "category": "voile",
       "description": "Un dialogue de lignes et de transparences.",
       "heroMedia": {
-        "src": "/images/221-1440.webp",
-        "alt": "Sashiko — détail du tissage Saint-Frison"
+        "src": "/images/library-345-1440.webp",
+        "alt": "Sashiko — détail du tissage"
       },
-      "gallery": [],
+      "gallery": [
+        {
+          "src": "/images/library-346-1440.webp",
+          "alt": "Sashiko — détail de la matière, vue 2"
+        },
+        {
+          "src": "/images/library-344-1440.webp",
+          "alt": "Sashiko — détail de la matière, vue 3"
+        }
+      ],
       "composition": "100% lin",
       "width": "140 cm",
       "weight": "400 gr / ml",
       "colourNames": "blanc, naturel",
       "collection": "Influences",
       "madeToOrder": true,
-      "applications": ["Voilages et rideaux"],
+      "applications": [
+        "Voilages et rideaux"
+      ],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 9,
       "colourways": [],
@@ -348,30 +469,220 @@
       "category": "exception",
       "description": "Le fil accueille le rotin. La trame devient volume, la ligne dessine des courbes et la matière se transforme avec la lumière.",
       "heroMedia": {
-        "src": "/images/256-1440.webp",
-        "alt": "Tissage blanc et courbes de rotin"
+        "src": "/images/library-255-1440.webp",
+        "alt": "Tissage & rotin — détail du tissage"
       },
       "gallery": [
         {
-          "src": "/images/254-1440.webp",
-          "alt": "Travail à la main du rotin dans le tissage"
+          "src": "/images/library-260-1440.webp",
+          "alt": "Tissage & rotin — détail de la matière, vue 2"
         },
         {
-          "src": "/images/264-1440.webp",
-          "alt": "Recherche de rotin sur tissage sombre"
+          "src": "/images/library-265-1440.webp",
+          "alt": "Tissage & rotin — détail de la matière, vue 3"
         },
         {
-          "src": "/images/266-1440.webp",
-          "alt": "Détail du geste sur la trame"
+          "src": "/images/library-248-1440.webp",
+          "alt": "Tissage & rotin — détail de la matière, vue 4"
+        },
+        {
+          "src": "/images/library-234-1440.webp",
+          "alt": "Tissage & rotin — détail de la matière, vue 5"
         }
       ],
       "sortOrder": 10,
-      "materials": ["Textile", "Rotin"],
+      "materials": [
+        "Textile",
+        "Rotin"
+      ],
       "colourways": [],
       "textileGroup": "exception"
+    },
+    {
+      "_id": "textile-plisses",
+      "_type": "textile",
+      "title": "Plissés",
+      "slug": "plisses",
+      "description": "Tissages plissés développés au studio.",
+      "category": "exception",
+      "textileGroup": "exception",
+      "sortOrder": 11,
+      "heroMedia": {
+        "src": "/images/library-297-1440.webp",
+        "alt": "Plissés — relief du tissage blanc"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-299-1440.webp",
+          "alt": "Plissés — détail des plis"
+        },
+        {
+          "src": "/images/library-284-1440.webp",
+          "alt": "Plissés — tissage à carreaux"
+        },
+        {
+          "src": "/images/library-290-1440.webp",
+          "alt": "Plissés — tissage bleu plissé"
+        },
+        {
+          "src": "/images/library-273-1440.webp",
+          "alt": "Plissés — tissage blanc sur le métier avec ses navettes"
+        }
+      ],
+      "colourways": []
     }
   ],
   "lighting": [
+    {
+      "_id": "lighting-aube",
+      "_type": "lighting",
+      "title": "Aube",
+      "slug": "aube",
+      "description": "Aube est une lampe à poser de la collection Trait d’Union, avec un abat-jour en textile plissé.",
+      "collection": "Trait d’Union",
+      "typology": "Lampe à poser",
+      "sortOrder": -10,
+      "status": "selection",
+      "heroMedia": {
+        "src": "/images/library-0-1440.webp",
+        "alt": "Aube — lampe plissée entière"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-4-1440.webp",
+          "alt": "Aube — lampe allumée"
+        },
+        {
+          "src": "/images/library-2-1440.webp",
+          "alt": "Aube — détail du tissage plissé"
+        },
+        {
+          "src": "/images/library-5-1440.webp",
+          "alt": "Aube — détail du pied et de l’abat-jour"
+        }
+      ],
+      "textileSlug": "plisses"
+    },
+    {
+      "_id": "lighting-aura",
+      "_type": "lighting",
+      "title": "Aura",
+      "slug": "aura",
+      "description": "Aura est une lampe à poser de la collection Trait d’Union, avec un abat-jour en textile plissé.",
+      "collection": "Trait d’Union",
+      "typology": "Lampe à poser",
+      "sortOrder": -9,
+      "status": "selection",
+      "heroMedia": {
+        "src": "/images/library-8-1440.webp",
+        "alt": "Aura — lampe plissée entière"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-14-1440.webp",
+          "alt": "Aura — lampe allumée"
+        },
+        {
+          "src": "/images/library-12-1440.webp",
+          "alt": "Aura — détail du tissage plissé"
+        },
+        {
+          "src": "/images/library-10-1440.webp",
+          "alt": "Aura — détail du pied et de l’abat-jour"
+        }
+      ],
+      "textileSlug": "plisses"
+    },
+    {
+      "_id": "lighting-onde",
+      "_type": "lighting",
+      "title": "Onde",
+      "slug": "onde",
+      "description": "Onde est une lampe à poser de la collection Trait d’Union, avec un abat-jour en textile plissé.",
+      "collection": "Trait d’Union",
+      "typology": "Lampe à poser",
+      "sortOrder": -8,
+      "status": "selection",
+      "heroMedia": {
+        "src": "/images/library-22-1440.webp",
+        "alt": "Onde — lampe plissée entière"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-31-1440.webp",
+          "alt": "Onde — lampe allumée"
+        },
+        {
+          "src": "/images/library-23-1440.webp",
+          "alt": "Onde — détail du tissage plissé"
+        },
+        {
+          "src": "/images/library-27-1440.webp",
+          "alt": "Onde — détail du pied et de l’abat-jour"
+        }
+      ],
+      "textileSlug": "plisses"
+    },
+    {
+      "_id": "lighting-orbe",
+      "_type": "lighting",
+      "title": "Orbe",
+      "slug": "orbe",
+      "description": "Orbe est une lampe à poser de la collection Trait d’Union, avec un abat-jour en textile plissé.",
+      "collection": "Trait d’Union",
+      "typology": "Lampe à poser",
+      "sortOrder": -7,
+      "status": "selection",
+      "heroMedia": {
+        "src": "/images/library-34-1440.webp",
+        "alt": "Orbe — lampe plissée entière"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-41-1440.webp",
+          "alt": "Orbe — lampe allumée"
+        },
+        {
+          "src": "/images/library-38-1440.webp",
+          "alt": "Orbe — détail du tissage plissé"
+        },
+        {
+          "src": "/images/library-37-1440.webp",
+          "alt": "Orbe — détail du pied et de l’abat-jour"
+        }
+      ],
+      "textileSlug": "plisses"
+    },
+    {
+      "_id": "lighting-vesper",
+      "_type": "lighting",
+      "title": "Vesper",
+      "slug": "vesper",
+      "description": "Vesper est une lampe à poser de la collection Trait d’Union, avec un abat-jour en textile plissé.",
+      "collection": "Trait d’Union",
+      "typology": "Lampe à poser",
+      "sortOrder": -6,
+      "status": "selection",
+      "heroMedia": {
+        "src": "/images/library-46-1440.webp",
+        "alt": "Vesper — lampe plissée entière"
+      },
+      "gallery": [
+        {
+          "src": "/images/library-56-1440.webp",
+          "alt": "Vesper — lampe allumée"
+        },
+        {
+          "src": "/images/library-51-1440.webp",
+          "alt": "Vesper — détail du tissage plissé"
+        },
+        {
+          "src": "/images/library-48-1440.webp",
+          "alt": "Vesper — détail du pied et de l’abat-jour"
+        }
+      ],
+      "textileSlug": "plisses"
+    },
     {
       "_id": "lighting-courbes-applique",
       "_type": "lighting",
@@ -379,24 +690,27 @@
       "slug": "courbes-applique",
       "description": "La recherche textile se prolonge dans la lumière. Le tissage et le rotin composent un jeu de lignes, d’ombres et de transparences.",
       "heroMedia": {
-        "src": "/images/29-1440.webp",
-        "alt": "Courbes — applique — Saint-Frison Textiles"
+        "src": "/images/library-70-1440.webp",
+        "alt": "Courbes — applique — vue d’ensemble"
       },
       "gallery": [
         {
-          "src": "/images/3-1440.webp",
-          "alt": "Courbes — applique — détail et application"
+          "src": "/images/library-71-1440.webp",
+          "alt": "Courbes — applique — détail de la matière, vue 2"
         },
         {
-          "src": "/images/36-1440.webp",
-          "alt": "Courbes — applique — détail et application"
+          "src": "/images/library-73-1440.webp",
+          "alt": "Courbes — applique — détail de la matière, vue 3"
         },
         {
-          "src": "/images/40-1440.webp",
-          "alt": "Courbes — applique — détail et application"
+          "src": "/images/library-74-1440.webp",
+          "alt": "Courbes — applique — détail de la matière, vue 4"
         }
       ],
-      "materials": ["Textile tissé", "Rotin"],
+      "materials": [
+        "Textile tissé",
+        "Rotin"
+      ],
       "textileSlug": "tissage-rotin",
       "status": "selection",
       "sortOrder": 0
@@ -417,7 +731,10 @@
           "alt": "Ondes — lampadaire — détail et application"
         }
       ],
-      "materials": ["Textile tissé", "Rotin"],
+      "materials": [
+        "Textile tissé",
+        "Rotin"
+      ],
       "textileSlug": "tissage-rotin",
       "status": "selection",
       "sortOrder": 1
@@ -429,20 +746,27 @@
       "slug": "courbes-lampe-noire",
       "description": "La recherche textile se prolonge dans la lumière. Le tissage et le rotin composent un jeu de lignes, d’ombres et de transparences.",
       "heroMedia": {
-        "src": "/images/18-1440.webp",
-        "alt": "Courbes — lampe noire — Saint-Frison Textiles"
+        "src": "/images/library-82-1440.webp",
+        "alt": "Courbes — lampe noire — vue d’ensemble"
       },
       "gallery": [
         {
-          "src": "/images/27-1440.webp",
-          "alt": "Courbes — lampe noire — détail et application"
+          "src": "/images/library-86-1440.webp",
+          "alt": "Courbes — lampe noire — détail de la matière, vue 2"
         },
         {
-          "src": "/images/264-1440.webp",
-          "alt": "Courbes — lampe noire — détail et application"
+          "src": "/images/library-84-1440.webp",
+          "alt": "Courbes — lampe noire — détail de la matière, vue 3"
+        },
+        {
+          "src": "/images/library-89-1440.webp",
+          "alt": "Courbes — lampe noire — détail de la matière, vue 4"
         }
       ],
-      "materials": ["Textile tissé", "Rotin"],
+      "materials": [
+        "Textile tissé",
+        "Rotin"
+      ],
       "textileSlug": "tissage-rotin",
       "status": "selection",
       "sortOrder": 2
@@ -463,7 +787,10 @@
           "alt": "Courbes — suspensions — détail et application"
         }
       ],
-      "materials": ["Textile tissé", "Rotin"],
+      "materials": [
+        "Textile tissé",
+        "Rotin"
+      ],
       "textileSlug": "tissage-rotin",
       "status": "selection",
       "sortOrder": 3
@@ -509,7 +836,9 @@
           "text": "Dessiner avec la trame. Le textile quitte le plan pour devenir un volume traversé de lumière."
         }
       ],
-      "textileSlugs": ["tissage-rotin"],
+      "textileSlugs": [
+        "tissage-rotin"
+      ],
       "sortOrder": 0
     }
   ]

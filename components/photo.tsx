@@ -13,7 +13,7 @@ export function Photo({
   fullView?: boolean;
   sizes?: string;
 }) {
-  const local = media.src.match(/^\/images\/(\d+)-1440.webp$/);
+  const local = media.src.match(/^\/images\/([a-z0-9-]+)-1440.webp$/);
   const builder =
     media.asset && process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
       ? imageUrlBuilder({

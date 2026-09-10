@@ -1,0 +1,28 @@
+{
+  "home": {
+    "heroMedia": {
+      "src": "/images/library-273-1440.webp",
+      "alt": "Tissage plissé blanc sur le métier, navettes et fils à l’atelier Saint Frison"
+    },
+    "materialProcessMedia": [
+      {
+        "src": "/images/library-371-1440.webp",
+        "alt": "Dessin préparatoire et recherche de formes au studio"
+      },
+      {
+        "src": "/images/library-386-1440.webp",
+        "alt": "Insertion du rotin dans le tissage à la main"
+      }
+    ]
+  },
+  "about": {
+    "heroMedia": {
+      "src": "/images/library-378-1440.webp",
+      "alt": "Margaux Saint Frison à sa table de travail au studio"
+    },
+    "workshopMedia": {
+      "src": "/images/library-380-1440.webp",
+      "alt": "Travail d’un tissage blanc sur le métier à bras"
+    }
+  }
+}
