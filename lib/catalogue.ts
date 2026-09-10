@@ -1,4 +1,4 @@
-import type { Entry } from "./types";
+import type { Entry, Media } from "./types";
 export function textileGroup(entry: Entry) {
   return (
     entry.textileGroup ||
@@ -28,6 +28,7 @@ export type RelatedEntry = {
   title: string;
   href: string;
   kind: "textile" | "lighting" | "project";
+  heroMedia?: Media;
 };
 export function relatedEntries(entry: Entry, entries: Entry[]): RelatedEntry[] {
   const related = new Map<string, RelatedEntry>();
@@ -57,7 +58,14 @@ export function relatedEntries(entry: Entry, entries: Entry[]): RelatedEntry[] {
     }[kind];
     if (!prefix) continue;
     const href = "/" + prefix + "/" + candidate.slug;
-    related.set(href, { title: candidate.title, href, kind });
+    related.set(href, {
+      title: candidate.title,
+      href,
+      kind,
+      heroMedia: candidate.heroMedia?.src
+        ? candidate.heroMedia
+        : candidate.gallery?.find((media) => media.src),
+    });
   }
   return [...related.values()];
 }

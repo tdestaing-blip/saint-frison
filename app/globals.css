@@ -1642,14 +1642,11 @@ body:has(.studio-root) .site-footer {
   font-size: 0.75rem;
 }
 .related-entries {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 3rem;
   padding: 1rem 7% 4rem;
 }
-.related-entries .text-link {
-  margin-top: 0;
-  gap: 1rem;
+.related-entries .catalogue-card:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 6px;
 }
 .project-story .related-entries {
   padding: 2rem 0 0;
