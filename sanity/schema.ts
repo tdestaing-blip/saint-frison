@@ -1,3 +1,4 @@
+import { homeCopy } from "../lib/home-copy";
 import { defineType, defineField } from "sanity";
 const field = (name: string, title: string, type = "string") =>
   defineField({ name, title, type });
@@ -338,7 +339,54 @@ export const schemaTypes = [
         title: "Image d’ouverture",
         type: "editorialImage",
       }),
-      field("heroLine", "Phrase d’ouverture"),
+      defineField({
+        name: "copy",
+        title: "Textes de l’accueil",
+        type: "object",
+        fields: Object.keys(homeCopy).map((name) =>
+          defineField({
+            name,
+            title: (
+              {
+                heroTitle: "Hero — nom",
+                heroSubtitle: "Hero — activité",
+                heroDescription: "Hero — présentation",
+                collectionsTitle: "Collections — titre",
+                collectionsDescription: "Collections — texte",
+                collectionsCta: "Collections — lien",
+                exceptionTitle: "Tissages d’exception — titre",
+                exceptionDescription: "Tissages d’exception — texte",
+                exceptionCta: "Tissages d’exception — lien",
+                lightingTitle: "Luminaires — titre",
+                lightingDescription: "Luminaires — texte",
+                lightingCta: "Luminaires — lien",
+                bespokeTitle: "Sur mesure — titre",
+                bespokeDescription: "Sur mesure — texte",
+                bespokeCta: "Sur mesure — lien",
+                studioTitle: "Studio — titre",
+                studioDescription: "Studio — texte",
+                studioCta: "Studio — lien",
+                closingTitle: "Fin de page — titre",
+                closingCta: "Fin de page — lien",
+              } as Record<string, string>
+            )[name],
+            type: name.endsWith("Description") ? "text" : "string",
+          }),
+        ),
+      }),
+      defineField({
+        name: "exceptionFeature",
+        title: "Tissage d’exception mis en avant",
+        type: "reference",
+        to: [{ type: "textile" }],
+        options: { filter: 'textileGroup == "exception"' },
+      }),
+      defineField({
+        name: "heroLine",
+        title: "Ancienne phrase d’ouverture",
+        type: "string",
+        hidden: true,
+      }),
       refs("selectedTextiles", "Sélection de textiles", "textile"),
       defineField({
         name: "materialProcessMedia",
@@ -353,7 +401,12 @@ export const schemaTypes = [
         to: [{ type: "lighting" }],
       }),
       refs("selectedProjects", "Projets mis en avant", "project"),
-      field("closingContactCopy", "Invitation finale"),
+      defineField({
+        name: "closingContactCopy",
+        title: "Ancienne invitation finale",
+        type: "string",
+        hidden: true,
+      }),
     ],
   }),
   ...(["aboutPage", "contactPage"] as const).map((name) =>

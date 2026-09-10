@@ -1,29 +1,48 @@
 import Link from "@/components/site-link";
 import { Photo } from "@/components/photo";
-import { getEntries, getHome, categoryLabels } from "@/lib/content";
+import { CatalogCard } from "@/components/catalog-card";
+import { getEntries, getHome } from "@/lib/content";
+import { textileGroup } from "@/lib/catalogue";
+import { homeCopy, type HomeCopy } from "@/lib/home-copy";
 export default async function Home() {
-  const [allTextiles, allLights, allProjects, content] = await Promise.all([
+  const [allTextiles, allLights, content] = await Promise.all([
     getEntries("textile"),
     getEntries("lighting"),
-    getEntries("project"),
     getHome(),
   ]);
-  const textiles =
+  const copy = Object.fromEntries(
+    Object.entries(homeCopy).map(([key, fallback]) => [
+      key,
+      content.copy?.[key as keyof HomeCopy]?.trim() || fallback,
+    ]),
+  ) as HomeCopy;
+  const textiles = (
     content.selectedTextiles ||
     ["strata", "meltem", "edgar"]
       .map((s) => allTextiles.find((x) => x.slug === s))
-      .filter((x) => !!x);
+      .filter((x) => !!x)
+  ).filter((x) => textileGroup(x) === "collection");
   const light = content.lightingFeature || allLights[3] || allLights[0];
-  const projects = content.selectedProjects || allProjects.slice(0, 1);
+  const exception =
+    content.exceptionFeature ||
+    allTextiles.find((x) => textileGroup(x) === "exception");
+  const atelier = content.materialProcessMedia?.[0] || {
+    src: "/images/254-1440.webp",
+    alt: "Travail du tissage et du rotin à l’atelier Saint Frison",
+  };
+  const metier = content.materialProcessMedia?.[1] || {
+    src: "/images/249-1440.webp",
+    alt: "Navette sur le métier à tisser du studio",
+  };
   return (
-    <main id="main">
+    <main id="main" className="home-v2">
       <section className="hero">
         <Photo
           className="hero-image"
           media={
             content.heroMedia || {
               src: "/images/40-1440.webp",
-              alt: "Détail du tissage Saint-Frison, lin blanc et courbes de rotin naturel",
+              alt: "Tissage blanc et courbes de rotin",
             }
           }
           priority
@@ -31,161 +50,115 @@ export default async function Home() {
         />
         <div className="hero-shade" />
         <div className="hero-copy">
-          <p className="eyebrow">STUDIO DE CRÉATION TEXTILE · PARIS</p>
-          <h1>
-            {content.heroLine || (
-              <>
-                La matière
-                <br />
-                <em>prend vie.</em>
-              </>
-            )}
-          </h1>
+          <h1>{copy.heroTitle}</h1>
+          <p className="hero-subtitle">{copy.heroSubtitle}</p>
+          <p className="hero-description">{copy.heroDescription}</p>
         </div>
-        <Link className="hero-explore" href="/textiles">
-          Explorer les textiles <span>↗</span>
-        </Link>
-        <span className="hero-caption">
-          Tissage & rotin — Recherche de l’atelier
-        </span>
       </section>
-      {textiles.length > 0 && (
-        <section className="section">
-          <div className="section-top">
-            <span className="eyebrow">01 / TEXTILES</span>
-            <p>
-              Des matières à ressentir.
-              <br />
-              Des espaces à habiter.
-            </p>
+      <section
+        className="section home-collections"
+        aria-labelledby="home-collections"
+      >
+        <div className="home-section-intro">
+          <div>
+            <p className="eyebrow">TEXTILES</p>
+            <h2 id="home-collections">{copy.collectionsTitle}</h2>
           </div>
-          <div className="textile-grid">
-            {textiles.map((x) => (
-              <Link
-                className="image-card"
-                href={"/textiles/" + x.slug}
-                key={x.slug}
-              >
-                <div className="image-wrap">
-                  <Photo media={x.heroMedia} />
-                </div>
-                <div className="card-caption">
-                  <h3>{x.title}</h3>
-                  <span>{categoryLabels[x.category || ""]} ↗</span>
-                </div>
-              </Link>
+          <p className="body-copy">{copy.collectionsDescription}</p>
+        </div>
+        {!!textiles.length && (
+          <div className="catalog-grid">
+            {textiles.map((entry) => (
+              <CatalogCard key={entry._id} entry={entry} />
             ))}
           </div>
-          <Link className="text-link" href="/textiles">
-            Toute la sélection <span>↗</span>
+        )}
+        <Link className="text-link" href="/textiles#family-collection">
+          {copy.collectionsCta} <span aria-hidden="true">↗</span>
+        </Link>
+      </section>
+      <section
+        className={"home-feature" + (!exception ? " without-image" : "")}
+        aria-labelledby="home-exception"
+      >
+        {exception && (
+          <Link
+            className="home-feature-image"
+            href={"/textiles/" + exception.slug}
+            aria-label={exception.title}
+          >
+            <Photo media={exception.heroMedia} />
           </Link>
-        </section>
-      )}
-      <section className="home-studio">
-        <div className="home-studio-images">
-          <Photo
-            className="image-main"
-            media={
-              content.materialProcessMedia?.[0] || {
-                src: "/images/254-1440.webp",
-                alt: "Mains au travail sur un tissage et rotin Saint-Frison",
-              }
-            }
-          />
-          <Photo
-            className="image-detail"
-            media={
-              content.materialProcessMedia?.[1] || {
-                src: "/images/249-1440.webp",
-                alt: "La navette sur le métier à tisser",
-              }
-            }
-            sizes="25vw"
-          />
-        </div>
+        )}
         <div>
-          <p className="eyebrow">02 / LE STUDIO</p>
-          <h2>
-            Une histoire de fils,
-            <br />
-            <em>de main et de temps.</em>
-          </h2>
-          <p className="body-copy">
-            À Saint-Ouen, Margaux Saint Frison explore la rencontre des matières
-            sur métier à tisser. Des étoffes singulières, pensées pour
-            l’architecture intérieure et développées au rythme de chaque projet.
-          </p>
-          <Link className="text-link" href="/about">
-            Entrer dans l’atelier <span>↗</span>
+          <p className="eyebrow">TISSAGES D’EXCEPTION</p>
+          <h2 id="home-exception">{copy.exceptionTitle}</h2>
+          <p className="body-copy">{copy.exceptionDescription}</p>
+          <Link className="text-link" href="/textiles#family-exception">
+            {copy.exceptionCta} <span aria-hidden="true">↗</span>
           </Link>
         </div>
       </section>
-      {light && (
-        <section className="home-lighting">
-          <div>
-            <p className="eyebrow">03 / LUMINAIRES</p>
-            <h2>
-              La lumière
-              <br />
-              <em>comme matière.</em>
-            </h2>
-            <p className="body-copy">
-              Le tissage quitte le plan, devient volume. Les fibres et les
-              courbes dessinent une autre façon d’habiter la lumière.
-            </p>
-            <Link className="text-link" href="/lighting">
-              Découvrir les luminaires <span>↗</span>
-            </Link>
-          </div>
-          <Link className="image-card" href={"/lighting/" + light.slug}>
-            <div className="image-wrap">
-              <Photo media={light.heroMedia} />
-            </div>
-            <div className="card-caption">
-              <h3>{light.title}</h3>
-              <span>Textile & rotin ↗</span>
-            </div>
+      <section
+        className={
+          "home-feature home-feature-reverse" + (!light ? " without-image" : "")
+        }
+        aria-labelledby="home-lighting"
+      >
+        {light && (
+          <Link
+            className="home-feature-image"
+            href={"/lighting/" + light.slug}
+            aria-label={light.title}
+          >
+            <Photo media={light.heroMedia} />
           </Link>
-        </section>
-      )}
-      {projects.length > 0 && (
-        <section className="home-projects">
-          <div className="section-top">
-            <span className="eyebrow">04 / PROJETS</span>
-            <p>Du fil à l’espace.</p>
-          </div>
-          {projects.map((p) => (
-            <Link
-              href={"/projects/" + p.slug}
-              key={p.slug}
-              className="image-card"
-            >
-              <div className="image-wrap">
-                <Photo media={p.heroMedia} sizes="90vw" />
-              </div>
-              <div className="card-caption">
-                <h3>{p.title}</h3>
-                <span>{p.category} ↗</span>
-              </div>
-            </Link>
-          ))}
-        </section>
-      )}
-      <section className="contact-closing">
+        )}
         <div>
-          <p className="eyebrow">SUR-MESURE · PROJETS · COLLABORATIONS</p>
-          <h2>
-            {content.closingContactCopy || (
-              <>
-                Une idée, une envie,
-                <br />
-                <em>un fil à suivre.</em>
-              </>
-            )}
-          </h2>
+          <p className="eyebrow">LUMINAIRES</p>
+          <h2 id="home-lighting">{copy.lightingTitle}</h2>
+          <p className="body-copy">{copy.lightingDescription}</p>
+          <Link className="text-link" href="/lighting">
+            {copy.lightingCta} <span aria-hidden="true">↗</span>
+          </Link>
         </div>
+      </section>
+      <section className="home-feature" aria-labelledby="home-bespoke">
+        <div className="home-feature-image">
+          <Photo media={atelier} />
+        </div>
+        <div>
+          <p className="eyebrow">SUR MESURE</p>
+          <h2 id="home-bespoke">{copy.bespokeTitle}</h2>
+          <p className="body-copy">{copy.bespokeDescription}</p>
+          <Link
+            className="text-link"
+            href="/contact?type=Projet%20sur%20mesure"
+          >
+            {copy.bespokeCta} <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
+      </section>
+      <section
+        className="home-feature home-feature-reverse"
+        aria-labelledby="home-studio"
+      >
+        <div className="home-feature-image">
+          <Photo media={metier} />
+        </div>
+        <div>
+          <p className="eyebrow">LE STUDIO</p>
+          <h2 id="home-studio">{copy.studioTitle}</h2>
+          <p className="body-copy">{copy.studioDescription}</p>
+          <Link className="text-link" href="/about">
+            {copy.studioCta} <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
+      </section>
+      <section className="contact-closing">
+        <h2>{copy.closingTitle}</h2>
         <Link className="text-link" href="/contact">
-          Ouvrir la conversation <span>↗</span>
+          {copy.closingCta} <span aria-hidden="true">↗</span>
         </Link>
       </section>
     </main>

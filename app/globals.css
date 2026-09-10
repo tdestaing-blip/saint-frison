@@ -1774,3 +1774,125 @@ body:has(.studio-root) .site-footer {
     gap: 0;
   }
 }
+
+/* Accueil V2: la photographie porte l’ouverture, les textes restent directs. */
+.home-v2 .hero-copy {
+  bottom: 12%;
+  max-width: 660px;
+  right: 7%;
+}
+.home-v2 .hero-copy h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: 0.015em;
+}
+.home-v2 .hero-subtitle {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.16em;
+}
+.home-v2 .hero-description {
+  margin-top: 1.75rem;
+  max-width: 38rem;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+.home-v2 .hero-shade {
+  background: linear-gradient(180deg, #17150f55, #17150f0d 30%, #17150f99);
+}
+.home-section-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8%;
+  align-items: end;
+  margin-bottom: 3.5rem;
+}
+.home-v2 .eyebrow {
+  font-size: 0.75rem;
+}
+.home-section-intro h2 {
+  margin-top: 1.25rem;
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+}
+.home-v2 .body-copy {
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 32rem;
+  color: #766d62;
+}
+.home-feature {
+  padding: 5rem 7%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 9%;
+  align-items: center;
+}
+.home-feature h2 {
+  font-size: clamp(2.25rem, 4.3vw, 4rem);
+  margin: 1.5rem 0 2rem;
+}
+.home-feature-image {
+  display: block;
+  min-width: 0;
+}
+.home-feature-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 42rem;
+  object-fit: cover;
+}
+.home-feature-reverse > .home-feature-image {
+  order: 2;
+}
+.home-feature.without-image {
+  grid-template-columns: 1fr;
+}
+.home-v2 .contact-closing h2 {
+  margin: 0;
+}
+.home-v2 .contact-closing .text-link {
+  margin: 0;
+}
+@media (max-width: 800px) {
+  .home-v2 .hero {
+    min-height: 650px;
+  }
+  .home-v2 .hero-copy {
+    bottom: 10%;
+    max-width: none;
+  }
+  .home-v2 .hero-copy h1 {
+    font-size: clamp(2.4rem, 10.8vw, 4rem);
+  }
+  .home-v2 .hero-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+  }
+  .home-v2 .hero-description {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+  .home-section-intro {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .home-feature {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3.5rem 6%;
+  }
+  .home-feature-reverse > .home-feature-image {
+    order: 0;
+  }
+  .home-feature h2 {
+    font-size: clamp(2.25rem, 9vw, 3.5rem);
+  }
+  .home-feature-image img {
+    max-height: 36rem;
+  }
+  .home-v2 .contact-closing .text-link {
+    margin-top: 2rem;
+  }
+}

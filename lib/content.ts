@@ -36,7 +36,7 @@ export const getSettings = cache(async (): Promise<Settings> =>
 export const getHome = cache(async (): Promise<HomeContent> =>
   isSanityConfigured
     ? ((await sanityQuery<HomeContent>(
-        `*[_type=="homePage"][0]{...,"heroMedia":heroMedia{...,"src":asset->url},"materialProcessMedia":materialProcessMedia[]{...,"src":asset->url},"selectedTextiles":selectedTextiles[]->${projection},"lightingFeature":lightingFeature->${projection},"selectedProjects":selectedProjects[]->${projection}}`,
+        `*[_type=="homePage"][0]{...,"heroMedia":heroMedia{...,"src":asset->url},"materialProcessMedia":materialProcessMedia[]{...,"src":asset->url},"selectedTextiles":selectedTextiles[]->${projection},"exceptionFeature":exceptionFeature->${projection},"lightingFeature":lightingFeature->${projection},"selectedProjects":selectedProjects[]->${projection}}`,
       )) ?? {})
     : {},
 );

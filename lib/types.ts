@@ -1,3 +1,4 @@
+import type { HomeCopy } from "./home-copy";
 export type Media = {
   src: string;
   alt: string;
@@ -81,6 +82,8 @@ export type Settings = {
   availablePiecesEnabled?: boolean;
 };
 export type HomeContent = {
+  copy?: Partial<HomeCopy>;
+  exceptionFeature?: Entry;
   heroMedia?: Media;
   heroLine?: string;
   materialProcessMedia?: Media[];
