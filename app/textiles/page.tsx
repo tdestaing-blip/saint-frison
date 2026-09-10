@@ -8,11 +8,15 @@ export const metadata = {
 export default async function Page() {
   const copy = await getPageCopy();
   return (
-    <main id="main">
+    <main id="main" className="typography-v3">
       <header className="page-intro">
         <p className="eyebrow">{copy.textilesEyebrow}</p>
         <div>
-          <h1>{copy.textilesTitle}</h1>
+          <h1>
+            {copy.textilesTitle === "TEXTILES"
+              ? "Textiles"
+              : copy.textilesTitle}
+          </h1>
           <p>{copy.textilesIntroduction}</p>
         </div>
       </header>

@@ -35,7 +35,7 @@ export default async function Home() {
     alt: "Navette sur le métier à tisser du studio",
   };
   return (
-    <main id="main" className="home-v2">
+    <main id="main" className="home-v2 typography-v3">
       <section className="hero">
         <Photo
           className="hero-image"
@@ -62,7 +62,11 @@ export default async function Home() {
         <div className="home-section-intro">
           <div>
             <p className="eyebrow">TEXTILES</p>
-            <h2 id="home-collections">{copy.collectionsTitle}</h2>
+            <h2 id="home-collections">
+              {copy.collectionsTitle === "LES COLLECTIONS"
+                ? "Les collections"
+                : copy.collectionsTitle}
+            </h2>
           </div>
           <p className="body-copy">{copy.collectionsDescription}</p>
         </div>

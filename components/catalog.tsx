@@ -29,14 +29,17 @@ export function Catalog({ entries }: { entries: Entry[] }) {
   return (
     <>
       <div className="filters" aria-label="Filtrer les textiles">
-        {filters.map(([value, label]) => (
+        {filters.map(([value, label], index) => (
           <button
             key={value}
             type="button"
             aria-pressed={filter === value}
             onClick={() => setFilter(value)}
           >
-            {label}
+            <span className="filter-index" aria-hidden="true">
+              0{index + 1}
+            </span>
+            <span>{label}</span>
           </button>
         ))}
       </div>

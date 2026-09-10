@@ -1,0 +1,3 @@
+Instrument Sans variable (upright), unchanged upstream font.
+https://github.com/google/fonts/tree/main/ofl/instrumentsans
+Downloaded 2026-09-10. See OFL.txt for license.
