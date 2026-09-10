@@ -52,7 +52,7 @@ export function Header() {
           Menu <span>☰</span>
         </DialogTrigger>
         <DialogContent
-          className="mobile-menu"
+          className="mobile-menu translate-x-0 translate-y-0"
           aria-describedby={undefined}
           showCloseButton={false}
         >
