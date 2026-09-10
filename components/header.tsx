@@ -62,7 +62,7 @@ export function Header() {
           </div>
           <nav aria-label="Navigation mobile">
             {links.map(([label, url], i) => (
-              <Link key={url} href={url} onClick={() => setOpen(false)}>
+              <Link key={url} href={url}>
                 <small>0{i + 1}</small>
                 {label}
               </Link>
