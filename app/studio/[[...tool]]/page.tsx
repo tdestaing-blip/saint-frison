@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/site-link";
 import { isSanityConfigured } from "@/sanity/client";
 import StudioClient from "@/components/studio-client";
 export const metadata = {

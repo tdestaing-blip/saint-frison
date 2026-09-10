@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/site-link";
 import { Photo } from "@/components/photo";
 import { getPageContent } from "@/lib/content";
 export const metadata = {

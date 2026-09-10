@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/site-link";
 import { getProduct } from "@/lib/shopify";
 import { Purchase } from "@/components/purchase";
 import { notFound } from "next/navigation";

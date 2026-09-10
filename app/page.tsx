@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/site-link";
 import { Photo } from "@/components/photo";
 import { getEntries, getHome, categoryLabels } from "@/lib/content";
 export default async function Home() {

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/site-link";
 import { Header } from "@/components/header";
 import "./globals.css";
 import { draftMode } from "next/headers";
