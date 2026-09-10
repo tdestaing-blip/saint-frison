@@ -37,9 +37,9 @@ export default defineConfig({
                       "Tous les textiles",
                     ),
                     ...[
-                      ["upholstery", "Ameublement"],
-                      ["voile", "Voiles"],
-                      ["research", "Recherche textile"],
+                      ["collection", "Collections textiles"],
+                      ["exception", "Tissages d’exception"],
+                      ["research", "Recherche — à venir"],
                     ].map(([category, title]) =>
                       S.listItem()
                         .title(title)
@@ -47,7 +47,7 @@ export default defineConfig({
                           S.documentList()
                             .title(title)
                             .filter(
-                              '_type == "textile" && category == $category',
+                              '_type == "textile" && textileGroup == $category',
                             )
                             .params({ category }),
                         ),
@@ -56,9 +56,6 @@ export default defineConfig({
               ),
             S.documentTypeListItem("lighting").title("Luminaires"),
             S.documentTypeListItem("project").title("Projets"),
-            S.documentTypeListItem("availablePiece").title(
-              "Pièces disponibles",
-            ),
             S.divider(),
             S.documentTypeListItem("inquiry").title("Demandes reçues"),
             ...singletons
@@ -119,7 +116,8 @@ export default defineConfig({
       options.filter(
         (o) =>
           !singletons.some(([type]) => type === o.templateId) &&
-          o.templateId !== "inquiry",
+          o.templateId !== "inquiry" &&
+          o.templateId !== "availablePiece",
       ),
   },
 });

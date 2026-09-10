@@ -1,6 +1,7 @@
 export type Media = {
   src: string;
   alt: string;
+  credit?: string;
   crop?: { top: number; bottom: number; left: number; right: number };
   hotspot?: { x: number; y: number };
   asset?: { _ref: string };
@@ -27,6 +28,21 @@ export type Entry = {
   slug: string;
   description: string;
   category?: string;
+  textileGroup?: "collection" | "exception" | "research";
+  typology?: string;
+  baseDescription?: string;
+  productionType?: string;
+  priceLabel?: string;
+  electricalInfo?: string;
+  socketType?: string;
+  recommendedBulb?: string;
+  maxWattage?: string;
+  cableDescription?: string;
+  countryOfManufacture?: string;
+  vintageNote?: string;
+  lightingSlugs?: string[];
+  projectSlugs?: string[];
+  relatedTextileSlugs?: string[];
   heroMedia: Media;
   gallery: Media[];
   composition?: string;

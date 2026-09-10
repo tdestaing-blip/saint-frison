@@ -1,58 +1,83 @@
 "use client";
 import { useState } from "react";
 import Link from "@/components/site-link";
-import { Photo } from "./photo";
+import { ProductGallery } from "./product-gallery";
+import { RelatedEntries } from "./related-entries";
+import {
+  availabilityLabels,
+  textileLabel,
+  type RelatedEntry,
+} from "@/lib/catalogue";
+import { contactHref } from "@/lib/enquiry-types";
 import type { Entry } from "@/lib/types";
 export function EntryDetail({
   entry,
   type,
+  related = [],
 }: {
   entry: Entry;
   type: "textile" | "lighting";
+  related?: RelatedEntry[];
 }) {
-  const [selected, setSelected] = useState(-1);
-  const image =
-    selected >= 0
-      ? entry.colourways?.[selected]?.heroMedia || entry.heroMedia
-      : entry.heroMedia;
-  const label =
+  const [selected, setSelected] = useState(0);
+  const variant = entry.colourways?.[selected];
+  const hero = variant?.heroMedia || entry.heroMedia;
+  const images = [hero, ...(entry.gallery || [])].filter(
+    (m, i, all) => m?.src && all.findIndex((x) => x?.src === m.src) === i,
+  );
+  const source =
+    "/" + (type === "textile" ? "textiles" : "lighting") + "/" + entry.slug;
+  const reference = entry.title + (variant ? " — " + variant.name : "");
+  const url = contactHref(
     type === "textile"
-      ? entry.category === "voile"
-        ? "Voile"
-        : entry.category === "research"
-          ? "Recherche textile"
-          : "Ameublement"
-      : "Luminaire";
-  const specs = [
-    ["Collection", entry.collection],
-    ["Composition", entry.composition],
-    ["Laize", entry.width],
-    ["Poids linéaire", entry.weight],
-    ["Applications", entry.applications?.join(" · ")],
-    ["Coloris", entry.colourNames],
-    ["Matières", entry.materials?.join(" · ")],
-    ["Dimensions", entry.dimensions],
-    ["Performances", entry.performance?.join(" · ")],
-    ["Minimum de commande", entry.minimumOrder],
-    ["Délai", entry.leadTime],
-    ["Production", entry.madeToOrder ? "À la commande" : undefined],
-    ["Entretien", entry.care],
-  ].filter(([, v]) => v);
-  const url =
-    "/contact?type=" +
-    encodeURIComponent(type === "textile" ? "Textile" : "Pièce") +
-    "&reference=" +
-    encodeURIComponent(entry.title) +
-    "&source=" +
-    encodeURIComponent(
-      "/" + (type === "textile" ? "textiles" : "lighting") + "/" + entry.slug,
-    );
+      ? "Informations sur un textile"
+      : "Luminaire / acquisition",
+    reference,
+    source,
+  );
+  const specs = (
+    type === "textile"
+      ? [
+          ["Famille", textileLabel(entry)],
+          ["Collection", entry.collection],
+          ["Composition", entry.composition],
+          ["Laize", entry.width],
+          ["Poids", entry.weight],
+          ["Usages", entry.applications?.join(" · ")],
+          [
+            "Coloris",
+            entry.colourNames ||
+              entry.colourways?.map((c) => c.name).join(" · "),
+          ],
+          ["Matières", entry.materials?.join(" · ")],
+          ["Performances", entry.performance?.join(" · ")],
+          ["Minimum de commande", entry.minimumOrder],
+          ["Délai", entry.leadTime],
+          ["Production", entry.madeToOrder ? "À la commande" : undefined],
+          ["Entretien", entry.care],
+        ]
+      : [
+          ["Typologie", entry.typology],
+          ["Dimensions", entry.dimensions],
+          ["Textile / matériaux", entry.materials?.join(" · ")],
+          ["Pied", entry.baseDescription],
+          ["Production", entry.productionType],
+          ["Disponibilité", availabilityLabels[entry.status || ""]],
+          ["Prix", entry.priceLabel],
+          ["Informations électriques", entry.electricalInfo],
+          ["Douille", entry.socketType],
+          ["Ampoule recommandée", entry.recommendedBulb],
+          ["Puissance maximale", entry.maxWattage],
+          ["Câble", entry.cableDescription],
+          ["Pays de fabrication", entry.countryOfManufacture],
+          ["Délai", entry.leadTime],
+          ["Pied vintage / pièce unique", entry.vintageNote],
+        ]
+  ).filter(([, value]) => value);
   return (
     <>
-      <section className="detail-intro">
-        <div className="detail-photo">
-          <Photo media={image} priority />
-        </div>
+      <section className="detail-intro product-intro">
+        <ProductGallery key={hero.src} title={entry.title} images={images} />
         <div className="detail-copy">
           <Link
             className="back-link"
@@ -61,25 +86,30 @@ export function EntryDetail({
             ← {type === "textile" ? "Les textiles" : "Les luminaires"}
           </Link>
           <p className="eyebrow">
-            {label}
-            {entry.year ? " / " + entry.year : ""}
+            {type === "textile"
+              ? textileLabel(entry)
+              : entry.typology || "Luminaire"}
           </p>
           <h1>{entry.title}</h1>
           <p className="detail-description">{entry.description}</p>
+          {type === "lighting" &&
+            (entry.priceLabel || availabilityLabels[entry.status || ""]) && (
+              <p className="product-availability">
+                {[availabilityLabels[entry.status || ""], entry.priceLabel]
+                  .filter(Boolean)
+                  .join(" — ")}
+              </p>
+            )}
           {!!entry.colourways?.length && (
             <fieldset className="colourways">
-              <legend>
-                Coloris —{" "}
-                {selected >= 0
-                  ? entry.colourways[selected].name
-                  : entry.colourways[0].name}
-              </legend>
+              <legend>Coloris — {variant?.name}</legend>
               {entry.colourways.map((c, i) => (
                 <button
+                  type="button"
                   key={c.name}
                   onClick={() => setSelected(i)}
                   aria-label={c.name}
-                  aria-pressed={i === (selected < 0 ? 0 : selected)}
+                  aria-pressed={selected === i}
                   title={c.name}
                 >
                   <span style={{ background: c.swatch || "#ddd" }} />
@@ -87,54 +117,42 @@ export function EntryDetail({
               ))}
             </fieldset>
           )}
-          <Link className="text-link" href={url}>
-            {type === "textile"
-              ? "Se renseigner sur ce textile"
-              : "Se renseigner sur cette pièce"}{" "}
-            <span>↗</span>
-          </Link>
-          {entry.status === "archive" && (
-            <p className="archive-note">Pièce d’archive</p>
-          )}
-          {entry.status === "available" && entry.shopifyHandle && (
-            <Link
-              className="text-link"
-              href={"/available-pieces/" + entry.shopifyHandle}
-            >
-              Voir la pièce disponible ↗
+          <div className="product-actions">
+            <Link className="text-link" href={url}>
+              {type === "textile"
+                ? "Se renseigner sur ce textile"
+                : entry.status === "available"
+                  ? "Acquérir cette pièce"
+                  : "Se renseigner sur cette pièce"}{" "}
+              <span aria-hidden="true">↗</span>
             </Link>
-          )}
+            {type === "textile" && (
+              <Link
+                className="text-link"
+                href={contactHref("Échantillon", reference, source)}
+              >
+                Demander un échantillon <span aria-hidden="true">↗</span>
+              </Link>
+            )}
+          </div>
         </div>
       </section>
-      {entry.gallery?.length > 0 && (
-        <section className="detail-gallery">
-          {entry.gallery.map((m, i) => (
-            <figure
-              key={m.src}
-              className={i === 0 && entry.gallery.length % 2 ? "wide" : ""}
-            >
-              <Photo media={m} />
-              <figcaption>{m.alt}</figcaption>
-            </figure>
-          ))}
-        </section>
-      )}
       {!!specs.length && (
         <section className="specs-section">
           <div>
-            <span className="eyebrow">LA MATIÈRE EN DÉTAIL</span>
+            <p className="eyebrow">FICHE TECHNIQUE</p>
             <h2>
               Informations
               <br />
-              <em>professionnelles.</em>
+              <em>{type === "textile" ? "textile." : "luminaire."}</em>
             </h2>
           </div>
           <div>
             <dl>
-              {specs.map(([k, v]) => (
-                <div key={k}>
-                  <dt>{k}</dt>
-                  <dd>{v}</dd>
+              {specs.map(([label, value]) => (
+                <div key={label}>
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
                 </div>
               ))}
             </dl>
@@ -145,35 +163,31 @@ export function EntryDetail({
                 target="_blank"
                 rel="noreferrer"
               >
-                Fiche technique ↗
+                Télécharger la fiche technique ↗
               </a>
             )}
             <p className="small-note">
-              Les nuances à l’écran peuvent varier. Le studio vous accompagne
-              dans le choix des matières et des coloris.
+              Les nuances à l’écran peuvent varier. Contactez le studio pour
+              découvrir les matières.
             </p>
           </div>
         </section>
       )}
+      <RelatedEntries entries={related} />
       {type === "textile" && (
         <section className="bespoke">
-          <p className="eyebrow">UNE MATIÈRE, VOTRE PROJET</p>
-          <h2>Imaginer ensemble.</h2>
+          <h2>Un développement sur mesure</h2>
           <p>
             {entry.customisation ||
-              "Un dialogue autour des matières, des couleurs et des structures, pour donner forme à un textile singulier."}
+              "Le studio étudie les adaptations de matières, de couleurs et de structures selon les besoins de votre projet."}
           </p>
-          <Link className="text-link" href={url}>
-            Parlons de votre projet <span>↗</span>
+          <Link
+            className="text-link"
+            href={contactHref("Projet sur mesure", reference, source)}
+          >
+            Parler de votre projet <span aria-hidden="true">↗</span>
           </Link>
         </section>
-      )}
-      {entry.textileSlug && (
-        <div className="related-line">
-          <Link className="text-link" href={"/textiles/" + entry.textileSlug}>
-            Découvrir la recherche textile associée <span>↗</span>
-          </Link>
-        </div>
       )}
     </>
   );

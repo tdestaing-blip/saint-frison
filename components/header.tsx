@@ -14,7 +14,6 @@ const links = [
   ["Luminaires", "/lighting"],
   ["Projets", "/projects"],
   ["Le studio", "/about"],
-  ["Pièces disponibles", "/available-pieces"],
   ["Contact", "/contact"],
 ];
 export function Header() {

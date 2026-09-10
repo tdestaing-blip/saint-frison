@@ -3,13 +3,13 @@ import { Catalog } from "@/components/catalog";
 export const metadata = {
   title: "Textiles",
   description:
-    "Une sélection de textiles tissés : ameublement, voiles et recherche textile. Collections et développements sur mesure.",
+    "Une sélection de textiles tissés : ameublement, voiles et tissages d’exception. Collections et développements sur mesure.",
 };
 export default async function Page() {
   return (
     <main id="main">
       <header className="page-intro">
-        <p className="eyebrow">COLLECTIONS & RECHERCHES</p>
+        <p className="eyebrow">COLLECTIONS & TISSAGES D’EXCEPTION</p>
         <div>
           <h1>Textiles</h1>
           <p>

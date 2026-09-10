@@ -1,66 +1,43 @@
-"use client";
-import { useState } from "react";
-import Link from "@/components/site-link";
-import { Photo } from "./photo";
 import type { Entry } from "@/lib/types";
-const cats = [
-  ["all", "Tous les textiles"],
-  ["upholstery", "Ameublement"],
-  ["voile", "Voiles"],
-  ["research", "Recherche textile"],
-];
+import { textileGroup } from "@/lib/catalogue";
+import { CatalogCard } from "./catalog-card";
 export function Catalog({ entries }: { entries: Entry[] }) {
-  const [category, setCategory] = useState("all");
-  const filtered = entries.filter(
-    (x) => category === "all" || x.category === category,
-  );
   return (
     <>
-      <div className="filters" role="group" aria-label="Familles textiles">
-        {cats.map(([id, label]) => (
-          <button
+      {[
+        { id: "collection", title: "Collections textiles" },
+        { id: "exception", title: "Tissages d’exception" },
+      ].map(({ id, title }) => {
+        const selection = entries.filter((e) => textileGroup(e) === id);
+        return (
+          <section
+            className="catalogue-family"
             key={id}
-            aria-pressed={category === id}
-            onClick={() => setCategory(id)}
+            aria-labelledby={"family-" + id}
           >
-            {label}
-            <sup>
-              {id === "all"
-                ? entries.length
-                : entries.filter((x) => x.category === id).length}
-            </sup>
-          </button>
-        ))}
-      </div>
-      <p className="sr-only" role="status">
-        {filtered.length} textiles affichés
-      </p>
-      <div className="catalog-grid">
-        {filtered.map((x) => (
-          <Link
-            key={x.slug}
-            href={"/textiles/" + x.slug}
-            className="image-card"
-          >
-            <div className="image-wrap">
-              <Photo media={x.heroMedia} />
-              <div className="card-overlay">
-                <span>{x.title}</span>
-                <span>↗</span>
-              </div>
+            <div className="catalogue-heading">
+              <h2 id={"family-" + id}>{title}</h2>
+              <span>
+                {selection.length} textile{selection.length > 1 ? "s" : ""}
+              </span>
             </div>
-            <div className="card-caption">
-              <h3>{x.title}</h3>
-              <span>{cats.find((c) => c[0] === x.category)?.[1]}</span>
+            <div className="catalog-grid">
+              {selection.map((entry, i) => (
+                <CatalogCard
+                  key={entry._id}
+                  entry={entry}
+                  priority={id === "collection" && i === 0}
+                />
+              ))}
             </div>
-          </Link>
-        ))}
-      </div>
-      {!filtered.length && (
-        <p className="empty-note">
-          Cette sélection se découvre directement avec le studio.
-        </p>
-      )}
+            {!selection.length && (
+              <p className="empty-note">
+                Cette sélection se découvre auprès du studio.
+              </p>
+            )}
+          </section>
+        );
+      })}
     </>
   );
 }

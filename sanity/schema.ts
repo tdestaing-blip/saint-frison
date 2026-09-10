@@ -139,6 +139,21 @@ export const schemaTypes = [
     fields: [
       ...identity,
       defineField({
+        name: "textileGroup",
+        title: "Univers textile",
+        type: "string",
+        initialValue: "collection",
+        options: {
+          list: [
+            { title: "Collections textiles", value: "collection" },
+            { title: "Tissages d’exception", value: "exception" },
+            { title: "Recherche — espace public à venir", value: "research" },
+          ],
+        },
+        description:
+          "Les recherches sont conservées à part des collections commercialisées.",
+      }),
+      defineField({
         name: "category",
         title: "Famille",
         type: "string",
@@ -146,6 +161,7 @@ export const schemaTypes = [
           list: [
             { title: "Ameublement", value: "upholstery" },
             { title: "Voiles", value: "voile" },
+            { title: "Tissages d’exception", value: "exception" },
             { title: "Recherche textile", value: "research" },
           ],
         },
@@ -210,6 +226,7 @@ export const schemaTypes = [
               value: "selection",
             },
             { title: "Disponible à la vente", value: "available" },
+            { title: "Sur commande", value: "madeToOrder" },
             { title: "Archive", value: "archive" },
           ],
         },
@@ -223,7 +240,36 @@ export const schemaTypes = [
         type: "reference",
         to: [{ type: "textile" }],
       }),
-      field("shopifyHandle", "Identifiant du produit Shopify"),
+      field("typology", "Typologie (lampe à poser, applique, suspension…)"),
+      field("baseDescription", "Pied et matériaux du pied", "text"),
+      defineField({
+        name: "productionType",
+        title: "Mode de production",
+        type: "string",
+        options: { list: ["Pièce unique", "Petite série", "Sur commande"] },
+      }),
+      defineField({
+        name: "priceLabel",
+        title: "Prix à afficher",
+        type: "string",
+        description:
+          "Prix et devise, avec la mention fiscale appropriée si nécessaire. Laisser vide pour ne pas afficher de prix.",
+      }),
+      field("electricalInfo", "Informations électriques", "text"),
+      field("socketType", "Type de douille"),
+      field("recommendedBulb", "Ampoule recommandée"),
+      field("maxWattage", "Puissance maximale (avec unité)"),
+      field("cableDescription", "Longueur et type de câble"),
+      field("countryOfManufacture", "Pays de fabrication"),
+      field("leadTime", "Délai sur commande"),
+      field("vintageNote", "Variations du pied vintage / pièce unique", "text"),
+      refs("projects", "Projets associés", "project"),
+      defineField({
+        name: "shopifyHandle",
+        title: "Ancien identifiant Shopify",
+        type: "string",
+        hidden: true,
+      }),
       ...seo,
     ],
     preview,
@@ -239,6 +285,7 @@ export const schemaTypes = [
       field("location", "Lieu"),
       field("clientOrCollaborator", "Client ou collaboration (si public)"),
       field("credits", "Crédits photographiques"),
+      texts("applications", "Types d’application"),
       defineField({
         name: "contentBlocks",
         title: "Histoire du projet",
@@ -272,7 +319,12 @@ export const schemaTypes = [
         validation: (r) => r.uri({ scheme: ["https"] }),
       }),
       field("studioLocationLabel", "Localisation de l’atelier"),
-      field("availablePiecesEnabled", "Activer la vente de pièces", "boolean"),
+      defineField({
+        name: "availablePiecesEnabled",
+        title: "Ancien réglage Shopify",
+        type: "boolean",
+        hidden: true,
+      }),
       ...seo,
     ],
   }),
@@ -312,6 +364,36 @@ export const schemaTypes = [
       fields: [
         field("title", "Titre"),
         field("description", "Texte principal", "text"),
+        ...(name === "aboutPage"
+          ? [
+              field("studioHeading", "Titre — présentation du studio"),
+              field("studioIntroduction", "Présentation du studio", "text"),
+              field("workshopHeading", "Titre — atelier et fabrication"),
+              field("workshopDescription", "Atelier et fabrication", "text"),
+              defineField({
+                name: "workshopMedia",
+                title: "Photographie de l’atelier",
+                type: "editorialImage",
+              }),
+              field("processHeading", "Titre — processus sur mesure"),
+              defineField({
+                name: "processSteps",
+                title: "Les quatre étapes",
+                type: "array",
+                validation: (r) => r.length(4),
+                of: [
+                  {
+                    type: "object",
+                    name: "processStep",
+                    fields: [
+                      required("title", "Titre"),
+                      required("text", "Description", "text"),
+                    ],
+                  },
+                ],
+              }),
+            ]
+          : []),
         defineField({
           name: "heroMedia",
           title: "Photographie",

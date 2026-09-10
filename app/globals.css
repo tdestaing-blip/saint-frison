@@ -1468,3 +1468,309 @@ body:has(.studio-root) .site-footer {
 .studio-setup > img {
   height: auto;
 }
+
+/* Catalogues: regular portrait grids; detail pages retain their editorial rhythm. */
+.desktop-nav {
+  font-size: 0.875rem;
+}
+.desktop-nav a:nth-last-child(2) {
+  margin-left: 0;
+}
+.catalog-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem 1.75rem;
+}
+.catalogue-card {
+  min-width: 0;
+}
+.catalogue-card .image-wrap {
+  aspect-ratio: 4 / 5;
+}
+.catalogue-card .card-caption {
+  display: block;
+  padding: 1rem 0;
+}
+.catalogue-card h3 {
+  font-size: 1.125rem;
+  line-height: 1.35;
+}
+.catalogue-card p {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+.catalogue-card .availability {
+  color: var(--ink);
+}
+.catalogue-family + .catalogue-family {
+  margin-top: 6rem;
+}
+.catalogue-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.catalogue-heading h2 {
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+}
+.catalogue-heading > span {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  color: var(--muted);
+}
+.page-intro > div > p {
+  font-size: 1rem;
+}
+.product-intro {
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  min-height: 0;
+  padding: 3rem 5% 5rem;
+  gap: 5%;
+  align-items: start;
+}
+.product-intro .detail-copy {
+  padding: 2rem 0;
+  min-width: 0;
+}
+.product-intro .detail-copy h1 {
+  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+  overflow-wrap: anywhere;
+}
+.product-intro .back-link {
+  font-size: 0.875rem;
+  margin-bottom: 2.5rem;
+}
+.product-intro .eyebrow,
+.specs-section .eyebrow {
+  font-size: 0.75rem;
+}
+.product-gallery {
+  min-width: 0;
+  width: 100%;
+}
+.product-view {
+  margin: 0;
+}
+.product-view > img {
+  width: 100%;
+  height: min(65svh, 42rem);
+  object-fit: contain;
+}
+.product-view figcaption {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 1rem;
+  min-height: 2.5rem;
+}
+.product-view figcaption span {
+  display: block;
+}
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0;
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+}
+.gallery-controls button {
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.5rem;
+}
+.gallery-controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.gallery-controls p {
+  font-size: 0.875rem;
+}
+.gallery-thumbnails {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.4rem;
+}
+.gallery-thumbnails button {
+  flex: 0 0 4.5rem;
+  padding: 0.3rem;
+  border: 1px solid transparent;
+}
+.gallery-thumbnails button[aria-pressed="true"] {
+  border-color: var(--ink);
+}
+.gallery-thumbnails img {
+  width: 100%;
+  height: 5rem;
+  object-fit: contain;
+}
+.product-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.product-actions .text-link {
+  margin-top: 0;
+  gap: 1.5rem;
+}
+.product-availability {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+.product-intro .colourways legend {
+  font-size: 0.875rem;
+}
+.product-intro .colourways button {
+  padding: 0.625rem;
+}
+.specs-section dl > div {
+  font-size: 0.875rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+}
+.specs-section dd {
+  overflow-wrap: anywhere;
+  white-space: pre-line;
+}
+.specs-section .small-note {
+  font-size: 0.75rem;
+}
+.related-entries {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 3rem;
+  padding: 1rem 7% 4rem;
+}
+.related-entries .text-link {
+  margin-top: 0;
+  gap: 1rem;
+}
+.project-story .related-entries {
+  padding: 2rem 0 0;
+}
+.project-credits {
+  font-size: 0.875rem;
+}
+.studio-page {
+  font-size: 1rem;
+}
+.studio-page .about-opening h1 {
+  font-size: clamp(2.5rem, 4.8vw, 4.5rem);
+}
+.studio-page .process-story h2 {
+  font-size: clamp(2.25rem, 4.3vw, 3.75rem);
+}
+.studio-page .process-story {
+  padding-top: 2rem;
+}
+.studio-page .process-steps p {
+  font-size: 1rem;
+}
+.studio-page .process-steps span {
+  font-size: 0.875rem;
+}
+.multiline {
+  white-space: pre-line;
+}
+.text-link {
+  font-size: 0.875rem;
+  max-width: 100%;
+}
+.contact-page {
+  font-size: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+.contact-page .form-field > label,
+.contact-address,
+.reference-note {
+  font-size: 0.875rem;
+}
+.form-field input,
+.form-field textarea {
+  font-size: 1rem;
+}
+.consent label,
+.form-error,
+.form-field textarea::placeholder,
+.contact-page .small-note {
+  font-size: 0.75rem;
+}
+.editorial-select {
+  min-height: 3rem;
+  height: auto !important;
+  font-size: 1rem !important;
+  white-space: normal;
+}
+.form-field {
+  min-width: 0;
+}
+.mobile-menu {
+  overflow-y: auto;
+  gap: 2rem;
+}
+.mobile-menu nav {
+  flex-shrink: 0;
+}
+.menu-heading {
+  gap: 1rem;
+}
+@media (max-width: 1100px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .desktop-nav {
+    gap: 1rem;
+  }
+}
+@media (max-width: 800px) {
+  .product-intro {
+    display: flex;
+    padding: 2rem 6% 3rem;
+    gap: 1.5rem;
+  }
+  .product-intro .detail-copy {
+    padding: 0;
+  }
+  .product-view > img {
+    height: 55svh;
+    min-height: 16rem;
+  }
+  .catalogue-heading {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .contact-page {
+    display: block;
+  }
+  .mobile-menu nav small {
+    font-size: 0.75rem;
+  }
+  .menu-trigger {
+    font-size: 0.875rem;
+  }
+}
+@media (max-width: 600px) {
+  .catalog-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+  .catalogue-family + .catalogue-family {
+    margin-top: 3.5rem;
+  }
+  .page-intro h1 {
+    font-size: clamp(2.75rem, 12vw, 3.875rem);
+  }
+  .studio-page .process-steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .form-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}

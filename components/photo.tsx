@@ -4,11 +4,13 @@ export function Photo({
   media,
   className = "",
   priority = false,
+  fullView = false,
   sizes = "(max-width: 800px) 100vw, 50vw",
 }: {
   media: Media;
   className?: string;
   priority?: boolean;
+  fullView?: boolean;
   sizes?: string;
 }) {
   const local = media.src.match(/^\/images\/(\d+)-1440.webp$/);
@@ -17,7 +19,7 @@ export function Photo({
       ? imageUrlBuilder({
           projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
           dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
-        }).image(media)
+        }).image(fullView ? { asset: media.asset } : media)
       : null;
   return (
     <img
@@ -36,7 +38,7 @@ export function Photo({
       fetchPriority={priority ? "high" : undefined}
       decoding="async"
       style={
-        media.hotspot
+        !fullView && media.hotspot
           ? {
               objectPosition: `${media.hotspot.x * 100}% ${media.hotspot.y * 100}%`,
             }

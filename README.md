@@ -5,15 +5,15 @@ Site éditorial en français, construit à partir des photographies, du logo, du
 ## Réalisation
 
 - Accueil photographique, navigation mobile accessible et mise en page responsive.
-- 11 références et recherches textiles, filtres par famille, pages détaillées, coloris photographiques Edgar, données techniques sourcées.
+- Deux sections textiles : Collections textiles et Tissages d’exception. Fiches avec carrousel accessible, coloris et caractéristiques renseignées.
 - 4 présentations de luminaires. Noms descriptifs de travail, sans prix ni disponibilité inventés.
 - Un projet éditorial documenté « La ligne devient lumière ». Aucun client, lieu ou projet résidentiel fictif.
-- Studio, démarche sur mesure, contact contextualisé, sélection commerciale Shopify et paiement hébergé.
+- Studio en trois parties, processus en quatre étapes et contact contextualisé. Acquisition des luminaires auprès du studio, sans panier ni paiement.
 - Sanity embarqué à `/studio`, modèles éditoriaux, brouillons/publication, recadrage, hotspot, textes alternatifs, ordre manuel, présentation et édition visuelle.
 
 ## Architecture
 
-Next.js 16 App Router, React 19, TypeScript, Tailwind 4 et CSS éditorial. Le moteur Vinext produit également un Worker Cloudflare pour l’aperçu privé Sites. Les commandes Next standard sont conservées pour Vercel. Sanity assure l’édition, Shopify le stock et le paiement, Resend les notifications.
+Next.js 16 App Router, React 19, TypeScript, Tailwind 4 et CSS éditorial. Le moteur Vinext produit également un Worker Cloudflare pour l’aperçu privé Sites. Les commandes Next standard sont conservées pour Vercel. Sanity assure l’édition et les disponibilités affichées ; Resend peut assurer les notifications.
 
 Le site utilise `content/seed.json` tant qu’aucun projet Sanity n’est configuré. Dès que Sanity est connecté, son contenu devient la source de vérité : une collection vide reste vide, elle n’est pas silencieusement remplacée par des données de démonstration. Les images fournies sont livrées en WebP responsive ; aucun visuel généré n’a été utilisé.
 
@@ -40,11 +40,11 @@ Copier `.env.example` dans `.env.local` pour activer les services. Ne jamais com
 
 ### Gestes éditoriaux
 
-**Textile** : nom, adresse, famille, photo principale avec description et texte court ; compléter seulement les caractéristiques connues. Coloris → associer une photo à chaque pastille. Publier, puis l’ajouter à la sélection de l’Accueil si souhaité.
+**Textile** : nom, adresse, univers (Collections / Exception / Recherche), famille, photo principale avec description et texte court ; compléter seulement les caractéristiques connues. L’univers Recherche est préparé pour une future rubrique et reste absent des deux grilles publiques. Coloris → associer une photo à chaque pastille. Publier, puis l’ajouter à la sélection de l’Accueil si souhaité.
 
 **Projet** : nom, image principale et courte présentation. Composer l’histoire avec les blocs Image, Portrait, Paire, Image + texte, Note, Respiration. Associer les textiles utilisés. Les références et données absentes ne produisent pas de lignes vides.
 
-**Luminaire** : renseigner le nom définitif, les dimensions, les matières, les photos et le statut. Choisir Disponible uniquement lorsque le produit Shopify correspondant est prêt. Renseigner son handle.
+**Luminaire** : renseigner le nom définitif, les dimensions, les matières, les photos et le statut. Choisir Disponible uniquement lorsque la disponibilité est confirmée. Le prix à afficher est facultatif et doit préciser la devise et les mentions appropriées. Les boutons d’acquisition ouvrent Contact. Les champs électriques, pied vintage et délai restent masqués tant qu’ils ne sont pas renseignés.
 
 **Demande** : consulter le message et sa référence dans « Demandes reçues », répondre par email, puis changer le suivi en Répondue ou Archivée. Les champs envoyés par le visiteur sont en lecture seule ; le suivi reste modifiable.
 
@@ -56,15 +56,15 @@ Variables : `SANITY_API_WRITE_TOKEN`, `RESEND_API_KEY`, `CONTACT_FROM_EMAIL` (do
 
 Sans Sanity configuré, le formulaire répond explicitement qu’aucun envoi n’a eu lieu et conserve le texte. L’email direct est disponible dès qu’il est renseigné dans les réglages. En cas d’échec de notification, la demande enregistrée reste consultable dans Sanity avec le statut de livraison. Le jeton d’écriture doit rester strictement côté serveur.
 
-## Shopify
+## Vitrine commerciale et compatibilité
 
-Configurer `SHOPIFY_STORE_DOMAIN` sous la forme `boutique.myshopify.com`, `SHOPIFY_STOREFRONT_ACCESS_TOKEN` et `SHOPIFY_COLLECTION_HANDLE` pour une collection dédiée aux pièces actuelles. Cette sélection explicite évite d’exposer les anciens stocks.
+L’achat en ligne est désactivé : `POST /api/checkout` répond 410 et ne crée aucun panier. Les anciens champs Shopify et documents sont conservés mais masqués dans l’édition courante. `/available-pieces` redirige vers `/lighting` ; une ancienne fiche redirige vers le luminaire associé ou vers l’index. Aucune requête Shopify n’est nécessaire au catalogue.
 
-Activer également « Activer la vente de pièces » dans les Réglages du site Sanity.
+Les liens entre textiles, luminaires et projets sont calculés dans les deux sens à partir des références existantes. Les références absentes ne donnent pas de liens cassés. Les anciennes catégories Contact sont normalisées vers les nouveaux objets sans modifier les demandes historiques.
 
-Les prix, variantes et disponibilités viennent exclusivement de Shopify. La création d’un panier contrôle à nouveau le stock et l’appartenance à la sélection. Le paiement, les taxes, le transport, les commandes et les conditions commerciales sont gérés par Shopify. Les pièces épuisées disparaissent de la sélection commerciale et peuvent rester en archive Luminaires. Sanity permet d’enrichir leur texte, dimensions et matières par handle.
+### Migration des contenus existants
 
-Sans connexion Shopify, aucun produit factice n’est achetable : la page invite à contacter le studio. L’API utilisée est Storefront 2026-07.
+`node --experimental-strip-types --env-file=.env.local scripts/migrate-v1-feedback.mjs` affiche les changements. Ajouter `--apply` pour les appliquer. Le script sauvegarde les documents concernés dans un fichier privé temporaire, vérifie leurs révisions et complète seulement les champs manquants. Seul le tissage dont le slug est `tissage-rotin` passe explicitement de Recherche à Exception. Les textes des trois parties Studio sont provisoires et éditables dans Sanity.
 
 ## Pages
 
@@ -80,7 +80,7 @@ npm run build
 npm run build:next
 ```
 
-Les tests vérifient la validation des demandes, la conservation des références, les unités des fiches techniques et l’existence des photographies. Ils n’envoient aucun email et ne créent aucune commande.
+Les tests couvrent les associations réciproques, les anciennes catégories de contact, les variantes, les fiches incomplètes, les galeries avec une ou plusieurs images et la désactivation du paiement. Le test de la route Contact utilise un stockage Sanity simulé et isolé : il vérifie l’enregistrement et les réessais sans contacter le service réel, envoyer d’email ni modifier les demandes de production.
 
 ## Publier sur Vercel
 
@@ -90,11 +90,11 @@ La version Sites utilise `npm run build` et `.openai/hosting.json`. Les variable
 
 ## État avant lancement commercial
 
-À confirmer avec Margaux : email et Instagram, identité et prix des quatre lampes réellement disponibles, noms définitifs des luminaires, dimensions, crédits photographiques et droits de publication, informations juridiques de l’éditeur, politique de confidentialité définitive, expédition/retours et configuration fiscale Shopify.
+À confirmer avec Margaux : email et Instagram, identité et prix des quatre lampes réellement disponibles, noms définitifs des luminaires, dimensions, crédits photographiques et droits de publication, informations juridiques de l’éditeur, politique de confidentialité définitive, conditions d’acquisition et mentions de prix.
 
-La page Confidentialité est une notice de présentation explicitement provisoire, pas une validation juridique. Le site reste non indexable tant que `SITE_INDEXABLE` n’est pas `true`. Aucun suivi publicitaire ni analytics n’est installé. Les comptes Sanity/Shopify/Resend n’ont pas été créés ni configurés à la place du propriétaire ; leur bon fonctionnement doit être validé avec les comptes réels avant lancement.
+La page Confidentialité est une notice de présentation explicitement provisoire, pas une validation juridique. Le site reste non indexable tant que `SITE_INDEXABLE` n’est pas `true`. Aucun suivi publicitaire ni analytics n’est installé. Sanity est connecté au site de recettage ; la notification par email reste à configurer et à tester avant lancement.
 
-Les fonctions de production Sanity (authentification, droits, sauvegarde, édition visuelle), l’envoi réel des emails et le checkout doivent faire l’objet d’un essai de recette après connexion. La compatibilité du build n’est pas une preuve de fonctionnement de services non configurés.
+Les fonctions de production Sanity (authentification, droits, sauvegarde, édition visuelle), et l’envoi réel des emails doivent faire l’objet d’un essai de recette avant lancement. La compatibilité du build n’est pas une preuve de fonctionnement de services non configurés.
 
 ## Sources
 

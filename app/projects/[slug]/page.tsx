@@ -1,6 +1,7 @@
+import { RelatedEntries } from "@/components/related-entries";
 import Link from "@/components/site-link";
 import { notFound } from "next/navigation";
-import { getEntry } from "@/lib/content";
+import { getEntry, getRelatedEntries } from "@/lib/content";
 import { Photo } from "@/components/photo";
 export async function generateMetadata({
   params,
@@ -39,6 +40,11 @@ export default async function Page({
             {b.images?.map((m) => (
               <figure key={m.src}>
                 <Photo media={m} />
+                {m.credit && (
+                  <figcaption className="small-note">
+                    Photo : {m.credit}
+                  </figcaption>
+                )}
               </figure>
             ))}
             {b.text && <p>{b.text}</p>}
@@ -53,11 +59,12 @@ export default async function Page({
               .join(" · ")}
           </p>
         )}
-        {e.textileSlugs?.map((slug) => (
-          <Link key={slug} className="text-link" href={"/textiles/" + slug}>
-            Explorer le textile associé <span>↗</span>
-          </Link>
-        ))}
+        {!!e.applications?.length && (
+          <p className="project-credits">
+            Applications : {e.applications.join(" · ")}
+          </p>
+        )}
+        <RelatedEntries entries={await getRelatedEntries(e)} />
       </article>
       <section className="bespoke">
         <h2>

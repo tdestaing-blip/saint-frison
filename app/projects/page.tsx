@@ -1,50 +1,41 @@
 import Link from "@/components/site-link";
 import { getEntries } from "@/lib/content";
-import { Photo } from "@/components/photo";
+import { CatalogCard } from "@/components/catalog-card";
 export const metadata = {
   title: "Projets",
   description:
-    "Du fil à l’espace : recherches textiles, applications et projets Saint-Frison.",
+    "Applications textiles et projets Saint-Frison pour l’architecture intérieure.",
 };
 export default async function Page() {
   const entries = await getEntries("project");
   return (
     <main id="main">
       <header className="page-intro">
-        <p className="eyebrow">DU FIL À L’ESPACE</p>
+        <p className="eyebrow">APPLICATIONS & COLLABORATIONS</p>
         <div>
           <h1>Projets</h1>
           <p>
-            La matière trouve sa place.
-            <br />
-            Une sélection de recherches et d’applications.
+            Une sélection de projets et d’applications des textiles et
+            luminaires du studio.
           </p>
         </div>
       </header>
-      <section className="projects-index">
-        {entries.map((e) => (
-          <Link
-            href={"/projects/" + e.slug}
-            key={e.slug}
-            className="image-card"
-          >
-            <div className="image-wrap">
-              <Photo media={e.heroMedia} priority sizes="90vw" />
-            </div>
-            <div className="card-caption">
-              <h3>{e.title}</h3>
-              <span>{e.category || e.location} ↗</span>
-            </div>
-          </Link>
-        ))}
+      <section className="catalog-section" aria-label="Catalogue des projets">
+        <div className="catalog-grid">
+          {entries.map((entry, i) => (
+            <CatalogCard key={entry._id} entry={entry} priority={i === 0} />
+          ))}
+        </div>
         {!entries.length && (
-          <p>Chaque projet commence par un échange avec le studio.</p>
+          <p className="empty-note">
+            Les projets seront présentés prochainement.
+          </p>
         )}
       </section>
       <section className="bespoke">
-        <h2>Écrivons la suite.</h2>
-        <Link className="text-link" href="/contact?type=Sur%20mesure">
-          Discuter d’un projet <span>↗</span>
+        <h2>Votre projet</h2>
+        <Link className="text-link" href="/contact?type=Projet%20sur%20mesure">
+          Parler de votre projet <span>↗</span>
         </Link>
       </section>
     </main>

@@ -23,12 +23,11 @@
       "colourNames": "Limestone",
       "collection": "On the Rocks",
       "madeToOrder": true,
-      "applications": [
-        "Ameublement et assises"
-      ],
+      "applications": ["Ameublement et assises"],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 0,
-      "colourways": []
+      "colourways": [],
+      "textileGroup": "collection"
     },
     {
       "_id": "textile-meltem",
@@ -53,12 +52,11 @@
       "colourNames": "Blanc",
       "collection": "Eole",
       "madeToOrder": true,
-      "applications": [
-        "Voilages et rideaux"
-      ],
+      "applications": ["Voilages et rideaux"],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 1,
-      "colourways": []
+      "colourways": [],
+      "textileGroup": "collection"
     },
     {
       "_id": "textile-edgar",
@@ -95,9 +93,7 @@
       "colourNames": "Naturel, Citron, Kaki, Terracotta, Midnight Blue",
       "collection": "Family Affair",
       "madeToOrder": true,
-      "applications": [
-        "Ameublement et assises"
-      ],
+      "applications": ["Ameublement et assises"],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 2,
       "colourways": [
@@ -141,7 +137,8 @@
             "alt": "Edgar — Midnight Blue"
           }
         }
-      ]
+      ],
+      "textileGroup": "collection"
     },
     {
       "_id": "textile-java",
@@ -170,12 +167,11 @@
       "colourNames": "Fauve, Denim, Olive, Menthe",
       "collection": "Pas de Deux",
       "madeToOrder": true,
-      "applications": [
-        "Ameublement et assises"
-      ],
+      "applications": ["Ameublement et assises"],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 3,
-      "colourways": []
+      "colourways": [],
+      "textileGroup": "collection"
     },
     {
       "_id": "textile-pampero",
@@ -204,12 +200,11 @@
       "colourNames": "Mastic, Ciel, Corail & Poudre",
       "collection": "Eole",
       "madeToOrder": true,
-      "applications": [
-        "Voilages et rideaux"
-      ],
+      "applications": ["Voilages et rideaux"],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 4,
-      "colourways": []
+      "colourways": [],
+      "textileGroup": "collection"
     },
     {
       "_id": "textile-espuma",
@@ -238,12 +233,11 @@
       "colourNames": "Blanc, Bleu Ciel, Bleu Nuit",
       "collection": "Dolce",
       "madeToOrder": true,
-      "applications": [
-        "Ameublement et assises"
-      ],
+      "applications": ["Ameublement et assises"],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 5,
-      "colourways": []
+      "colourways": [],
+      "textileGroup": "collection"
     },
     {
       "_id": "textile-oslo",
@@ -263,12 +257,11 @@
       "colourNames": "Blanc",
       "collection": "Grand Nord",
       "madeToOrder": true,
-      "applications": [
-        "Ameublement et assises"
-      ],
+      "applications": ["Ameublement et assises"],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 6,
-      "colourways": []
+      "colourways": [],
+      "textileGroup": "collection"
     },
     {
       "_id": "textile-toundra",
@@ -288,12 +281,11 @@
       "colourNames": "Marlin, Larkspur, Clémentine, Burgundy, Carbon",
       "collection": "Grand Nord",
       "madeToOrder": true,
-      "applications": [
-        "Ameublement et assises"
-      ],
+      "applications": ["Ameublement et assises"],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 7,
-      "colourways": []
+      "colourways": [],
+      "textileGroup": "collection"
     },
     {
       "_id": "textile-mauka",
@@ -318,12 +310,11 @@
       "colourNames": "Ardoise, Blush, Naturel, Sable et Blanc",
       "collection": "Eole",
       "madeToOrder": true,
-      "applications": [
-        "Voilages et rideaux"
-      ],
+      "applications": ["Voilages et rideaux"],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 8,
-      "colourways": []
+      "colourways": [],
+      "textileGroup": "collection"
     },
     {
       "_id": "textile-sashiko",
@@ -343,19 +334,18 @@
       "colourNames": "blanc, naturel",
       "collection": "Influences",
       "madeToOrder": true,
-      "applications": [
-        "Voilages et rideaux"
-      ],
+      "applications": ["Voilages et rideaux"],
       "customisation": "Coloris, densité et structure : chaque adaptation fait l’objet d’une étude de faisabilité.",
       "sortOrder": 9,
-      "colourways": []
+      "colourways": [],
+      "textileGroup": "collection"
     },
     {
       "_id": "textile-tissage-rotin",
       "_type": "textile",
       "title": "Tissage & rotin",
       "slug": "tissage-rotin",
-      "category": "research",
+      "category": "exception",
       "description": "Le fil accueille le rotin. La trame devient volume, la ligne dessine des courbes et la matière se transforme avec la lumière.",
       "heroMedia": {
         "src": "/images/256-1440.webp",
@@ -376,11 +366,9 @@
         }
       ],
       "sortOrder": 10,
-      "materials": [
-        "Textile",
-        "Rotin"
-      ],
-      "colourways": []
+      "materials": ["Textile", "Rotin"],
+      "colourways": [],
+      "textileGroup": "exception"
     }
   ],
   "lighting": [
@@ -408,10 +396,7 @@
           "alt": "Courbes — applique — détail et application"
         }
       ],
-      "materials": [
-        "Textile tissé",
-        "Rotin"
-      ],
+      "materials": ["Textile tissé", "Rotin"],
       "textileSlug": "tissage-rotin",
       "status": "selection",
       "sortOrder": 0
@@ -432,10 +417,7 @@
           "alt": "Ondes — lampadaire — détail et application"
         }
       ],
-      "materials": [
-        "Textile tissé",
-        "Rotin"
-      ],
+      "materials": ["Textile tissé", "Rotin"],
       "textileSlug": "tissage-rotin",
       "status": "selection",
       "sortOrder": 1
@@ -460,10 +442,7 @@
           "alt": "Courbes — lampe noire — détail et application"
         }
       ],
-      "materials": [
-        "Textile tissé",
-        "Rotin"
-      ],
+      "materials": ["Textile tissé", "Rotin"],
       "textileSlug": "tissage-rotin",
       "status": "selection",
       "sortOrder": 2
@@ -484,10 +463,7 @@
           "alt": "Courbes — suspensions — détail et application"
         }
       ],
-      "materials": [
-        "Textile tissé",
-        "Rotin"
-      ],
+      "materials": ["Textile tissé", "Rotin"],
       "textileSlug": "tissage-rotin",
       "status": "selection",
       "sortOrder": 3
@@ -533,9 +509,7 @@
           "text": "Dessiner avec la trame. Le textile quitte le plan pour devenir un volume traversé de lumière."
         }
       ],
-      "textileSlugs": [
-        "tissage-rotin"
-      ],
+      "textileSlugs": ["tissage-rotin"],
       "sortOrder": 0
     }
   ]

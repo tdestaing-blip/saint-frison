@@ -1,4 +1,9 @@
 "use client";
+import {
+  enquiryTypes as types,
+  normaliseEnquiryType,
+  type EnquiryType,
+} from "@/lib/enquiry-types";
 import Link from "@/components/site-link";
 import { useState, useRef } from "react";
 import {
@@ -9,14 +14,6 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-const types = [
-  "Sur mesure",
-  "Textile",
-  "Pièce",
-  "Rendez-vous",
-  "Collaboration",
-  "Presse / autre",
-];
 export function ContactForm({
   reference = "",
   source = "",
@@ -28,8 +25,11 @@ export function ContactForm({
   initialType?: string;
   email?: string;
 }) {
-  const [type, setType] = useState(
-    types.includes(initialType) ? initialType : "Sur mesure",
+  const normalised = normaliseEnquiryType(initialType);
+  const [type, setType] = useState<string>(
+    types.includes(normalised as EnquiryType)
+      ? normalised
+      : "Projet sur mesure",
   );
   const [consent, setConsent] = useState(false);
   const [state, setState] = useState<"idle" | "sending" | "success" | "error">(

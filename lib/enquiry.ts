@@ -1,14 +1,11 @@
+import { enquiryTypes, normaliseEnquiryType } from "./enquiry-types.ts";
 import { z } from "zod";
 export const enquirySchema = z.object({
   id: z.string().uuid(),
-  type: z.enum([
-    "Sur mesure",
-    "Textile",
-    "Pièce",
-    "Rendez-vous",
-    "Collaboration",
-    "Presse / autre",
-  ]),
+  type: z.preprocess(
+    (v) => (typeof v === "string" ? normaliseEnquiryType(v) : v),
+    z.enum(enquiryTypes),
+  ),
   name: z.string().trim().min(2).max(150),
   email: z.string().email().max(254),
   company: z.string().trim().max(200).default(""),

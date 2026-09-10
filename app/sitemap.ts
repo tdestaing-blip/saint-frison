@@ -15,7 +15,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/projects",
     "/about",
     "/contact",
-    "/available-pieces",
     ...entries.flatMap((items, i) =>
       items.map(
         (e) => "/" + ["textiles", "lighting", "projects"][i] + "/" + e.slug,
